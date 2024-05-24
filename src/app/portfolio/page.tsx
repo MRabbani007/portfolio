@@ -8,13 +8,13 @@ import PortfolioSkillsSoft from "../_components/Portfolio/PortfolioSkillsSoft";
 
 export default function PortfolioPage() {
   return (
-    <main className="flex flex-col items-center gap-4">
-      <div className="bg-gradient-to-br from-zinc-950 to-sky-900 w-full h-[40vh] relative">
+    <main className="flex flex-col items-center gap-4 pt-16">
+      {/* <div className="bg-gradient-to-br from-zinc-950 to-sky-900 w-full h-[40vh] relative">
         <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
           <p className="text-2xl">Mohamad Rabbani</p>
           <p>Software Engineer</p>
         </div>
-      </div>
+      </div> */}
       <PortfolioHome />
       <PortfolioAbout />
       <PortfolioSkills />

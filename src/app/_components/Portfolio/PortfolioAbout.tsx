@@ -4,7 +4,7 @@ export default function PortfolioAbout() {
   return (
     <div id="about" className="section-container pt-12">
       <section>
-        <h2 className="">About</h2>
+        <h2 className="">About Me</h2>
         <div className="font-light mx-auto flex flex-col lg:flex-row items-center my-2 gap-4">
           <div className="">
             <img

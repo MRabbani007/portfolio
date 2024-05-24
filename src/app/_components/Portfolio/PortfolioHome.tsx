@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 export default function PortfolioHome() {
   return (
     <div id="home" className="section-container pt-12">
-      <section className="flex flex-row gap-4">
+      <section className="flex flex-row items-center lg:flex-nowrap flex-wrap gap-4">
         <div className="flex flex-col gap-3">
           <p className="text-3xl sm:text-4xl md:text-6xl font-extralight uppercase">
             Mohamad Rabbani

@@ -12,7 +12,9 @@ export default function HomePage() {
           <p>Software Engineer</p>
         </div>
       </div>
-      <h1>Welcome to my website, have a look around!</h1>
+      <div className="flex items-center justify-center">
+        <h1>Welcome to my website, have a look around!</h1>
+      </div>
     </main>
   );
 }

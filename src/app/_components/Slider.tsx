@@ -70,7 +70,7 @@ const Slider = ({ project }: Props) => {
       {/* Slider controls */}
       <button
         type="button"
-        className="sm:absolute hidden left-0 top-[50%] z-10 "
+        className="sm:absolute hidden left-0 top-[50%] z-10"
       >
         <IoChevronBackOutline
           className="inline text-4xl text-yellow-500"
@@ -86,7 +86,7 @@ const Slider = ({ project }: Props) => {
           onClick={gotoNext}
         />
       </button>
-      <h3 className="bg-gradient-to-br from-blue-500 to-blue-400 py-2 mb-2 text-center text-white rounded-full">
+      <h3 className="bg-gradient-to-br from-blue-500 to-blue-400 py-2 mb-2 text-center text-white rounded-full w-fit px-4 mx-auto">
         {project?.name}
       </h3>
       {/* Carousel Wrapper */}

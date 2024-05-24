@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { SyntheticEvent, useEffect, useRef, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Sidebar from "./Sidebar";
 import { usePathname } from "next/navigation";
@@ -14,6 +14,7 @@ export default function Navbar() {
   const [showPortMenu, setShowPortMenu] = useState(false);
 
   const pathname = usePathname();
+  const ref = useRef(null);
 
   const isPortfolio = pathname === "/portfolio";
 
@@ -32,11 +33,24 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleShadow);
   }, []);
 
+  useEffect(() => {
+    const handlePortfolioMenu = () => {
+      // if (ref?.current) {
+      //   if(!ref?.current.contains(e?.target))
+      //   setShowPortMenu(false);
+      // }
+    };
+
+    window.addEventListener("click", handlePortfolioMenu);
+
+    return () => window.removeEventListener("scroll", handlePortfolioMenu);
+  }, []);
+
   return (
     <nav
       className={
         (shadow ? "shadow-sm shadow-blue-700 " : "  ") +
-        "fixed top-4 left-4 right-4 flex items-center justify-between py-2 px-8 z-[100] bg-gradient-to-br from-zinc-300 to-zinc-100 text-xl rounded-full duration-200"
+        "fixed top-0 left-0 right-0 flex items-center justify-between py-4 px-8 z-[100] text-xl bg-gradient-to-br from-zinc-300 to-zinc-100 duration-200"
       }
     >
       {/* Logo */}
@@ -44,8 +58,8 @@ export default function Navbar() {
         <Image
           src={"/assets/logo/logo.png"}
           alt="Mohamad"
-          width={60}
-          height={40}
+          width={80}
+          height={80}
         />
       </Link>
       <div className="flex flex-col gap-1 items-center relative">
@@ -100,11 +114,12 @@ export default function Navbar() {
           </li>
         </ul>
         <ul
+          ref={ref}
           className={
             (isPortfolio && showPortMenu
               ? ""
               : " -translate-y-4 opacity-0 invisible") +
-            " absolute top-11 -right-4 hidden md:flex items-center gap-5 bg-zinc-200 rounded-lg py-2 px-4 duration-200"
+            " absolute top-14 -right-4 hidden md:flex items-center gap-5 bg-zinc-200 rounded-lg py-2 px-4 duration-200"
           }
         >
           <li>

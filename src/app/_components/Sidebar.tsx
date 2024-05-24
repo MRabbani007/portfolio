@@ -30,8 +30,8 @@ export default function Sidebar({ showSideMenu, setShowSideMenu }: Props) {
             <Image
               src={"/assets/logo/logo.png"}
               alt="Mohamad"
-              width={60}
-              height={40}
+              width={80}
+              height={80}
             />
           </Link>
           <button
@@ -42,43 +42,59 @@ export default function Sidebar({ showSideMenu, setShowSideMenu }: Props) {
           </button>
         </div>
         <p className="p-4 text-md">
-          Let{"'"}s build something legendary together
+          Let&apos;s build something legendary together
         </p>
         <ul className="flex flex-col gap-3 uppercase px-4 h-full text-sm">
-          <li>
+          <li onClick={() => setShowSideMenu(false)}>
             <Link href="/">Home</Link>
           </li>
-          <li>
-            <Link href="/">About</Link>
+          <li onClick={() => setShowSideMenu(false)}>
+            <Link href="/portfolio">Porfolio</Link>
           </li>
-          <li>
-            <Link href="/">Skills</Link>
+          <li onClick={() => setShowSideMenu(false)}>
+            <Link href="/projects">Projects</Link>
           </li>
-          <li>
-            <Link href="/">Projects</Link>
+          <li onClick={() => setShowSideMenu(false)}>
+            <Link href="/blog">Blog</Link>
           </li>
-          <li>
-            <Link href="/">Experience</Link>
+          <li onClick={() => setShowSideMenu(false)}>
+            <Link href="/roadmap">Roadmap</Link>
           </li>
-          <li>
-            <Link href="/">Contact</Link>
+          <li onClick={() => setShowSideMenu(false)}>
+            <Link href="/resources">Resources</Link>
           </li>
         </ul>
         <div className="px-4 my-4">
-          <p className="uppercase my-2 font-bold text-md">Let&aposs Connect</p>
+          <p className="uppercase my-2 font-bold text-md">Let&apos;s Connect</p>
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer">
+            <a
+              className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer"
+              href="www.linkedin.com/in/mohamadrabbani"
+              target="_blank"
+            >
               <FaLinkedinIn size={28} />
-            </div>
-            <div className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer">
+            </a>
+            <a
+              className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer"
+              href="https://github.com/MRabbani007"
+              target="_blank"
+            >
               <FaGithub size={28} />
-            </div>
-            <div className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer">
+            </a>
+            <a
+              className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer"
+              href="mailto: mrabbani@outlook.com"
+              target="_blank"
+            >
               <AiOutlineMail size={28} />
-            </div>
-            <div className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer">
+            </a>
+            <a
+              className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer"
+              href="#"
+              target="_blank"
+            >
               <BsFillPersonLinesFill size={28} />
-            </div>
+            </a>
           </div>
         </div>
       </div>

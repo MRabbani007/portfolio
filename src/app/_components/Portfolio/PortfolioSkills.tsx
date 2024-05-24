@@ -6,15 +6,14 @@ export default function PortfolioSkills() {
     <div id="skills" className="section-container pt-12">
       <section>
         {/* Container */}
-        <h2>Skills</h2>
-        <p>The technologies that I use</p>
+        <h2>Technical Skills</h2>
+        {/* <p>The technologies that I use</p> */}
         <div className="p-1 flex flex-wrap justify-center gap-4 text-center skills-container">
           {skills_technical.map((skill, index) => {
             return (
               <div
                 key={index}
-                className="rounded-md shadow-md shadow-slate-500 w-28 skill-card p-2 flex flex-col items-center"
-                // data-aos="flip-left"
+                className="rounded-lg shadow-md shadow-blue-500 bg-zinc-100 w-28 skill-card py-4 px-2 flex flex-col items-center"
               >
                 <Image
                   src={"/assets/skills/" + skill?.image}

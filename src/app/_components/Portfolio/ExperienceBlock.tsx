@@ -24,7 +24,7 @@ const ExperienceBlock = ({ item, index }: Props) => {
   return (
     <article key={index}>
       <header
-        className="py-2 px-4 flex flex-wrap sm:flex-nowrap justify-between gap-3 cursor-pointer rounded-md shadow-md shadow-slate-300 relative"
+        className="py-2 px-4 flex flex-wrap sm:flex-nowrap justify-between gap-3 cursor-pointer rounded-md shadow-md shadow-blue-500 bg-zinc-50 relative"
         onClick={() => setExpand(!expand)}
       >
         <p className="my-auto">{item?.period}</p>
@@ -66,7 +66,7 @@ const ExperienceBlock = ({ item, index }: Props) => {
         <div className="flex-1 flex flex-col gap-2 p-1">
           {item.responsibilities.map((resp, index) => (
             <p
-              className="p-2 font-light rounded-md shadow-md hover:shadow-slate-600 shadow-slate-400 duration-300"
+              className="p-2 font-light rounded-lg shadow-md hover:shadow-md hover:shadow-blue-700 shadow-blue-500 duration-200 bg-zinc-50"
               key={"expitem-" + index}
             >
               {resp}

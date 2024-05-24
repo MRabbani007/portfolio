@@ -16,7 +16,7 @@ export default function PortfolioSkillsSoft() {
               return (
                 <div
                   key={index}
-                  className="rounded-md shadow-md shadow-slate-500 w-40 skill-card"
+                  className="rounded-lg shadow-md shadow-blue-500 bg-zinc-100 py-2 px-0 w-40 flex flex-col items-center skill-card"
                 >
                   <img
                     className="w-20 mx-auto py-2"
