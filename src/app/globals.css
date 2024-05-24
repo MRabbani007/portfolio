@@ -1,33 +1,130 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
+  --clr-yellow-400: #facc15;
+  --clr-yellow-500: #eab308;
+  --clr-zinc-300:#d4d4d8;
+  --clr-zinc-500:#71717a;
+  --clr-zinc-800:#27272a;
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255; */
+}
+
+*, *::after, *::before{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Supreme', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0; */
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 1rem .5rem;
+  border-radius: .375rem;
+  max-width: 1032px;
+  margin: 0 auto;
+  top: 1rem;
+  left: .5rem;
+  right: .5rem;
+  height: 4rem;
+  z-index: 50;
+  box-shadow: 0 0 10px 2px var(--clr-zinc-800);
+  transition: all 500ms ease-in-out;
+}
+
+menu:hover {
+  box-shadow: 0 0 7px 4px var(--clr-zinc-500);
+}
+
+h1 {
+  color: rgb(0, 74, 170);
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem; 
+  color: rgb(0, 74, 170);
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+}
+
+h3{
+  font-size: 1rem;
+}
+
+section {
+  width: 100%;
+  max-width: 1032px;
+  /* border-radius: .5rem; */
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+  padding: 1rem 1rem 2rem;
+  /* box-shadow: 0 0 10px 0px var(--clr-zinc-800); */
+}
+
+.section-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 564px) {
+}
+
+.skills-container > .skill-card{
+  transition: scale 200ms ease, opacity 100ms linear;
+  cursor: pointer;
+}
+
+.skills-container > .skill-card:hover{
+  transition: scale 200ms ease, opacity 100ms linear;
+  scale: 1.1;
+}
+
+.skills-container > .skill-card:not(:hover){
+  transition: scale 200ms ease, opacity 100ms linear;
+}
+
+.skills-container:has(.skill-card:hover) > .skill-card:not(:hover){
+  transition: scale 200ms ease, opacity 100ms linear;
+  scale: .9;
+  opacity: .5;
 }
