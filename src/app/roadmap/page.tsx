@@ -1,8 +1,31 @@
 import React from "react";
+import { BsSignStop } from "react-icons/bs";
+import { IoConstructOutline } from "react-icons/io5";
+import { GoAlert } from "react-icons/go";
+
+const FRONTEND = [
+  "HTML",
+  "CSS",
+  "Javascript",
+  "Bootstrap",
+  "React",
+  "Typescript",
+  "Tailwind",
+  "Sass",
+];
+
+const BACKEND = [
+  "NodeJS",
+  "ExpressJS",
+  "NestJS",
+  "MongoDB",
+  "MySQL",
+  "PostGre-SQL",
+];
 
 export default function RoadmapPage() {
   return (
-    <div className=" min-h-screen">
+    <div className="min-h-screen">
       <div className="bg-zinc-900 w-full h-[40vh] relative">
         <img
           src="/assets/stairs.png"
@@ -14,22 +37,65 @@ export default function RoadmapPage() {
           <p>How to became a web developer</p>
         </div>
       </div>
-      <div className="py-2 px-4">
+      <div className="py-2 px-4 max-w-[1000px] mx-auto">
         <h2>Roadmap</h2>
-        <ol className="list-decimal list-inside">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Javascript</li>
-          <li>Bootstrap</li>
-          <li>React</li>
-          <li>Tailwind</li>
-          <li>NodeJS</li>
-          <li>Express</li>
-          <li>MongoDB</li>
-          <li>Sass</li>
-          <li>Typescript</li>
-          <li>NextJS</li>
-        </ol>
+        <div className="flex justify-evenly my-4" title="Construction Zone!">
+          <BsSignStop size={40} className="text-red-600" title="Stop!" />
+          <GoAlert className="text-yellow-500" size={40} title="Warning!" />
+          <IoConstructOutline
+            size={40}
+            className="text-red-600"
+            title="Construction Ahead!"
+          />
+          <GoAlert className="text-yellow-500" size={40} title="Warning!" />
+          <BsSignStop size={40} className="text-red-600" title="Stop!" />
+        </div>
+        <div className="flex flex-col md:flex-row flex-wrap w-full sm:justify-center sm:items-start items-start gap-6">
+          <article className="flex-1">
+            <h3 className="text-xl text-blue-600">Frontend</h3>
+            <p>UI & UX</p>
+            <ol className="list-decimal list-inside p-2">
+              {FRONTEND.map((item, index) => {
+                return <li key={index}>{item}</li>;
+              })}
+            </ol>
+          </article>
+          <article className="flex-1">
+            <h3 className="text-xl text-blue-600">Backend</h3>
+            <p className="text-wrap">
+              Server functionality, data storage and database management
+            </p>
+            <ol
+              className="list-decimal list-inside"
+              start={FRONTEND.length + 1}
+            >
+              {BACKEND.map((item, index) => {
+                return <li key={index}>{item}</li>;
+              })}
+            </ol>
+          </article>
+          <article className="flex-1">
+            <h3 className="text-xl text-blue-600">Full-Stack</h3>
+            <p>Frontend & backend</p>
+            <ol
+              className="list-decimal list-inside"
+              start={FRONTEND.length + BACKEND.length + 1}
+            >
+              <li>NextJS</li>
+            </ol>
+          </article>
+        </div>
+        <div className="flex justify-evenly my-4" title="Construction Zone!">
+          <BsSignStop size={40} className="text-red-600" title="Stop!" />
+          <GoAlert className="text-yellow-500" size={40} title="Warning!" />
+          <IoConstructOutline
+            size={40}
+            className="text-red-600"
+            title="Construction Ahead!"
+          />
+          <GoAlert className="text-yellow-500" size={40} title="Warning!" />
+          <BsSignStop size={40} className="text-red-600" title="Stop!" />
+        </div>
       </div>
     </div>
   );

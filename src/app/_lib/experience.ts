@@ -5,11 +5,14 @@ export const experience = [
     company: "Freelance",
     project: "",
     period: "Aug 2023 – Present",
-    image: "",
-    companyLogo: "",
+    image: "/assets/png/tech.png",
+    companyLogo: "/assets/png/logo.png",
     responsibilities: [
-      "Developing full stack responsive web-applications using the latest technologies",
-      "NextJS, React, NodeJS, Express, MongoDB, Tailwind & Github",
+      "Developing full stack responsive web-applications using the latest technologies including NextJS, React, NodeJS, ExpressJS, MongoDB, Tailwind & Github",
+      "Building applications with React JS using functional components, react hooks, react router, context, redux toolkit & RTK Query, lazy-loading, and JWT",
+      "Working with Tailwind, Bootstrap, and SASS, to create responsive web applications",
+      "Working with version control Git and GitHub",
+      "Developing projects (including an Online Store, Todo App, Language App, and Movies App) and deploying to Vercel, Render & GitHub pages",
     ],
   },
   {

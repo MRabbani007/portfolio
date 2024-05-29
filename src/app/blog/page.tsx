@@ -7,12 +7,12 @@ export const revalidate = 10;
 export default function BlogPage() {
   return (
     <div className=" min-h-screen">
-      <div className="bg-zinc-900 w-full h-[40vh] relative">
-        <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
+      <div className="bg-zinc-900 w-full h-[50vh] relative">
+        <div className="text-zinc-50 absolute left-0 bottom-0 p-4 z-5">
           <p className="text-2xl">Blog</p>
           <p>Web Development topics</p>
         </div>
-        <div className="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+        <div className="absolute bottom-2 sm:left-[50%] right-10 sm:-translate-x-[50%] z-0">
           <ProfilePic />
         </div>
       </div>

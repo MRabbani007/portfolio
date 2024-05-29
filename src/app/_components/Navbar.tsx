@@ -72,6 +72,8 @@ export default function Navbar() {
           >
             <Link href="/portfolio">Portfolio</Link>
             <button
+              // onMouseOver={() => setShowPortMenu(true)}
+              // onMouseLeave={() => setShowPortMenu(false)}
               onClick={() => setShowPortMenu((curr) => !curr)}
               className={
                 (isPortfolio ? "w-8" : "w-0 invisible overflow-hidden") +

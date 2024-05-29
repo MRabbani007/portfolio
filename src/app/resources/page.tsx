@@ -11,9 +11,9 @@ export default function ResourcesPage() {
           <p>Useful Links & Resources</p>
         </div>
       </div>
-      <div className="py-2 px-4">
+      <div className="py-2 px-4 max-w-[1000px] mx-auto">
         <h1>Links & Resources</h1>
-        <h2>FrameWorks</h2>
+        <h2 className="text-xl">FrameWorks</h2>
         <ul className="flex flex-wrap gap-4 justify-center items-stretch">
           {FRAMEWORKS.map((item, index) => {
             return (
@@ -21,30 +21,25 @@ export default function ResourcesPage() {
                 <a
                   href={item?.url ?? "#"}
                   target="_blank"
-                  className="flex flex-col gap-2 justify-between"
+                  className="flex flex-col gap-2 justify-between h-full"
                 >
                   <Image
                     src={"/assets/resources/" + item?.image}
                     width={60}
                     height={60}
                     alt={item?.name}
-                    className="mx-auto"
+                    className="mx-auto my-auto"
                   />
-                  <p className="font-mono mx-auto mt-auto">{item.name}</p>
+                  <p className="font-mono mx-auto">{item.name}</p>
                 </a>
               </li>
             );
           })}
         </ul>
-        <h2>Media</h2>
+        <h2 className="text-xl">Media</h2>
         <ul>
+          <li>unsplash</li>
           <li>icons8</li>
-          <li>React</li>
-          <li>Nextjs</li>
-          <li>npm</li>
-          <li>tailwind</li>
-          <li>mongodb</li>
-          <li>mdn</li>
         </ul>
       </div>
     </div>

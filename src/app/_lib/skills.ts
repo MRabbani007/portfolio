@@ -2,6 +2,7 @@ export const skills_technical = [
   { name: "NextJS", image: "nextjs.svg", group: 1 },
   { name: "React", image: "react.png", group: 1 },
   { name: "NodeJS", image: "node.png", group: 1 },
+  { name: "ExpressJS", image: "express.png", group: 1 },
   { name: "MongoDB", image: "mongo.png", group: 1 },
   { name: "Typescript", image: "typescript.png", group: 2 },
   { name: "Tailwind", image: "tailwind.png", group: 2 },
