@@ -23,7 +23,7 @@ const defaultProject = {
   technologies: [],
 };
 
-export default function ProjectPage({ params }: Props) {
+export default function ProjectPage({ params = { id: 0, name: "" } }: Props) {
   const project =
     projects.find((item) => item.name === params?.name) || defaultProject;
 
