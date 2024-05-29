@@ -4,15 +4,19 @@ import { projects } from "@/app/_lib/projects";
 import Link from "next/link";
 import React from "react";
 
-type Props = {
-  id: string;
-  name: string;
+type URLProps = {
+  params: {
+    id: string;
+    name: string;
+  };
 };
 
 const defaultProject = {
   id: 0,
   name: "",
+  title: "",
   subtitle: "",
+  mainImage: "",
   images: [],
   imageNames: [],
   live_URL: "",
@@ -23,7 +27,7 @@ const defaultProject = {
   technologies: [],
 };
 
-export default function ProjectPage({ params = { id: 0, name: "" } }: Props) {
+export default function ProjectPage({ params }: URLProps) {
   const project =
     projects.find((item) => item.name === params?.name) || defaultProject;
 

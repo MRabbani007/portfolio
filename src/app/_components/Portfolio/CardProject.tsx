@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function CardProject({ project }) {
+export default function CardProject({ project }: { project: Project }) {
   return (
     <div className="flex flex-col gap-2">
       <h3 className="text-xl text-blue-600 uppercase">{project.title}</h3>
