@@ -2,7 +2,7 @@ import ListItem from "@/app/_components/blog/ListItem";
 import { getPostsMeta } from "@/app/_lib/blog/posts";
 import Link from "next/link";
 
-export const revalidate = 86400;
+export const revalidate = 500; //86400;
 
 type Props = {
   params: {
@@ -38,7 +38,7 @@ export default async function TagPostList({ params: { tag } }: Props) {
     return (
       <div className="text-center">
         <p className="mt-10">Sorry, no posts for that keyword.</p>
-        <Link href="/">Back to Home</Link>
+        <Link href="/blog">Back to Blog</Link>
       </div>
     );
   }

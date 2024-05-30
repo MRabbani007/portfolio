@@ -2,7 +2,7 @@ import React from "react";
 import ProfilePic from "../_components/blog/ProfilePic";
 import Posts from "../_components/blog/Posts";
 
-export const revalidate = 10;
+export const revalidate = 500;
 
 export default function BlogPage() {
   return (
@@ -19,7 +19,7 @@ export default function BlogPage() {
       <div className="py-2 px-4">
         <h1>Blog</h1>
         <Posts />
-        <article>
+        {/* <article>
           <div>Roadmap</div>
           <div>How to become a webdeveloper in 2024</div>
         </article>
@@ -33,7 +33,7 @@ export default function BlogPage() {
         <article>
           <div>Hosting Sites</div>
           <div>Github Pages, Vercel, Firebase...</div>
-        </article>
+        </article> */}
       </div>
     </div>
   );

@@ -12,8 +12,10 @@ export default function HomePage() {
           <p>Software Engineer</p>
         </div>
       </div>
-      <div className="flex items-center justify-center">
-        <h1>Welcome to my website, have a look around!</h1>
+      <div className="flex items-center justify-center p-4">
+        <h1 className="text-wrap whitespace-break-spaces">
+          Welcome to my website, have a look around!
+        </h1>
       </div>
     </main>
   );

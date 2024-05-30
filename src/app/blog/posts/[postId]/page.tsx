@@ -4,7 +4,7 @@ import "highlight.js/styles/github-dark.css";
 import { getPostByName, getPostsMeta } from "@/app/_lib/blog/posts";
 import getFormattedDate from "@/app/_lib/blog/getFormattedDate";
 
-export const revalidate = 86400;
+export const revalidate = 500; //86400;
 
 type Props = {
   params: {
@@ -61,7 +61,7 @@ export default async function Post({ params: { postId } }: Props) {
         <div className="flex flex-row gap-4">{tags}</div>
       </section>
       <p className="mb-10">
-        <Link href="/">← Back to home</Link>
+        <Link href="/blog">← Back to Blog</Link>
       </p>
     </>
   );

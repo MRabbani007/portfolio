@@ -11,8 +11,9 @@ export default function PostsLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // dark:prose-invert
   return (
-    <main className="min-h-screen pt-20 px-4 md:px-6 prose prose-xl prose-slate dark:prose-invert mx-auto">
+    <main className="min-h-screen pt-20 px-4 md:px-6 prose prose-base prose-slate mx-auto">
       {children}
     </main>
   );
