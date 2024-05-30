@@ -26,20 +26,27 @@ const BACKEND = [
 export default function RoadmapPage() {
   return (
     <div className="min-h-screen">
-      <div className="bg-zinc-900 w-full h-[40vh] relative">
-        <img
-          src="/assets/stairs.png"
-          alt="stairs"
-          className="object-contain h-full ml-auto"
-        />
-        <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
-          <p className="text-2xl">Web Developer Roadmap</p>
-          <p>How to became a web developer</p>
+      <header className="bg-zinc-900 mt-[80px]">
+        <div className="w-full max-w-[1000px] mx-auto h-[40vh] relative">
+          <img
+            src="/assets/stairs.png"
+            alt="stairs"
+            className="object-contain h-full ml-auto"
+            height={300}
+            width={200}
+          />
+          <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
+            <p className="text-2xl">Web Developer Roadmap</p>
+            <p>How to became a web developer</p>
+          </div>
         </div>
-      </div>
-      <div className="py-2 px-4 max-w-[1000px] mx-auto">
+      </header>
+      <main className="py-2 px-4 max-w-[1000px] mx-auto">
         <h2>Roadmap</h2>
-        <div className="flex justify-evenly my-4" title="Construction Zone!">
+        <div
+          className="flex flex-wrap justify-evenly my-4"
+          title="Construction Zone!"
+        >
           <BsSignStop size={40} className="text-red-600" title="Stop!" />
           <GoAlert className="text-yellow-500" size={40} title="Warning!" />
           <IoConstructOutline
@@ -85,7 +92,10 @@ export default function RoadmapPage() {
             </ol>
           </article>
         </div>
-        <div className="flex justify-evenly my-4" title="Construction Zone!">
+        <div
+          className="flex flex-wrap justify-evenly my-4"
+          title="Construction Zone!"
+        >
           <BsSignStop size={40} className="text-red-600" title="Stop!" />
           <GoAlert className="text-yellow-500" size={40} title="Warning!" />
           <IoConstructOutline
@@ -96,7 +106,7 @@ export default function RoadmapPage() {
           <GoAlert className="text-yellow-500" size={40} title="Warning!" />
           <BsSignStop size={40} className="text-red-600" title="Stop!" />
         </div>
-      </div>
+      </main>
     </div>
   );
 }

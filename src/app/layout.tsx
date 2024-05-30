@@ -9,7 +9,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Mohamad Rabbani",
   description: "Portfolio for Mohamad Rabbani",
-  icons: "/assets/logo/icon.png",
 };
 
 export default function RootLayout({
@@ -19,6 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="iconshortcut icon" href="/assets/logo/icon.png" />
+      </head>
       <body className={inter.className}>
         <Navbar />
         <div>{children}</div>

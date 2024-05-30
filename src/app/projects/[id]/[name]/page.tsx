@@ -33,14 +33,16 @@ export default function ProjectPage({ params }: URLProps) {
 
   return (
     <div>
-      <div className="bg-zinc-900 w-full h-[40vh] relative">
-        <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
-          <p className="text-2xl">{project?.title}</p>
-          <p>{project?.subtitle}</p>
+      <header className="bg-zinc-900 mt-[80px]">
+        <div className="w-full max-w-[1000px] mx-auto h-[40vh] relative">
+          <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
+            <p className="text-2xl">{project?.title}</p>
+            <p>{project?.subtitle}</p>
+          </div>
         </div>
-      </div>
+      </header>
       <div className="p-4 md:max-w-[1000px] mx-auto flex flex-wrap gap-4">
-        <div className="flex flex-1 justify-between items-start gap-3">
+        <div className="flex flex-wrap flex-1 justify-between items-start gap-3">
           <div className="flex-1 flex flex-col gap-4">
             {/* About */}
             <div>

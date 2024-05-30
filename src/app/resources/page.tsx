@@ -5,17 +5,19 @@ import Image from "next/image";
 export default function ResourcesPage() {
   return (
     <div className=" min-h-screen">
-      <div className="bg-zinc-900 w-full h-[40vh] relative">
-        <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
-          <p className="text-2xl">Links & Resources</p>
-          <p>Useful Links & Resources</p>
+      <header className="bg-zinc-900 mt-[80px]">
+        <div className="w-full max-w-[1000px] mx-auto h-[40vh] relative">
+          <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
+            <p className="text-2xl">Links & Resources</p>
+            <p>Useful Links & Resources</p>
+          </div>
         </div>
-      </div>
-      <div className="py-2 px-4 max-w-[1000px] mx-auto flex flex-col gap-6">
+      </header>
+      <main className="py-2 px-4 max-w-[1000px] mx-auto flex flex-col gap-6">
         <h1>Links & Resources</h1>
         <section>
           <h2 className="text-xl">FrameWorks</h2>
-          <ul className="flex flex-wrap gap-4 justify-center items-stretch">
+          <ul className="flex flex-wrap gap-6 justify-center items-stretch">
             {FRAMEWORKS.map((item, index) => {
               return (
                 <li key={index}>
@@ -40,7 +42,7 @@ export default function ResourcesPage() {
         </section>
         <section>
           <h2 className="text-xl">Media</h2>
-          <ul className="flex flex-wrap gap-4 justify-center items-stretch">
+          <ul className="flex flex-wrap gap-6 justify-center items-stretch">
             {MEDIA.map((item, index) => {
               return (
                 <li key={index}>
@@ -63,7 +65,7 @@ export default function ResourcesPage() {
             })}
           </ul>
         </section>
-      </div>
+      </main>
     </div>
   );
 }

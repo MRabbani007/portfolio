@@ -7,16 +7,18 @@ export const revalidate = 500;
 export default function BlogPage() {
   return (
     <div className=" min-h-screen">
-      <div className="bg-zinc-900 w-full h-[50vh] relative">
-        <div className="text-zinc-50 absolute left-0 bottom-0 p-4 z-5">
-          <p className="text-2xl">Blog</p>
-          <p>Web Development topics</p>
+      <header className="bg-zinc-900 mt-[80px]">
+        <div className="h-[40vh] w-full max-w-[1000px] mx-auto relative">
+          <div className="text-zinc-50 absolute left-0 bottom-0 p-4 z-5">
+            <p className="text-2xl">Blog</p>
+            <p>Web Development topics</p>
+          </div>
+          <div className="absolute bottom-2 left-[50%] sm:-translate-x-[50%] z-0">
+            <ProfilePic />
+          </div>
         </div>
-        <div className="absolute bottom-2 sm:left-[50%] right-10 sm:-translate-x-[50%] z-0">
-          <ProfilePic />
-        </div>
-      </div>
-      <div className="py-2 px-4">
+      </header>
+      <main className="py-2 px-4 max-w-[1000px] mx-auto">
         <h1>Blog</h1>
         <Posts />
         {/* <article>
@@ -34,7 +36,7 @@ export default function BlogPage() {
           <div>Hosting Sites</div>
           <div>Github Pages, Vercel, Firebase...</div>
         </article> */}
-      </div>
+      </main>
     </div>
   );
 }

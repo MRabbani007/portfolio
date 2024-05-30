@@ -44,12 +44,12 @@ export default function Sidebar({ showSideMenu, setShowSideMenu }: Props) {
         <p className="p-4 text-md">
           Let&apos;s build something legendary together
         </p>
-        <ul className="flex flex-col gap-3 uppercase px-4 h-full text-sm">
+        <ul className="flex flex-col gap-3 uppercase px-4 h-full text-lg">
           <li onClick={() => setShowSideMenu(false)}>
             <Link href="/">Home</Link>
           </li>
           <li onClick={() => setShowSideMenu(false)}>
-            <Link href="/portfolio">Porfolio</Link>
+            <Link href="/portfolio">Portfolio</Link>
           </li>
           <li onClick={() => setShowSideMenu(false)}>
             <Link href="/projects">Projects</Link>
