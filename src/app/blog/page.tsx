@@ -6,10 +6,10 @@ export const revalidate = 500;
 
 export default function BlogPage() {
   return (
-    <div className=" min-h-screen">
-      <header className="bg-zinc-900 mt-[80px]">
-        <div className="h-[40vh] w-full max-w-[1000px] mx-auto relative">
-          <div className="text-zinc-50 absolute left-0 bottom-0 p-4 z-5">
+    <div className="">
+      <header className="bg-zinc-900">
+        <div className="h-[40vh] w-full max-w-[1024px] mx-auto relative">
+          <div className="text-zinc-50 absolute left-0 bottom-0 py-4 z-10">
             <p className="text-2xl">Blog</p>
             <p>Web Development topics</p>
           </div>
@@ -18,7 +18,7 @@ export default function BlogPage() {
           </div>
         </div>
       </header>
-      <main className="py-2 px-4 max-w-[1000px] mx-auto">
+      <main className="">
         <h1>Blog</h1>
         <Posts />
         {/* <article>

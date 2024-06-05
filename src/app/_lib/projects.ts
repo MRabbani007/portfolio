@@ -1,6 +1,7 @@
 export const projects = [
   {
     id: 1,
+    pinned: true,
     name: "TodoApp",
     title: "Todo Application",
     subtitle: "React, AntD",
@@ -31,6 +32,7 @@ export const projects = [
   },
   {
     id: 2,
+    pinned: true,
     name: "LanguageApp",
     title: "Language Learning Application",
     subtitle: "React, Redux",
@@ -51,6 +53,7 @@ export const projects = [
   },
   {
     id: 3,
+    pinned: true,
     name: "onlineStore",
     title: "Online Store",
     subtitle: "React, Nodejs, ExpressJS, MongoDB",
@@ -76,6 +79,7 @@ export const projects = [
   },
   {
     id: 4,
+    pinned: false,
     name: "Movies App",
     title: "Movies Application",
     subtitle: "React, Tailwind, MoviesAPI",
@@ -91,6 +95,7 @@ export const projects = [
   },
   {
     id: 5,
+    pinned: false,
     name: "expenseManager",
     title: "Expense Manager",
     subtitle: "React, Tailwind",
@@ -110,6 +115,7 @@ export const projects = [
   },
   {
     id: 6,
+    pinned: false,
     name: "travelApp",
     title: "Travel App",
     subtitle: "",

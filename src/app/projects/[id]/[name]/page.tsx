@@ -33,15 +33,15 @@ export default function ProjectPage({ params }: URLProps) {
 
   return (
     <div>
-      <header className="bg-zinc-900 mt-[80px]">
+      <header className="bg-gradient-to-br from-zinc-900 to-zinc-700">
         <div className="w-full max-w-[1000px] mx-auto h-[40vh] relative">
-          <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
+          <div className="text-zinc-50 absolute left-0 bottom-0 py-4">
             <p className="text-2xl">{project?.title}</p>
             <p>{project?.subtitle}</p>
           </div>
         </div>
       </header>
-      <div className="p-4 md:max-w-[1000px] mx-auto flex flex-wrap gap-4">
+      <main className="">
         <div className="flex flex-wrap flex-1 justify-between items-start gap-3">
           <div className="flex-1 flex flex-col gap-4">
             {/* About */}
@@ -82,7 +82,7 @@ export default function ProjectPage({ params }: URLProps) {
           <div className="text-blue-600 text-xl uppercase tracking-wide m-0">
             Preview
           </div>
-          <div className="flex flex-wrap items-center justify-start gap-4 p-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 py-4">
             {project?.images.map((image, index) => {
               return (
                 <PreviewCard
@@ -112,7 +112,7 @@ export default function ProjectPage({ params }: URLProps) {
             View Code
           </Link>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

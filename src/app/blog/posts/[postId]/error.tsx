@@ -29,8 +29,8 @@ export default function Error({
       </button>
       <p className="text-xl">
         Or go back to{" "}
-        <Link href="/" className="underline">
-          Home 🏠
+        <Link href="/blog" className="underline">
+          Blog
         </Link>
       </p>
     </main>

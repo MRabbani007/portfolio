@@ -9,13 +9,13 @@ type PreviewCardProp = {
 export default function PreviewCard({ imageName, imageURL }: PreviewCardProp) {
   return (
     <article className="flex flex-col items-center justify-center">
-      <div className="w-[400px] h-[300px]">
+      <div className="w-full h-auto">
         <Image
           src={"/assets/projects/" + imageURL}
           alt={imageName}
           width={500}
           height={350}
-          className="rounded-lg"
+          className="w-full"
         />
       </div>
       <p className="py-auto font-semibold">{imageName}</p>

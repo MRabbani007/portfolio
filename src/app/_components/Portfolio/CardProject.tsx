@@ -13,7 +13,7 @@ export default function CardProject({ project }: { project: Project }) {
           height={400}
           alt="Dashboard"
         />
-        <div className="absolute top-0 left-0 bottom-0 right-0 bg-blue-600/50 z-5 -translate-y-[1000px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 flex items-end justify-center gap-6 p-6 duration-200">
+        <div className="absolute top-0 left-0 bottom-0 right-0 bg-blue-600/50 z-10 -translate-y-[1000px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 flex items-end justify-center gap-6 p-6 duration-200">
           <Link
             title="Show More"
             href={`/projects/${project.id}/${project.name}`}

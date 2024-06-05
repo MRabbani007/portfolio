@@ -43,19 +43,19 @@ export default function Navbar() {
 
     window.addEventListener("click", handlePortfolioMenu);
 
-    return () => window.removeEventListener("scroll", handlePortfolioMenu);
+    return () => window.removeEventListener("click", handlePortfolioMenu);
   }, []);
 
   return (
     <nav
       className={
         (shadow ? "shadow-sm shadow-blue-700 " : "  ") +
-        "fixed top-0 left-0 right-0 h-[80px] px-4 sm:px-8 z-[100] text-xl bg-gradient-to-br from-zinc-300 to-zinc-100 duration-200"
+        "top-0 left-0 right-0 h-[80px] px-4 sm:px-8 z-[100] text-xl bg-gradient-to-br from-zinc-300 to-zinc-100 duration-200"
       }
     >
-      <div className="flex items-center justify-between max-w-[1000px] mx-auto h-full">
+      <div className="flex items-center justify-between max-w-[1024px] mx-auto h-full">
         {/* Logo */}
-        <Link href="/" className="cursor-pointer">
+        <Link title="Home Page" href="/" className="cursor-pointer">
           <Image
             src={"/assets/logo/logo.png"}
             alt="Mohamad"
@@ -71,7 +71,9 @@ export default function Navbar() {
                 " flex items-center gap-2 duration-200 delay-0"
               }
             >
-              <Link href="/portfolio">Portfolio</Link>
+              <Link title="Portfolio" href="/portfolio">
+                Portfolio
+              </Link>
               <button
                 // onMouseOver={() => setShowPortMenu(true)}
                 // onMouseLeave={() => setShowPortMenu(false)}
@@ -94,28 +96,36 @@ export default function Navbar() {
                 (isActive("projects") ? "text-blue-700" : "") + " duration-200"
               }
             >
-              <Link href="/projects">Projects</Link>
+              <Link title="Projects" href="/projects">
+                Projects
+              </Link>
             </li>
             <li
               className={
                 (isActive("blog") ? "text-blue-700" : "") + " duration-200"
               }
             >
-              <Link href="/blog">Blog</Link>
+              <Link title="Blog" href="/blog">
+                Blog
+              </Link>
             </li>
             <li
               className={
                 (isActive("roadmap") ? "text-blue-700" : "") + " duration-200"
               }
             >
-              <Link href="/roadmap">Roadmap</Link>
+              <Link title="Roadmap" href="/roadmap">
+                Roadmap
+              </Link>
             </li>
             <li
               className={
                 (isActive("resources") ? "text-blue-700" : "") + " duration-200"
               }
             >
-              <Link href="/resources">Resources</Link>
+              <Link title="Resources" href="/resources">
+                Resources
+              </Link>
             </li>
           </ul>
           <ul
@@ -128,26 +138,42 @@ export default function Navbar() {
             }
           >
             <li>
-              <Link href="#home">Home</Link>
+              <Link title="Home" href="#home">
+                Home
+              </Link>
             </li>
             <li>
-              <Link href="#about">About</Link>
+              <Link title="About" href="#about">
+                About
+              </Link>
             </li>
             <li>
-              <Link href="#skills">Skills</Link>
+              <Link title="Skills" href="#skills">
+                Skills
+              </Link>
             </li>
             <li>
-              <Link href="#projects">Projects</Link>
+              <Link title="Projects" href="#projects">
+                Projects
+              </Link>
             </li>
             <li>
-              <Link href="#experience">Experience</Link>
+              <Link title="Experience" href="#experience">
+                Experience
+              </Link>
             </li>
             <li>
-              <Link href="#contact">Contact</Link>
+              <Link title="Contact" href="#contact">
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
-        <button className="md:hidden" onClick={() => setShowSideMenu(true)}>
+        <button
+          title="Menu"
+          className="md:hidden"
+          onClick={() => setShowSideMenu(true)}
+        >
           <AiOutlineMenu size={32} />
         </button>
       </div>

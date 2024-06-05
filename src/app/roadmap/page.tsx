@@ -25,8 +25,8 @@ const BACKEND = [
 
 export default function RoadmapPage() {
   return (
-    <div className="min-h-screen">
-      <header className="bg-zinc-900 mt-[80px]">
+    <div className="">
+      <header className="bg-zinc-900">
         <div className="w-full max-w-[1000px] mx-auto h-[40vh] relative">
           <img
             src="/assets/stairs.png"
@@ -35,13 +35,13 @@ export default function RoadmapPage() {
             height={300}
             width={200}
           />
-          <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
+          <div className="text-zinc-50 absolute left-0 bottom-0 py-4">
             <p className="text-2xl">Web Developer Roadmap</p>
             <p>How to became a web developer</p>
           </div>
         </div>
       </header>
-      <main className="py-2 px-4 max-w-[1000px] mx-auto">
+      <main className="">
         <h2>Roadmap</h2>
         <div
           className="flex flex-wrap justify-evenly my-4"

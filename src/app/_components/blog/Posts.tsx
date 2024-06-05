@@ -9,12 +9,10 @@ export default async function Posts() {
   }
 
   return (
-    <section className="mt-6 mx-auto max-w-2xl">
-      <ul className="w-full list-none p-0">
-        {posts.map((post) => (
-          <ListItem key={post.id} post={post} />
-        ))}
-      </ul>
-    </section>
+    <ul className="flex flex-col gap-2">
+      {posts.map((post) => (
+        <ListItem key={post.id} post={post} />
+      ))}
+    </ul>
   );
 }

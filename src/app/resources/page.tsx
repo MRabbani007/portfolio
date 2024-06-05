@@ -4,16 +4,23 @@ import Image from "next/image";
 
 export default function ResourcesPage() {
   return (
-    <div className=" min-h-screen">
-      <header className="bg-zinc-900 mt-[80px]">
+    <div className="">
+      <header className="bg-zinc-900">
         <div className="w-full max-w-[1000px] mx-auto h-[40vh] relative">
-          <div className="text-zinc-50 absolute left-0 bottom-0 p-4">
+          <img
+            src="/assets/resources/links.png"
+            alt="links"
+            className="object-contain h-full ml-auto"
+            height={300}
+            width={200}
+          />
+          <div className="text-zinc-50 absolute left-0 bottom-0 py-4">
             <p className="text-2xl">Links & Resources</p>
             <p>Useful Links & Resources</p>
           </div>
         </div>
       </header>
-      <main className="py-2 px-4 max-w-[1000px] mx-auto flex flex-col gap-6">
+      <main className="">
         <h1>Links & Resources</h1>
         <section>
           <h2 className="text-xl">FrameWorks</h2>
