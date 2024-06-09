@@ -1,6 +1,6 @@
 import React from "react";
-import { FRAMEWORKS, MEDIA } from "../_lib/resources";
-import Image from "next/image";
+import { FRAMEWORKS, MEDIA, STYLING } from "../_lib/resources";
+import SectionResources from "../_components/resources/SectionResources";
 
 export default function ResourcesPage() {
   return (
@@ -22,56 +22,9 @@ export default function ResourcesPage() {
       </header>
       <main className="">
         <h1>Links & Resources</h1>
-        <section>
-          <h2 className="text-xl">FrameWorks</h2>
-          <ul className="flex flex-wrap gap-6 justify-center items-stretch">
-            {FRAMEWORKS.map((item, index) => {
-              return (
-                <li key={index}>
-                  <a
-                    href={item?.url ?? "#"}
-                    target="_blank"
-                    className="flex flex-col gap-2 justify-between h-full"
-                  >
-                    <Image
-                      src={"/assets/resources/" + item?.image}
-                      width={60}
-                      height={60}
-                      alt={item?.name}
-                      className="mx-auto my-auto hover:scale-125 duration-200"
-                    />
-                    <p className="font-mono mx-auto">{item.name}</p>
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-        <section>
-          <h2 className="text-xl">Media</h2>
-          <ul className="flex flex-wrap gap-6 justify-center items-stretch">
-            {MEDIA.map((item, index) => {
-              return (
-                <li key={index}>
-                  <a
-                    href={item?.url ?? "#"}
-                    target="_blank"
-                    className="flex flex-col gap-2 justify-between h-full"
-                  >
-                    <Image
-                      src={"/assets/resources/" + item?.image}
-                      width={60}
-                      height={60}
-                      alt={item?.name}
-                      className="mx-auto my-auto hover:scale-125 duration-200"
-                    />
-                    <p className="font-mono mx-auto">{item.name}</p>
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
+        <SectionResources title="FrameWorks" resources={FRAMEWORKS} />
+        <SectionResources title="Styling" resources={STYLING} />
+        <SectionResources title="Media" resources={MEDIA} />
       </main>
     </div>
   );

@@ -21,19 +21,6 @@ export const FRAMEWORKS = [
     image: "mongo.png",
     url: "https://www.mongodb.com/",
   },
-  {
-    name: "Tailwind",
-    text: "",
-    image: "tailwind.png",
-    url: "https://tailwindcss.com/",
-  },
-  {
-    name: "Bootstrap",
-    text: "",
-    image: "bootstrap.png",
-    url: "https://getbootstrap.com/",
-  },
-  { name: "Sass", text: "", image: "sass.png", url: "https://sass-lang.com/" },
   { name: "Github", text: "", image: "github.png", url: "https://github.com/" },
 ];
 
@@ -67,5 +54,27 @@ export const MEDIA = [
     text: "Online Markdown Editor",
     image: "missing.png",
     url: "https://dillinger.io/",
+  },
+];
+
+export const STYLING = [
+  {
+    name: "Tailwind",
+    text: "",
+    image: "tailwind.png",
+    url: "https://tailwindcss.com/",
+  },
+  {
+    name: "Bootstrap",
+    text: "",
+    image: "bootstrap.png",
+    url: "https://getbootstrap.com/",
+  },
+  { name: "Sass", text: "", image: "sass.png", url: "https://sass-lang.com/" },
+  {
+    name: "Styled Components",
+    text: "",
+    image: "styled-component.png",
+    url: "https://styled-components.com/",
   },
 ];

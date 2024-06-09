@@ -27,7 +27,7 @@ export default function RoadmapPage() {
   return (
     <div className="">
       <header className="bg-zinc-900">
-        <div className="w-full max-w-[1000px] mx-auto h-[40vh] relative">
+        <div className="w-full max-w-[1024px] mx-auto h-[40vh] relative">
           <img
             src="/assets/stairs.png"
             alt="stairs"
@@ -43,21 +43,7 @@ export default function RoadmapPage() {
       </header>
       <main className="">
         <h2>Roadmap</h2>
-        <div
-          className="flex flex-wrap justify-evenly my-4"
-          title="Construction Zone!"
-        >
-          <BsSignStop size={40} className="text-red-600" title="Stop!" />
-          <GoAlert className="text-yellow-500" size={40} title="Warning!" />
-          <IoConstructOutline
-            size={40}
-            className="text-red-600"
-            title="Construction Ahead!"
-          />
-          <GoAlert className="text-yellow-500" size={40} title="Warning!" />
-          <BsSignStop size={40} className="text-red-600" title="Stop!" />
-        </div>
-        <div className="flex flex-col md:flex-row flex-wrap w-full sm:justify-center sm:items-start items-start gap-6">
+        <div className="flex flex-col flex-wrap w-full sm:justify-center sm:items-start items-start gap-6">
           <article className="flex-1">
             <h3 className="text-xl text-blue-600">Frontend</h3>
             <p>UI & UX</p>
@@ -91,20 +77,6 @@ export default function RoadmapPage() {
               <li>NextJS</li>
             </ol>
           </article>
-        </div>
-        <div
-          className="flex flex-wrap justify-evenly my-4"
-          title="Construction Zone!"
-        >
-          <BsSignStop size={40} className="text-red-600" title="Stop!" />
-          <GoAlert className="text-yellow-500" size={40} title="Warning!" />
-          <IoConstructOutline
-            size={40}
-            className="text-red-600"
-            title="Construction Ahead!"
-          />
-          <GoAlert className="text-yellow-500" size={40} title="Warning!" />
-          <BsSignStop size={40} className="text-red-600" title="Stop!" />
         </div>
       </main>
     </div>

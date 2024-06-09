@@ -25,3 +25,10 @@ type Project = {
   build: string[];
   technologies: string[];
 };
+
+type Resource = {
+  name: string;
+  text: string;
+  image: string;
+  url: string;
+};

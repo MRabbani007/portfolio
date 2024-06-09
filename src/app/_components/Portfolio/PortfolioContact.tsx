@@ -5,23 +5,26 @@ export default function PortfolioContact() {
   return (
     <div id="contact" className="section-container pt-12">
       <section>
-        {/* <Image
-          src={"/assets/portfolio/contact.jpg"}
-          alt="Contact"
-          width={300}
-          height={700}
-          loading="lazy"
-          className="object-fill"
-        /> */}
         <h2>Contact</h2>
-        <div className="w-fit mx-auto">
+        <div className="mx-auto flex flex-col sm:flex-row flex-wrap gap-4">
+          <div className="">
+            <Image
+              src={"/assets/portfolio/contact_me.png"}
+              alt="Contact"
+              width={300}
+              height={700}
+              loading="lazy"
+              className="object-cover"
+            />
+          </div>
           <form
             method="POST"
             action="https://getform.io/f/483d805c-1fff-47c8-8a66-a6e7375b4d11"
-            className="flex flex-col gap-4 max-w-[600px] w-full"
+            className="flex flex-1 flex-col gap-4 max-w-[600px]"
           >
             <p className="py-2">
-              Submit the form below or send me an email - mrabbani@outlook.com
+              Submit the form below or send me an email -{" "}
+              <a href="mailto: mrabbani@outlook.com">mrabbani@outlook.com</a>
             </p>
             <input
               className="bg-zinc-200 p-2 rounded-md"

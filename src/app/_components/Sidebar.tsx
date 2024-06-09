@@ -22,7 +22,7 @@ export default function Sidebar({ showSideMenu, setShowSideMenu }: Props) {
       <div
         className={
           (showSideMenu ? "" : " -translate-x-[1000px] ") +
-          " md:hidden fixed top-0 left-0 w-[75%] sm:w-[60%] md:w-[30%] h-full bg-zinc-300 flex flex-col justify-between duration-300"
+          " md:hidden fixed top-0 left-0 w-[75%] sm:w-[60%] md:w-[30%] h-full bg-zinc-300 flex flex-col justify-between duration-300 z-40"
         }
       >
         <div className="flex items-center justify-between p-4">
@@ -69,7 +69,7 @@ export default function Sidebar({ showSideMenu, setShowSideMenu }: Props) {
           <div className="flex items-center gap-3">
             <a
               className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer"
-              href="www.linkedin.com/in/mohamadrabbani"
+              href="https://www.linkedin.com/in/mohamadrabbani"
               target="_blank"
             >
               <FaLinkedinIn size={28} />
@@ -90,8 +90,7 @@ export default function Sidebar({ showSideMenu, setShowSideMenu }: Props) {
             </a>
             <a
               className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer"
-              href="#"
-              target="_blank"
+              href="/portfolio/#contact"
             >
               <BsFillPersonLinesFill size={28} />
             </a>
