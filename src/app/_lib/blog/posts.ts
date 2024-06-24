@@ -24,6 +24,7 @@ export async function getPostByName(
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         "X-Github-Api-Version": "2022-11-28",
       },
+      next: { revalidate: 600 },
     }
   );
 
@@ -37,6 +38,7 @@ export async function getPostByName(
     title: string;
     date: string;
     tags: string[];
+    sortIndex: number;
   }>({
     source: rawMDX,
     components: {
@@ -68,6 +70,7 @@ export async function getPostByName(
       title: frontmatter.title,
       date: frontmatter.date,
       tags: frontmatter.tags,
+      sortIndex: frontmatter.sortIndex,
     },
     content,
   };
@@ -84,6 +87,7 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
         "X-Github-Api-Version": "2022-11-28",
       },
+      next: { revalidate: 600 },
     }
   );
 
@@ -105,5 +109,5 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
     }
   }
 
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return posts.sort((a, b) => (a.sortIndex > b.sortIndex ? 1 : -1));
 }

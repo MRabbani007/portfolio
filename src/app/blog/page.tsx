@@ -21,21 +21,6 @@ export default function BlogPage() {
       <main className="">
         <h1>Blog</h1>
         <Posts />
-        {/* <article>
-          <div>Roadmap</div>
-          <div>How to become a webdeveloper in 2024</div>
-        </article>
-        <article>
-          <div>Best Practives</div>
-        </article>
-        <article>
-          <div>Tailwind vs Sass vs CSS</div>
-          <div>What are the differences, which is better?</div>
-        </article>
-        <article>
-          <div>Hosting Sites</div>
-          <div>Github Pages, Vercel, Firebase...</div>
-        </article> */}
       </main>
     </div>
   );

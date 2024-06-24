@@ -3,6 +3,7 @@ type Meta = {
   title: string;
   date: string;
   tags: string[];
+  sortIndex: number;
 };
 
 type BlogPost = {
