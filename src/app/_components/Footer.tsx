@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <div className="w-full bg-zinc-300">
+    <div className="w-full">
       <div className="flex sm:flex-row flex-col flex-wrap sm:justify-between md:px-10 p-4  gap-6 w-fit sm:w-full max-w-[1000px] sm:mx-auto">
         <div className="">
           <h4 className="text-blue-500 uppercase tracking-wide text-xl font-bold">

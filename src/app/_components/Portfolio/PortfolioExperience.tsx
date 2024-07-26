@@ -5,7 +5,7 @@ import ExperienceBlock from "./ExperienceBlock";
 export default function PortfolioExperience() {
   return (
     <div id="experience" className="section-container pt-12">
-      <section>
+      <section className="px-8">
         <h2>Experience</h2>
         <div className="flex flex-col gap-4">
           {experience.map((item, index) => (

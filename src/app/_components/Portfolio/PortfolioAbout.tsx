@@ -3,19 +3,19 @@ import React from "react";
 export default function PortfolioAbout() {
   return (
     <div id="about" className="section-container pt-12">
-      <section>
+      <section className="px-8">
         <h2 className="">About Me</h2>
-        <div className="font-light mx-auto flex flex-col lg:flex-row items-center my-2 gap-4">
-          <div className="">
+        <div className="font-light mx-auto flex flex-col lg:flex-row items-center gap-4">
+          <div className="w-[400px]">
             <img
               src="/assets/portfolio/tech.png"
               alt="technology"
-              width={250}
-              height={500}
+              width={686}
+              height={717}
             />
           </div>
-          <div className="flex flex-col gap-4 flex-1 text-justify text-xl">
-            <p className="text-left text-lg sm:text-xl md:text-2xl font-normal">
+          <div className="flex flex-col gap-4 flex-1 text-justify text-xl px-4">
+            <p className="text-left text-lg sm:text-xl md:text-3xl font-normal">
               Mission-driven engineer with a passion for thoughtful UI design
               and a futuristic user experience.
             </p>

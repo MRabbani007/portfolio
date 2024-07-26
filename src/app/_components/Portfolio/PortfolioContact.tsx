@@ -4,9 +4,9 @@ import React from "react";
 export default function PortfolioContact() {
   return (
     <div id="contact" className="section-container pt-12">
-      <section>
+      <section className="px-8">
         <h2>Contact</h2>
-        <div className="mx-auto flex flex-col sm:flex-row flex-wrap gap-4">
+        <div className="mx-auto flex flex-col sm:flex-row flex-wrap gap-8">
           <div className="">
             <Image
               src={"/assets/portfolio/contact_me.png"}

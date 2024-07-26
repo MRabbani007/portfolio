@@ -22,22 +22,22 @@ const ExperienceBlock = ({ item, index }: Props) => {
   const [expand, setExpand] = useState(false);
 
   return (
-    <article key={index}>
+    <article key={index} className="">
       <header
-        className="py-2 px-4 flex flex-col sm:flex-row flex-wrap sm:flex-nowrap justify-between gap-2 cursor-pointer rounded-md shadow-md shadow-blue-500 bg-zinc-50 relative"
+        className="py-2 px-4 flex gap-2 cursor-pointer relative"
         onClick={() => setExpand(!expand)}
       >
-        <p className="my-auto flex-1 sm:max-w-[40%]">{item?.period}</p>
-        <div className="flex flex-1 items-center gap-2">
+        <div className="flex items-center gap-2">
           <Image
             src={item?.companyLogo}
             alt="Company Logo"
             width={100}
             height={100}
-            className="w-10 h-auto"
+            className="w-14 h-auto"
           />
           <div>
-            <p className="text-xl">{item?.position}</p>
+            <h3 className="">{item?.position}</h3>
+            {/* <p className="">{item?.period}</p> */}
             <p className="text-lg font-extralight">
               <i>{item?.company}</i>
             </p>
@@ -50,37 +50,37 @@ const ExperienceBlock = ({ item, index }: Props) => {
           }
         />
       </header>
-      <div
-        className={
-          (expand
-            ? "opacity-100 h-fit translate-y-0 sm:px-4 py-4 "
-            : "opacity-0 invisible h-0 -translate-y-8") +
-          " flex flex-wrap items-stretch gap-4 duration-300 "
-        }
-      >
-        <div className="sm:w-[40%] w-full h-full">
-          <Image
-            src={item.image}
-            alt={item.project}
-            width={500}
-            height={350}
-            className="object-fit max-h-[300px] w-auto mx-auto my-auto"
-          />
-          {item.project !== "" && (
-            <p className="text-center text-xl p-2 bg-slate-200 dark:text-zinc-900 duration-300">
-              {item.project}
-            </p>
-          )}
-        </div>
-        <div className="flex-1 flex flex-col gap-2 px-2 text-zinc-800">
-          {item.responsibilities.map((resp, index) => (
-            <p
-              className="p-4 font-light rounded-lg shadow-sm hover:shadow-sm hover:shadow-blue-700 shadow-blue-500 duration-200 bg-zinc-50"
-              key={"expitem-" + index}
-            >
-              {resp}
-            </p>
-          ))}
+      <div className="flex-1">
+        <div
+          className={
+            (expand
+              ? "opacity-100 h-fit translate-y-0"
+              : "opacity-0 invisible h-0 -translate-y-8") +
+            " flex flex-wrap items-stretch duration-300  sm:px-4 py-4 "
+          }
+        >
+          <div className="sm:max-w-[40%] w-full">
+            <Image
+              src={item.image}
+              alt={item.project}
+              width={500}
+              height={350}
+              className="max-h-[400px]"
+            />
+            {item.project !== "" && (
+              <p className="text-pretty text-xl duration-300">{item.project}</p>
+            )}
+          </div>
+          <div className="flex-1 flex flex-col">
+            {item.responsibilities.map((resp, index) => (
+              <p
+                className="font-light text-xl duration-200 pb-4"
+                key={"expitem-" + index}
+              >
+                {resp}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </article>

@@ -9,10 +9,10 @@ import { IoMdArrowDropleft } from "react-icons/io";
 export default function PortfolioProjects() {
   return (
     <div id="projects" className="section-container pt-12">
-      <section>
+      <section className="px-8">
         <div className="cursor-pointer group/container">
           <div className="relative w-fit">
-            <h2 className="m-0 p-0">Projects</h2>
+            <h2 className="">Projects</h2>
             <Link
               href={"/projects"}
               className="absolute left-full top-1/2 -translate-y-1/2 -translate-x-4 opacity-0 group-hover/container:opacity-100 group-hover/container:translate-x-0 invisible group-hover/container:visible text-md duration-200 group/tooltip flex items-center ml-2"
