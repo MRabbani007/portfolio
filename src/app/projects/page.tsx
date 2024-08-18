@@ -1,8 +1,8 @@
 "use client";
 
+import { PROJECTS } from "@/lib/projects";
 import Link from "next/link";
 import React, { useState } from "react";
-import { projects } from "../_lib/projects";
 import { IoIosArrowForward } from "react-icons/io";
 
 export default function ProjectsPage() {
@@ -11,18 +11,18 @@ export default function ProjectsPage() {
 
   return (
     <div className="">
-      <header className="bg-gradient-to-br from-zinc-900 to-zinc-700">
+      {/* <header className="bg-gradient-to-br from-zinc-900 to-zinc-700">
         <div className="h-[40vh] w-full max-w-[1024px] mx-auto relative">
           <div className="text-zinc-50 absolute left-0 bottom-0 py-4">
             <p className="text-2xl">Projects</p>
             <p>Projects that I built</p>
           </div>
         </div>
-      </header>
-      <main className="">
+      </header> */}
+      <main className="p-8">
         <h1>Projects</h1>
         <ul className="flex flex-col gap-2 py-2">
-          {projects.map((project, index) => {
+          {PROJECTS.map((project, index) => {
             return (
               <li
                 key={project.id}
@@ -42,7 +42,7 @@ export default function ProjectsPage() {
                 <div
                   className={
                     (expandIndex === index ? "rounded-t-xl" : "rounded-xl") +
-                    " duration-200 flex items-center gap-2 bg-stone-500 text-white w-full p-2"
+                    " duration-500 z-20 flex items-center gap-2 bg-stone-500 text-white w-full p-2"
                   }
                 >
                   <IoIosArrowForward
@@ -58,8 +58,8 @@ export default function ProjectsPage() {
                   className={
                     (expandIndex === index
                       ? ""
-                      : "h-0 -translate-y-4 invisible opacity-0 ") +
-                    " pl-[33px] duration-500 flex flex-col gap-2 py-2 w-full rounded-b-xl bg-stone-100"
+                      : " h-0 -translate-y-4 invisible opacity-0 ") +
+                    " pl-[33px] duration-500 flex flex-col gap-2 py-2 w-full z-10 rounded-b-xl bg-stone-100 dark:bg-zinc-900 dark:text-zinc-50 text-zinc-800"
                   }
                 >
                   <p className="max-w-[600px] text-pretty">{project.about}</p>

@@ -4,6 +4,7 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import Video from "@/app/_components/blog/Video";
 import CustomImage from "@/app/_components/blog/CustomImage";
+import { BlogPost, Meta } from "../../../../types";
 
 type Filetree = {
   tree: [

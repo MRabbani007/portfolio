@@ -1,6 +1,6 @@
 import PreviewCard from "@/app/_components/projects/PreviewCard";
 import Technologies from "@/app/_components/projects/Technologies";
-import { projects } from "@/app/_lib/projects";
+import { PROJECTS } from "@/lib/projects";
 import Link from "next/link";
 import React from "react";
 
@@ -29,7 +29,7 @@ const defaultProject = {
 
 export default function ProjectPage({ params }: URLProps) {
   const project =
-    projects.find((item) => item.name === params?.name) || defaultProject;
+    PROJECTS.find((item) => item.name === params?.name) || defaultProject;
 
   return (
     <div>
@@ -41,19 +41,19 @@ export default function ProjectPage({ params }: URLProps) {
           </div>
         </div>
       </header>
-      <main className="">
+      <main className="p-8">
         <div className="flex flex-wrap flex-1 justify-between items-start gap-3">
           <div className="flex-1 flex flex-col gap-4">
             {/* About */}
             <div>
-              <div className="text-blue-600 text-xl uppercase tracking-wide m-0 p-0">
+              <div className="text-accent text-xl uppercase tracking-wide m-0 p-0">
                 About
               </div>
               <p>{project?.about}</p>
             </div>
             {/* Features */}
             <div>
-              <div className="text-blue-600 text-xl uppercase tracking-wide m-0">
+              <div className="text-accent text-xl uppercase tracking-wide m-0">
                 Features
               </div>
               <ul>
@@ -64,7 +64,7 @@ export default function ProjectPage({ params }: URLProps) {
             </div>
             {/* Features */}
             <div>
-              <div className="text-blue-600 text-xl uppercase tracking-wide m-0">
+              <div className="text-accent text-xl uppercase tracking-wide m-0">
                 Build
               </div>
               <ul>
@@ -79,7 +79,7 @@ export default function ProjectPage({ params }: URLProps) {
         </div>
         {/* Preview */}
         <div>
-          <div className="text-blue-600 text-xl uppercase tracking-wide m-0">
+          <div className="text-accent text-xl uppercase tracking-wide m-0">
             Preview
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 py-4">
@@ -99,7 +99,7 @@ export default function ProjectPage({ params }: URLProps) {
             href={project?.live_URL}
             target="_blank"
             title="Demo"
-            className="w-fit text-xl group border-none px-6 py-3 my-2 flex items-center duration-500 rounded-full shadow-xl shadow-blue-500 bg-gradient-to-r from-sky-600 to-sky-400 text-white"
+            className="w-fit text-xl group border-none px-6 py-3 my-2 flex items-center duration-500 rounded-full bg-gradient-to-r from-sky-600 to-sky-400 text-white"
           >
             Demo
           </Link>
@@ -107,7 +107,7 @@ export default function ProjectPage({ params }: URLProps) {
             href={project?.live_URL}
             target="_blank"
             title="View Code"
-            className="w-fit text-xl group border-none px-6 py-3 my-2 flex items-center duration-500 rounded-full shadow-xl shadow-blue-500 bg-gradient-to-r from-sky-600 to-sky-400 text-white"
+            className="w-fit text-xl group border-none px-6 py-3 my-2 flex items-center duration-500 rounded-full  bg-gradient-to-r from-sky-600 to-sky-400 text-white"
           >
             View Code
           </Link>

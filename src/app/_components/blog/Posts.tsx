@@ -9,7 +9,7 @@ export default async function Posts() {
   }
 
   return (
-    <ul className="flex flex-col gap-2">
+    <ul className="space-y-4">
       {posts.map((post) => (
         <ListItem key={post.id} post={post} />
       ))}

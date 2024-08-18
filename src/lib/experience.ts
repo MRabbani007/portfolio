@@ -1,10 +1,11 @@
-export const experience = [
+export const EXPERIENCE = [
   {
     id: 1,
     position: "Software Engineer",
     company: "Freelance",
     project: "",
     period: "Aug 2023 – Present",
+    time: "1 year",
     image: "/assets/png/bg-1.jpg",
     companyLogo: "/assets/png/logo.png",
     responsibilities: [
@@ -14,6 +15,12 @@ export const experience = [
       "Working with version control Git and GitHub",
       "Developing projects (including an Online Store, Todo App, Language App, and Movies App) and deploying to Vercel, Render & GitHub pages",
     ],
+    keyRes: [
+      "Full-stack responsive web-applications",
+      "NextJS, ReactJS, NodeJS, MongoDB",
+      "Tailwind, BootStrap, SASS",
+      "Git & Github",
+    ],
   },
   {
     id: 2,
@@ -21,6 +28,7 @@ export const experience = [
     company: "Consolidated Contractors Company",
     project: "FGP 3RD GENERATION PLANT, REPUBLIC OF KAZAKHSTAN",
     period: "MAR 2020 – JUL 2023",
+    time: "~3 years",
     image: "/assets/png/fgp.jpeg",
     companyLogo: "/assets/png/ccc.png",
     responsibilities: [
@@ -36,6 +44,7 @@ export const experience = [
     company: "Consolidated Contractors Company",
     project: "GHAZEER CENTRAL PROCESSING FACILITY PHASE II, SULTANATE OF OMAN",
     period: "AUG 2018 – FEB 2020",
+    time: "~1.5 years",
     image: "/assets/png/khazzan2.jpg",
     companyLogo: "/assets/png/ccc.png",
     responsibilities: [
@@ -50,6 +59,7 @@ export const experience = [
     company: "Consolidated Contractors Company",
     project: "RABAB HARWEEL INTEGRATED PROJECT, SULTANATE OF OMAN",
     period: "JAN 2017 – JUL 2018",
+    time: "~1.5 year",
     image: "/assets/png/rhip.png",
     companyLogo: "/assets/png/ccc.png",
     responsibilities: [
@@ -66,6 +76,7 @@ export const experience = [
     company: "Consolidated Contractors Company",
     project: "KHAZZAN CENTRAL PROCESSING FACILITY PHASE I, SULTANATE OF OMAN",
     period: "May 2015 – Dec 2016",
+    time: "~1.5 year",
     image: "/assets/png/khazzan.jpg",
     companyLogo: "/assets/png/ccc.png",
     responsibilities: [

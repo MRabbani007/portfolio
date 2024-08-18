@@ -1,13 +1,16 @@
-export const projects = [
+import { Project } from "../../types";
+
+export const PROJECTS: Project[] = [
   {
     id: 1,
+    bgColor: "#F54748",
     pinned: true,
     name: "TodoApp",
     title: "Todo Application",
     subtitle: "React, AntD",
     about:
       "Oraginze your day, keep track of activities, sort in lists, set due dates & priorities, build a journal, save notes and more",
-    live_URL: "https://mrabbani007.github.io/todolist/",
+    live_URL: "https://mrabbani007.github.io/taskit/",
     code_URL: "",
     features: [
       "Keep track of your tasks",
@@ -32,6 +35,7 @@ export const projects = [
   },
   {
     id: 2,
+    bgColor: "#7952B3",
     pinned: true,
     name: "LanguageApp",
     title: "Language Learning Application",
@@ -53,6 +57,7 @@ export const projects = [
   },
   {
     id: 3,
+    bgColor: "#1597BB",
     pinned: true,
     name: "onlineStore",
     title: "Online Store",
@@ -79,6 +84,7 @@ export const projects = [
   },
   {
     id: 4,
+    bgColor: "#185ADB",
     pinned: false,
     name: "Movies App",
     title: "Movies Application",
@@ -96,6 +102,7 @@ export const projects = [
   {
     id: 5,
     pinned: false,
+    bgColor: "#FF616D",
     name: "expenseManager",
     title: "Expense Manager",
     subtitle: "React, Tailwind",

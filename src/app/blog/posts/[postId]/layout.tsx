@@ -13,7 +13,7 @@ export default function PostsLayout({
 }) {
   // dark:prose-invert
   return (
-    <main className="min-h-screen pt-20 px-4 md:px-6 prose prose-base prose-slate mx-auto">
+    <main className="min-h-screen pt-20 px-4 md:px-6 prose-invert prose prose-base prose-zinc mx-auto">
       {children}
     </main>
   );

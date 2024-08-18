@@ -18,7 +18,7 @@ export default function PortfolioPage() {
       <PortfolioHome />
       <PortfolioAbout />
       <PortfolioSkills />
-      <PortfolioSkillsSoft />
+      {/* <PortfolioSkillsSoft /> */}
       <PortfolioProjects />
       <PortfolioExperience />
       <PortfolioContact />
