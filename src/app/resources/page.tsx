@@ -20,7 +20,7 @@ export default function ResourcesPage() {
           </div>
         </div>
       </header>
-      <main className="">
+      <main className="p-8">
         <h1>Links & Resources</h1>
         <SectionResources title="FrameWorks" resources={FRAMEWORKS} />
         <SectionResources title="Styling" resources={STYLING} />

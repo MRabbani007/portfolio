@@ -41,11 +41,11 @@ export default function RoadmapPage() {
           </div>
         </div>
       </header>
-      <main className="">
+      <main className="p-8">
         <h2>Roadmap</h2>
         <div className="flex flex-col flex-wrap w-full sm:justify-center sm:items-start items-start gap-6">
           <article className="flex-1">
-            <h3 className="text-xl text-blue-600">Frontend</h3>
+            <h3 className="text-xl text-accent">Frontend</h3>
             <p>UI & UX</p>
             <ol className="list-decimal list-inside p-2">
               {FRONTEND.map((item, index) => {
@@ -54,7 +54,7 @@ export default function RoadmapPage() {
             </ol>
           </article>
           <article className="flex-1">
-            <h3 className="text-xl text-blue-600">Backend</h3>
+            <h3 className="text-xl text-accent">Backend</h3>
             <p className="text-wrap">
               Server functionality, data storage and database management
             </p>
@@ -68,7 +68,7 @@ export default function RoadmapPage() {
             </ol>
           </article>
           <article className="flex-1">
-            <h3 className="text-xl text-blue-600">Full-Stack</h3>
+            <h3 className="text-xl text-accent">Full-Stack</h3>
             <p>Frontend & backend</p>
             <ol
               className="list-decimal list-inside"

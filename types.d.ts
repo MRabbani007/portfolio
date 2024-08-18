@@ -11,10 +11,24 @@ type BlogPost = {
   content: any;
 };
 
+export interface SliderItem {
+  id: number;
+  bgColor?: string;
+  icon?: ReactNode | string | null;
+  title: string;
+  name?: string;
+  desc?: string;
+  about: string;
+  images: string[];
+  live_URL?: string;
+}
+
 type Project = {
   id: number;
   name: string;
   title: string;
+  pinned?: boolean;
+  bgColor?: string;
   subtitle: string;
   mainImage: string;
   images: string[];
@@ -32,4 +46,10 @@ type Resource = {
   text: string;
   image: string;
   url: string;
+};
+
+export type Skill = {
+  name: string;
+  image: string;
+  group: number;
 };

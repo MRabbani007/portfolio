@@ -109,10 +109,10 @@ body {
 
 @layer base {
   h1 {
-    @apply text-4xl text-blue-600;
+    @apply text-4xl text-accent;
   }
   h2 {
-    @apply text-4xl text-blue-600 mb-4 sm:mb-8 uppercase;
+    @apply text-4xl text-accent mb-4 sm:mb-8 uppercase;
   }
   h3 {
     @apply text-4xl;
@@ -141,8 +141,42 @@ menu:hover {
   box-shadow: 0 0 7px 4px var(--clr-zinc-500);
 }
 
+.clipPath {
+  animation-name: clipPath;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes clipPath {
+  from {
+    clip-path: polygon(
+      0 0,
+      50% 30%,
+      100% 0,
+      70% 50%,
+      100% 100%,
+      50% 70%,
+      0 100%,
+      30% 50%
+    );
+  }
+  to {
+    clip-path: polygon(
+      0 20%,
+      20% 0,
+      80% 0,
+      80% 10%,
+      20% 11%,
+      80% 100%,
+      20% 100%,
+      0 80%
+    );
+  }
+}
+
 main {
-  padding: 1rem;
   /* max-width: 1024px; */
   min-height: 100dvh;
   margin: 0 auto;
@@ -150,10 +184,6 @@ main {
   flex-direction: column;
   gap: 1.5rem;
   scroll-snap-type: y mandatory;
-}
-
-h2 {
-  letter-spacing: 0.05rem;
 }
 
 section {
@@ -182,7 +212,6 @@ section {
 
 @media screen and (min-width: 1024px) {
   main {
-    padding: 2rem;
   }
 }
 
@@ -204,4 +233,99 @@ section {
   transition: scale 200ms ease, opacity 100ms linear;
   scale: 0.9;
   opacity: 0.5;
+}
+
+.message-container {
+  color: #333;
+  font-family: tahoma;
+  font-size: 3rem;
+  font-weight: 100;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: relative;
+  width: fit-content;
+}
+
+.message-container span {
+  font-size: 40px;
+  margin-left: 40px;
+}
+
+.message {
+  /* background-color: yellow; */
+  color: #333;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  position: absolute;
+  padding-left: 0.5rem;
+  top: 0rem;
+  left: 100%;
+  animation: openclose 8s ease-in-out infinite;
+}
+
+@keyframes openclose {
+  0% {
+    top: 0rem;
+    width: 0;
+  }
+  5% {
+    width: 0;
+  }
+  15% {
+    width: 600px;
+  }
+  30% {
+  }
+  33% {
+    top: 0rem;
+    width: 0;
+  }
+  35% {
+    top: -4.5rem;
+    width: 0;
+  }
+  40% {
+  }
+  48% {
+    top: -4.5rem;
+    width: 600px;
+  }
+  52% {
+    top: -4.5rem;
+    width: 600px;
+  }
+  63% {
+  }
+  66% {
+    top: -4.5rem;
+    width: 0;
+    text-indent: 0;
+  }
+  67% {
+  }
+  71% {
+    top: -9rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  86% {
+    top: -9rem;
+    width: 610px;
+  }
+  95% {
+    top: -9rem;
+    width: 610px;
+  }
+  98% {
+    top: -9rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  100% {
+    top: 0;
+    width: 0;
+    text-indent: 0;
+  }
 }

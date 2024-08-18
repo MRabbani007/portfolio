@@ -1,8 +1,8 @@
 "use client";
 
+import { PROJECTS } from "@/lib/projects";
 import Link from "next/link";
 import React, { useState } from "react";
-import { projects } from "../_lib/projects";
 import { IoIosArrowForward } from "react-icons/io";
 
 export default function ProjectsPage() {
@@ -19,10 +19,10 @@ export default function ProjectsPage() {
           </div>
         </div>
       </header> */}
-      <main className="">
+      <main className="p-8">
         <h1>Projects</h1>
         <ul className="flex flex-col gap-2 py-2">
-          {projects.map((project, index) => {
+          {PROJECTS.map((project, index) => {
             return (
               <li
                 key={project.id}
@@ -59,7 +59,7 @@ export default function ProjectsPage() {
                     (expandIndex === index
                       ? ""
                       : " h-0 -translate-y-4 invisible opacity-0 ") +
-                    " pl-[33px] duration-500 flex flex-col gap-2 py-2 w-full z-10 rounded-b-xl bg-stone-100 text-zinc-800"
+                    " pl-[33px] duration-500 flex flex-col gap-2 py-2 w-full z-10 rounded-b-xl bg-stone-100 dark:bg-zinc-900 dark:text-zinc-50 text-zinc-800"
                   }
                 >
                   <p className="max-w-[600px] text-pretty">{project.about}</p>
