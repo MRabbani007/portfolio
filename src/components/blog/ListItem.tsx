@@ -1,7 +1,7 @@
 import getFormattedDate from "@/app/_lib/blog/getFormattedDate";
 import Link from "next/link";
 import React from "react";
-import { Meta } from "../../../../types";
+import { Meta } from "../../../types";
 
 type Props = {
   post: Meta;

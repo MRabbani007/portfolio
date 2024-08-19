@@ -152,24 +152,26 @@ function Slide({
   return (
     <div
       onClick={() => handleSlideClick(idx)}
-      className={` p-4 flex-col h-full flex-1 gap-2 relative overflow-hidden `}
+      className={` p-4 flex-col h-full flex-1 gap-2 relative overflow-hidden`}
     >
-      {item?.icon}
-      <p
-        className={`text-2xl font-medium text-zinc-100 border-b-4 pb-2`}
-        style={{ borderColor: "#facc15" || item?.bgColor }}
-      >
-        {item?.title}
-      </p>
+      <div className="flex items-center">
+        {item?.icon}
+        <p
+          className={`text-2xl font-medium text-zinc-100 border-b-4 pb-2 flex-1`}
+          style={{ borderColor: "#facc15" || item?.bgColor }}
+        >
+          {item?.title}
+        </p>
+      </div>
       {/* <p>{item?.about}</p> */}
-      <div className="flex-1 mx-auto h-[60%] w-full">
+      <div className="flex-1 mx-auto overflow-hidden">
         <Image
           src={"/assets/projects/" + item?.images[0]}
           alt={item?.title}
           width={300}
           height={200}
           quality={100}
-          className="w-full object-cover"
+          className="w-full h-full object-cover"
         />
       </div>
       <div

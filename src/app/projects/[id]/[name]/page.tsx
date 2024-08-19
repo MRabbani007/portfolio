@@ -1,5 +1,5 @@
-import PreviewCard from "@/app/_components/projects/PreviewCard";
-import Technologies from "@/app/_components/projects/Technologies";
+import PreviewCard from "@/components/projects/PreviewCard";
+import Technologies from "@/components/projects/Technologies";
 import { PROJECTS } from "@/lib/projects";
 import Link from "next/link";
 import React from "react";

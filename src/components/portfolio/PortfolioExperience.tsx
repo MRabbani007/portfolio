@@ -35,7 +35,7 @@ const items2 = [
 export default function PortfolioExperience() {
   return (
     <div id="experience" className="section-container pt-12">
-      <section className="px-8">
+      <section>
         <article className="min-h-screen p-8">
           <Slide from="left">
             <h2 className="flex items-center gap-4">
@@ -49,7 +49,7 @@ export default function PortfolioExperience() {
                 <Slide
                   key={index}
                   from="bottom"
-                  className="hover:scale-110 hover:bg-zinc-900 p-2 rounded-md duration-200 w-fit"
+                  className="hover:scale-110 hover:bg-zinc-900 p-2 rounded-md duration-200 min-w-fit"
                 >
                   <Image
                     src={"/assets/skills/" + item.image}
@@ -76,11 +76,9 @@ export default function PortfolioExperience() {
                   key={idx}
                   from="bottom"
                   delay={0.2 * idx}
-                  className="w-fit"
+                  className="min-w-fit p-4 rounded-xl uppercase w-fit bg-zinc-900"
                 >
-                  <p className={"p-4 rounded-xl uppercase w-fit bg-zinc-900"}>
-                    {item.label}
-                  </p>
+                  {item.label}
                 </Slide>
               ))}
             </div>

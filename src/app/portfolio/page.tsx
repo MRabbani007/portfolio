@@ -1,10 +1,10 @@
-import PortfolioAbout from "../_components/Portfolio/PortfolioAbout";
-import PortfolioContact from "../_components/Portfolio/PortfolioContact";
-import PortfolioExperience from "../_components/Portfolio/PortfolioExperience";
-import PortfolioHome from "../_components/Portfolio/PortfolioHome";
-import PortfolioProjects from "../_components/Portfolio/PortfolioProjects";
-import PortfolioSkills from "../_components/Portfolio/PortfolioSkills";
-import PortfolioSkillsSoft from "../_components/Portfolio/PortfolioSkillsSoft";
+import PortfolioAbout from "@/components/portfolio/PortfolioAbout";
+import PortfolioContact from "../../components/portfolio/PortfolioContact";
+import PortfolioExperience from "../../components/portfolio/PortfolioExperience";
+import PortfolioHome from "../../components/portfolio/PortfolioHome";
+import PortfolioProjects from "../../components/portfolio/PortfolioProjects";
+import PortfolioSkills from "../../components/portfolio/PortfolioSkills";
+import PortfolioSkillsSoft from "../../components/portfolio/PortfolioSkillsSoft";
 
 export default function PortfolioPage() {
   return (

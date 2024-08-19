@@ -25,7 +25,8 @@ export default function Carousel({ items, animationDuration }: Props) {
       // onMouseLeave={() => setIsHover(false)}
       className="w-full h-[200px] overflow-hidden relative group"
     >
-      <div className="w-32 h-full bg-gradient-to-r from-zinc-800 to-yellow-200/0 absolute top-0 left-0 bottom-0 z-10" />
+      <div className="w-10 h-full bg-gradient-to-r from-black to-black/95 absolute top-0 left-0 bottom-0 z-10" />
+      <div className="w-20 h-full bg-gradient-to-r from-black/95 to-black/0 absolute top-0 left-10 bottom-0 z-10" />
       <div
         className="absolute top-6 left-[calc(50%-40px)] -translate-y-full animate-autoRotate transform-style-3d"
         style={{
@@ -60,7 +61,8 @@ export default function Carousel({ items, animationDuration }: Props) {
           );
         })}
       </div>
-      <div className="w-32 h-full bg-gradient-to-l from-zinc-800 to-yellow-200/0 absolute top-0 right-0 bottom-0 z-10" />
+      <div className="w-10 h-full bg-gradient-to-l from-black to-black/95 absolute top-0 right-0 bottom-0 z-10" />
+      <div className="w-20 h-full bg-gradient-to-l from-black/95 to-black/0 absolute top-0 right-10 bottom-0 z-10" />
     </div>
   );
 }

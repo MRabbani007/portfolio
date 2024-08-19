@@ -14,15 +14,16 @@ export default function MagicButton({
   handleClick?: () => void;
   children: React.ReactNode;
 }) {
+  // inset-[-1000%]
   return (
-    <button className="relative inline-flex h-12 w-fit overflow-hidden p-[1px] focus:outline-none m-4">
-      {/* <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-      <span className="inline-flex h-full w-full cursor-pointer items-center justify-center bg-zinc-950 py-4 px-8 text-sm font-medium text-white backdrop-blur-3xl"> */}
-      {position === "left" && icon}
-      {/* <Link href="#projects">{title}</Link> */}
-      {children}
-      {position === "right" && icon}
-      {/* </span> */}
-    </button>
+    <div className="relative block overflow-hidden min-h-12 w-fit p-[1px] focus:outline-none my-4 mx-2">
+      <div className="absolute inset-[0] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#facc15_50%,#E2CBFF_100%)]" />
+      <div className="block h-full w-full cursor-pointer items-center justify-center bg-zinc-950/70 hover:bg-zinc-950/95 py-4 px-8 text-sm font-medium text-white backdrop-blur-3xl">
+        {position === "left" && icon}
+        {/* <Link href="#projects">{title}</Link> */}
+        {children}
+        {position === "right" && icon}
+      </div>
+    </div>
   );
 }

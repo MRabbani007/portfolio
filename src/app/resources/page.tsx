@@ -1,6 +1,6 @@
 import React from "react";
 import { FRAMEWORKS, MEDIA, STYLING } from "../_lib/resources";
-import SectionResources from "../_components/resources/SectionResources";
+import SectionResources from "../../components/resources/SectionResources";
 
 export default function ResourcesPage() {
   return (

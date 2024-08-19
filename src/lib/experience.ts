@@ -6,7 +6,7 @@ export const EXPERIENCE = [
     project: "",
     period: "Aug 2023 – Present",
     time: "1 year",
-    image: "/assets/png/bg-1.jpg",
+    image: "/assets/png/freelance.png",
     companyLogo: "/assets/png/logo.png",
     responsibilities: [
       "Developing full stack responsive web-applications using the latest technologies including NextJS, React, NodeJS, ExpressJS, MongoDB, Tailwind & Github",
@@ -29,7 +29,8 @@ export const EXPERIENCE = [
     project: "FGP 3RD GENERATION PLANT, REPUBLIC OF KAZAKHSTAN",
     period: "MAR 2020 – JUL 2023",
     time: "~3 years",
-    image: "/assets/png/fgp.jpeg",
+    image: "/assets/png/bg-1.jpg",
+    // image: "/assets/png/fgp.jpeg",
     companyLogo: "/assets/png/ccc.png",
     responsibilities: [
       "Utilizing advanced work packaging principles to facilitate workplace management and reduce construction costs",

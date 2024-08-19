@@ -4,7 +4,7 @@ import Image from "next/image";
 import { skills_technical } from "@/app/_lib/skills";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Skill } from "../../../../types";
+import { Skill } from "../../../types";
 import { useInView } from "framer-motion";
 import Carousel from "@/components/Carousel";
 import { GrTechnology } from "react-icons/gr";
@@ -17,7 +17,7 @@ export default function PortfolioSkills() {
 
   return (
     <div id="skills" className="section-container">
-      <section className="px-10">
+      <section>
         {/* Container */}
         <Slide from="left">
           <h2 className="flex items-center gap-4 mb-10 lg:mb-20">

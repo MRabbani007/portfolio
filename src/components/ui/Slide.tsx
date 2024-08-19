@@ -14,7 +14,7 @@ type Props = {
 export default function Slide({
   children,
   delay = 0,
-  from = "left",
+  from = "bottom",
   className,
 }: Props) {
   const ref = useRef(null);
@@ -43,7 +43,7 @@ export default function Slide({
       initial="hidden"
       animate={mainControls}
       transition={{ duration: 0.5, delay }}
-      className={cn("w-full", className)}
+      className={cn("", className)}
     >
       {children}
     </motion.div>

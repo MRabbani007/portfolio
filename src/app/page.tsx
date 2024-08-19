@@ -34,16 +34,22 @@ export default function HomePage() {
               exceptional digital experiences
             </p>
           </Slide>
-          {/* <MagicButton title="Go to Portfolio">
-          </MagicButton> */}
           <Slide from="bottom" className="mt-6">
-            <Link
-              href={"/portfolio"}
-              className="border-2 border-accent/50 py-2 px-4 rounded-lg text-accent"
-            >
-              View Work
-            </Link>
+            <MagicButton title="Go to Portfolio">
+              <Link
+                href={"/portfolio"}
+                // className="border-2 border-accent/50 py-2 px-4 rounded-lg text-accent"
+              >
+                View Work
+              </Link>
+            </MagicButton>
           </Slide>
+
+          {/* <div className="absolute inset-0 overflow-hidden z-50 ">
+          <div className="relative w-full h-full">
+            <div className="absolute top-1/2 left-0 shadow-[0_0_100px_5px_rgba(245,245,245,0.5)] w-[5000px] h-0 animate-[spin_2s_linear_infinite] origin-left "></div>
+          </div>
+        </div> */}
         </section>
         <section></section>
         {/* <h1 className="text-wrap whitespace-break-spaces">

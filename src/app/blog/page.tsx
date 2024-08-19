@@ -1,6 +1,6 @@
 import React from "react";
-import ProfilePic from "../_components/blog/ProfilePic";
-import Posts from "../_components/blog/Posts";
+import ProfilePic from "../../components/blog/ProfilePic";
+import Posts from "../../components/blog/Posts";
 import { IoSearch } from "react-icons/io5";
 
 export const revalidate = 500;

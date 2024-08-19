@@ -1,4 +1,4 @@
-import ListItem from "@/app/_components/blog/ListItem";
+import ListItem from "@/components/blog/ListItem";
 import { getPostsMeta } from "@/app/_lib/blog/posts";
 import Link from "next/link";
 

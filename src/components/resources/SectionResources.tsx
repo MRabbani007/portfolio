@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Resource } from "../../../../types";
+import { Resource } from "../../../types";
 
 export default function SectionResources({
   resources,

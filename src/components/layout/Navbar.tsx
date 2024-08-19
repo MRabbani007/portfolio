@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { IoIosArrowForward } from "react-icons/io";
 import Slide from "@/components/ui/Slide";
 import SideBar from "@/components/SideBar";
+import MobileMenu from "./MobileMenu";
 
 const items = [
   {
@@ -125,6 +126,8 @@ export default function Navbar() {
         </button>
       </div>
       {isPortfolio && <SideBar />}
+
+      <MobileMenu showMenu={showSideMenu} setShowMenu={setShowSideMenu} />
     </nav>
   );
 }
