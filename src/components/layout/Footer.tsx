@@ -1,3 +1,4 @@
+import { CONTACTS } from "@/lib/contacts";
 import Link from "next/link";
 import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
@@ -12,35 +13,18 @@ export default function Footer() {
           <h4 className="text-accent uppercase tracking-wide text-xl font-bold">
             Contacts
           </h4>
-          <div className="flex items-center gap-3 py-2">
-            <a
-              className="p-4 rounded-full bg-zinc-950 hover:scale-105 ease-in duration-200 cursor-pointer"
-              href="https://linkedin.com/in/mohamadrabbani"
-              target="_blank"
-            >
-              <FaLinkedinIn size={28} />
-            </a>
-            <a
-              className="p-4 rounded-full bg-zinc-950 hover:scale-105 ease-in duration-200 cursor-pointer"
-              href="https://github.com/MRabbani007"
-              target="_blank"
-            >
-              <FaGithub size={28} />
-            </a>
-            <a
-              className="p-4 rounded-full bg-zinc-950 hover:scale-105 ease-in duration-200 cursor-pointer"
-              href="mailto: mrabbani@outlook.com"
-              target="_blank"
-            >
-              <AiOutlineMail size={28} />
-            </a>
-            <a
-              className="p-4 rounded-full bg-zinc-950 hover:scale-105 ease-in duration-200 cursor-pointer"
-              href="/portfolio/#contact"
-            >
-              <BsFillPersonLinesFill size={28} />
-            </a>
-          </div>
+          <ul className="flex items-center gap-3 py-2">
+            {CONTACTS.map((item, idx) => (
+              <li
+                key={idx}
+                className="p-4 rounded-full bg-zinc-400 dark:bg-zinc-800 hover:scale-105 ease-in duration-200 cursor-pointer"
+              >
+                <Link href={item.url} target="_blank">
+                  {item.icon}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="">
           <h4 className="text-accent uppercase tracking-wide text-xl font-bold">

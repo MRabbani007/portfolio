@@ -6,7 +6,7 @@ export default function ResourcesPage() {
   return (
     <div className="">
       <header className="bg-zinc-900">
-        <div className="w-full max-w-[1000px] mx-auto h-[40vh] relative">
+        <div className="w-full mx-auto h-[40vh] px-8 relative">
           <img
             src="/assets/resources/links.png"
             alt="links"
@@ -14,7 +14,7 @@ export default function ResourcesPage() {
             height={300}
             width={200}
           />
-          <div className="text-zinc-50 absolute left-0 bottom-0 py-4">
+          <div className="text-zinc-50 absolute left-0 bottom-0 px-8 py-4">
             <p className="text-2xl">Links & Resources</p>
             <p>Useful Links & Resources</p>
           </div>

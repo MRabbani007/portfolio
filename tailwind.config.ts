@@ -12,7 +12,7 @@ const config: Config = {
         black: { DEFAULT: "#000", 100: "#000319" },
         primary: { DEFAULT: "#fff" },
         secondary: { DEFAULT: "#fff" },
-        accent: { DEFAULT: "#facc15" },
+        accent: { DEFAULT: "var(--accent)" },
       },
       keyframes: {
         marquee: {

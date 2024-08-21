@@ -85,7 +85,7 @@ export default function Navbar() {
     <nav
       className={
         (shadow ? "shadow-sm shadow-blue-700 " : "  ") +
-        " top-0 left-0 right-0 z-50 text-xl duration-200 relative"
+        " top-0 left-0 right-0 z-50 text-xl duration-200 relative bg-zinc-400 dark:bg-transparent"
       }
     >
       <div className="flex items-center justify-between px-4 sm:px-10 mx-auto h-20">

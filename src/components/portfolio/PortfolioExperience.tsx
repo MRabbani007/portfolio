@@ -49,7 +49,7 @@ export default function PortfolioExperience() {
                 <Slide
                   key={index}
                   from="bottom"
-                  className="hover:scale-110 hover:bg-zinc-900 p-2 rounded-md duration-200 min-w-fit"
+                  className="hover:scale-110 dark:hover:bg-zinc-900 hover:bg-zinc-600 p-2 rounded-md duration-200 min-w-fit"
                 >
                   <Image
                     src={"/assets/skills/" + item.image}
@@ -61,7 +61,7 @@ export default function PortfolioExperience() {
                 </Slide>
               ))}
             </div>
-            <div className="text-center space-y-4 flex-1">
+            <div className="text-center space-y-4 flex-1 text-white">
               {items.map((item, idx) => (
                 <Slide key={idx} from="bottom" delay={0.2 * idx}>
                   <p className={"p-4 rounded-xl uppercase " + item.bgColor}>
@@ -70,7 +70,7 @@ export default function PortfolioExperience() {
                 </Slide>
               ))}
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-4 max-w-[400px]">
+            <div className="flex flex-wrap items-center justify-center gap-4 max-w-[400px] text-white">
               {items2.map((item, idx) => (
                 <Slide
                   key={idx}

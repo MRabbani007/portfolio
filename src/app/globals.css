@@ -2,10 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* @layer base {
+@layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: #27272a;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -16,7 +16,7 @@
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
+    --accent: #eab308;
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -33,7 +33,7 @@
 
   .dark {
     --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --foreground: #ffffff;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
@@ -44,7 +44,7 @@
     --secondary-foreground: 210 40% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --accent: #facc15;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -57,7 +57,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-} */
+}
 
 :root {
   --clr-yellow-400: #facc15;
@@ -66,7 +66,7 @@
   --clr-zinc-500: #71717a;
   --clr-zinc-800: #27272a;
   --foreground-rgb: 24, 24, 27;
-  --background-start-rgb: 214, 214, 214;
+  --background-start-rgb: 180, 180, 180;
   --background-end-rgb: 100, 100, 100;
 }
 
@@ -85,6 +85,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --foreground: #ffffff;
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
@@ -92,7 +93,7 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--foreground);
   /* background-color: var(--background-start-rgb); */
   background: linear-gradient(
       to bottom,
@@ -113,7 +114,7 @@ body {
     @apply text-4xl text-accent;
   }
   h2 {
-    @apply text-4xl text-accent mb-4 sm:mb-8 uppercase;
+    @apply text-4xl text-accent font-semibold mb-4 sm:mb-8 uppercase;
   }
   h3 {
     @apply text-4xl;
@@ -182,7 +183,7 @@ menu:hover {
 
 main {
   /* max-width: 1024px; */
-  min-height: 100dvh;
+  /* min-height: 100dvh; */
   margin: 0 auto;
   display: flex;
   flex-direction: column;

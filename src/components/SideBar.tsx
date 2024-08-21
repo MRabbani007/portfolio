@@ -23,13 +23,13 @@ export default function SideBar() {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed left-10 top-20 border-white`}
+      className={`fixed left-10 top-24 border-white`}
     >
       <div
         ref={ref}
         className={
           (true ? "" : "") +
-          "  hidden md:flex flex-row items-start justify-start gap-5 py-2 px-0 duration-200 rotate-90 origin-top-left text-base font-extralight text-white"
+          "  hidden md:flex flex-row items-start justify-start gap-5 py-2 px-0 duration-200 rotate-90 origin-top-left text-base font-extralight text-zinc-950 dark:text-white"
         }
       >
         {items?.map((item, index) => (
@@ -37,7 +37,7 @@ export default function SideBar() {
             key={index}
             title={item.label}
             href={item.url}
-            className=" hover:text-yellow-400 duration-200"
+            className="hover:text-accent duration-200"
           >
             {item.label}
           </Link>

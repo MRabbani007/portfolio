@@ -27,7 +27,7 @@ export default function RoadmapPage() {
   return (
     <div className="">
       <header className="bg-zinc-900">
-        <div className="w-full max-w-[1024px] mx-auto h-[40vh] relative">
+        <div className="w-full mx-auto h-[40vh] relative">
           <img
             src="/assets/stairs.png"
             alt="stairs"
@@ -35,7 +35,7 @@ export default function RoadmapPage() {
             height={300}
             width={200}
           />
-          <div className="text-zinc-50 absolute left-0 bottom-0 py-4">
+          <div className="text-zinc-50 absolute left-0 bottom-0 px-8 py-4">
             <p className="text-2xl">Web Developer Roadmap</p>
             <p>How to became a web developer</p>
           </div>

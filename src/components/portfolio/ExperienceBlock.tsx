@@ -49,7 +49,7 @@ const ExperienceBlock = ({ item, index }: Props) => {
             className="w-full h-full object-cover"
           />
           {item.project !== "" && (
-            <p className="text-pretty text-sm md:text-xl absolute bottom-0 left-0 w-full p-4 bg-zinc-700/60 duration-300 invisible group-hover:visible translate-y-20  group-hover:translate-y-0">
+            <p className="text-pretty text-sm md:text-xl absolute bottom-0 left-0 w-full p-4 text-white bg-zinc-700/60 duration-300 invisible group-hover:visible translate-y-20  group-hover:translate-y-0">
               {item.project}
             </p>
           )}

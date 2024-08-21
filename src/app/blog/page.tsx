@@ -9,8 +9,8 @@ export default function BlogPage() {
   return (
     <div className="">
       <header className="bg-zinc-900">
-        <div className="h-[40vh] w-full max-w-[1024px] mx-auto relative">
-          <div className="text-zinc-50 absolute left-0 bottom-0 py-4 z-10">
+        <div className="h-[40vh] w-full mx-auto relative">
+          <div className="text-zinc-50 absolute left-0 bottom-0 px-8 py-4 z-10">
             <h1 className="text-2xl">Blog</h1>
             <p>Web Development topics</p>
           </div>

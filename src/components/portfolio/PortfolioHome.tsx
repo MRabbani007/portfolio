@@ -14,7 +14,7 @@ export default function PortfolioHome() {
         <Slide from="bottom">
           <p className="text-6xl font-extrabold uppercase">
             Hi, I&apos;m
-            <span className="text-accent"> Mohamad.</span>
+            <span className=" text-accent"> Mohamad.</span>
           </p>
         </Slide>
         <Slide from="bottom" className="overflow-hidden hidden md:block">

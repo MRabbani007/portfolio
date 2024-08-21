@@ -23,12 +23,12 @@ export default function HomePage() {
           />
         </div>
       </header> */}
-      <main className="flex flex-col gap-4 p-4">
-        <section className="min-h-[calc(100vh-5rem-1px)] w-fit mx-auto">
+      <main className="flex flex-col gap-4 p-0 ">
+        <section className="min-h-[calc(100vh-5rem-1px)] w-fit mx-auto ">
           <TextGenerateEffect
             words={"Transform concepts into seamless experiences"}
           />
-          <Slide from="bottom">
+          <Slide from="bottom" className="mt-4">
             <p>
               I'm a full-stack developer and I specialize in building
               exceptional digital experiences
