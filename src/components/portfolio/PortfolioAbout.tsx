@@ -22,7 +22,7 @@ const items = [
 export default function PortfolioAbout() {
   return (
     <div id="about" className="section-container">
-      <section>
+      <section className="">
         <Slide
           from="left"
           delay={0}

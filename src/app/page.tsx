@@ -40,7 +40,7 @@ export default function HomePage() {
                 href={"/portfolio"}
                 // className="border-2 border-accent/50 py-2 px-4 rounded-lg text-accent"
               >
-                View Work
+                Go to Portfolio
               </Link>
             </MagicButton>
           </Slide>

@@ -120,7 +120,7 @@ body {
     @apply text-4xl;
   }
   section {
-    @apply w-full flex flex-col justify-center px-4 md:px-10;
+    @apply w-full flex flex-col justify-center px-4 md:px-10 lg:mx-10;
   }
 }
 

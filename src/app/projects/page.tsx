@@ -1,6 +1,7 @@
 "use client";
 
 import { PROJECTS } from "@/lib/projects";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
@@ -11,14 +12,23 @@ export default function ProjectsPage() {
 
   return (
     <div className="">
-      {/* <header className="bg-gradient-to-br from-zinc-900 to-zinc-700">
-        <div className="h-[40vh] w-full max-w-[1024px] mx-auto relative">
-          <div className="text-zinc-50 absolute left-0 bottom-0 py-4">
+      <header className="bg-gradient-to-br from-zinc-900 to-zinc-700">
+        <div className="h-[40vh] w-full mx-auto relative overflow-hidden">
+          {/* <div className="text-zinc-50 absolute left-0 bottom-0 py-4">
             <p className="text-2xl">Projects</p>
             <p>Projects that I built</p>
+          </div> */}
+          <div className="w-full ">
+            <Image
+              src={"/wallpaper.jpeg"}
+              width={6000}
+              height={4000}
+              alt="wallpaper"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
-      </header> */}
+      </header>
       <main className="p-8">
         <h1>Projects</h1>
         <ul className="flex flex-col gap-2 py-2">
