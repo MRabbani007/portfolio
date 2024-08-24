@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import React from "react";
+import React, { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -11,5 +11,5 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="">{children}</div>;
+  return <div className="w-full">{children}</div>;
 }

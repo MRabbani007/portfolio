@@ -187,6 +187,7 @@ main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: 1.5rem;
   scroll-snap-type: y mandatory;
 }
