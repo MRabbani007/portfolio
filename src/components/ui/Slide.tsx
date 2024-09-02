@@ -18,7 +18,7 @@ export default function Slide({
   className,
 }: Props) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function Slide({
     <motion.div
       ref={ref}
       variants={{
-        hidden: { opacity: 0, visibility: "visible", y: offsetY, x: offsetX },
+        hidden: { opacity: 0, visibility: "hidden", y: offsetY, x: offsetX },
         visible: { opacity: 1, visibility: "visible", y: 0, x: 0 },
       }}
       initial="hidden"

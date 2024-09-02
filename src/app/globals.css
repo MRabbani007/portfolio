@@ -120,7 +120,7 @@ body {
     @apply text-4xl;
   }
   section {
-    @apply w-full flex flex-col justify-center px-4 md:px-10 lg:mx-10;
+    @apply flex-1 flex flex-col justify-center px-4 md:px-10 lg:mx-10;
   }
 }
 
@@ -195,7 +195,8 @@ main {
 .section-container {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  justify-content: center;
   scroll-snap-align: start;
 }
 
@@ -206,13 +207,13 @@ main {
 }
 
 .skills-container > .skill-card {
-  transition: scale 200ms ease, opacity 100ms linear;
+  transition: all 200ms ease, opacity 100ms linear;
   cursor: pointer;
 }
 
 .skills-container > .skill-card:hover {
   transition: scale 200ms ease, opacity 100ms linear;
-  scale: 1.1;
+  /* scale: 1.1; */
 }
 
 .skills-container > .skill-card:not(:hover) {
@@ -221,7 +222,7 @@ main {
 
 .skills-container:has(.skill-card:hover) > .skill-card:not(:hover) {
   transition: scale 200ms ease, opacity 100ms linear;
-  scale: 0.9;
+  /* scale: 0.9; */
   opacity: 0.5;
 }
 

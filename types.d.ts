@@ -52,6 +52,7 @@ export type Skill = {
   name: string;
   image: string;
   group: number;
+  detail?: string;
 };
 
 export type MetaData = {

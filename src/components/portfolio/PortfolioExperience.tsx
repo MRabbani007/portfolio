@@ -36,7 +36,7 @@ export default function PortfolioExperience() {
   return (
     <div id="experience" className="section-container pt-12">
       <section>
-        <article className="min-h-screen p-8">
+        <article className="min-h-screen">
           <Slide from="left">
             <h2 className="flex items-center gap-4">
               <IoBarChartSharp size={50} />

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { skills_technical } from "@/app/_lib/skills";
+import { SKILLS_TECHNICAL } from "@/lib/skills";
 import { HTMLAttributes, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Skill } from "../../../types";
@@ -11,40 +11,49 @@ import { GrTechnology } from "react-icons/gr";
 import Slide from "@/components/ui/Slide";
 
 export default function PortfolioSkills() {
-  const group1 = skills_technical.filter((item) => item.group === 1);
-  const group2 = skills_technical.filter((item) => item.group === 2);
-  const group3 = skills_technical.filter((item) => item.group === 3);
-
   return (
     <div id="skills" className="section-container">
       <section>
         {/* Container */}
         <Slide from="left">
-          <h2 className="flex items-center gap-4 mb-10 lg:mb-20">
+          <h2 className="flex items-center gap-4">
             <GrTechnology size={60} />
             Skills
           </h2>
         </Slide>
-        <Carousel
-          animationDuration="60s"
-          items={[...skills_technical, ...skills_technical]}
-        />
         {/* <Carousel
-          animationDuration="20s"
-          items={[...group2, ...group2, ...group2, ...group2]}
-        />
-        <Carousel
-          animationDuration="30s"
-          items={[...group3, ...group3, ...group3]}
+          animationDuration="60s"
+          items={[...group1, ...group1, ...group1, ...group1, ...group1]}
+        /> */}
+        {/* <Carousel
+          animationDuration="60s"
+          items={[...group2, ...group2, ...group2]}
         /> */}
         {/* <p>The technologies that I use</p> */}
-        {/* <div className="overflow-hidden">
-          <div className="flex flex-nowrap justify-start gap-8 text-center skills-container perspective-origin-center">
-            {skills_technical.map((skill, index) => {
-              return <SkillItem key={index} skill={skill} index={index} />;
+        <div className="overflow-hidden">
+          <div className="flex flex-wrap items-stretch justify-start gap-4 text-center skills-container">
+            {SKILLS_TECHNICAL.map((skill, index) => {
+              return (
+                <div
+                  key={index}
+                  className="font-mono flex items-center gap-4 w-[400px] py-2 px-4 rounded-lg hover:bg-yellow-400/20"
+                >
+                  <Image
+                    src={"/assets/skills/" + skill.image}
+                    alt={skill.name}
+                    width={100}
+                    height={100}
+                    className="size-16"
+                  />
+                  <div className="text-start">
+                    <p className="font-semibold text-xl">{skill.name}</p>
+                    <p className="text-zinc-500">{skill?.detail}</p>
+                  </div>
+                </div>
+              );
             })}
           </div>
-        </div> */}
+        </div>
         {/* {skills_technical.length} */}
         {/* <SkillsGrid /> */}
       </section>
@@ -149,9 +158,9 @@ function SkillsGrid() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.4 });
   // const columns = splitArray(PHONES, 3);
-  const column1 = skills_technical.filter((item) => item?.group === 1);
-  const column2 = skills_technical.filter((item) => item?.group === 2);
-  const column3 = skills_technical.filter((item) => item?.group === 3);
+  const column1 = SKILLS_TECHNICAL.filter((item) => item?.group === 1);
+  const column2 = SKILLS_TECHNICAL.filter((item) => item?.group === 2);
+  const column3 = SKILLS_TECHNICAL.filter((item) => item?.group === 3);
 
   return (
     <div
@@ -161,7 +170,7 @@ function SkillsGrid() {
       {isInView ? (
         <>
           <SkillRow
-            skills={skills_technical}
+            skills={SKILLS_TECHNICAL}
             skillsClassName={(index) =>
               cn({
                 "md:hidden": index >= column1.length + column3.length,

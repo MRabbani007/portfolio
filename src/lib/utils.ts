@@ -22,7 +22,7 @@ export const genDate = (timeStamp?: TimeStamp | null) => {
 
   const timeAgo =
     days >= 2
-      ? postDate.toLocaleTimeString("en-US")
+      ? postDate.toLocaleDateString("en-US")
       : days >= 1
       ? "yesterday"
       : hours < 1

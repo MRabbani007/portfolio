@@ -12,11 +12,11 @@ export default async function Posts() {
   }
 
   return (
-    <ul className="space-y-4">
+    <div className="flex flex-col gap-4 items-stretch">
       {blogs.map((blog, idx) => (
         <CardBlog key={idx} blog={blog} />
       ))}
-    </ul>
+    </div>
   );
 }
 

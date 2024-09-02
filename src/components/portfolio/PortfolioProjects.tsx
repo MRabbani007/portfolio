@@ -6,8 +6,8 @@ import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 
 export default function PortfolioProjects() {
   return (
-    <div id="projects" className="section-container pt-12">
-      <section className="px-8">
+    <div id="projects" className="section-container pt-12 ">
+      <section className="">
         <div className="group/container">
           <div className="relative w-fit">
             <Slide from="left">
@@ -30,7 +30,9 @@ export default function PortfolioProjects() {
             </Link> */}
           </div>
         </div>
-        <Slider data={PROJECTS} />
+        <div>
+          <Slider data={PROJECTS} />
+        </div>
         {/* <div className="flex flex-wrap justify-center items-center w-full gap-8 mx-auto">
           {PROJECTS.filter((item) => item.pinned === true).map(
             (project, index) => {
