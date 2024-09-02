@@ -1,4 +1,4 @@
-import { skills_soft } from "@/app/_lib/skills";
+import { SKILLS_SOFT } from "@/lib/skills";
 import React from "react";
 
 export default function PortfolioSkillsSoft() {
@@ -7,7 +7,7 @@ export default function PortfolioSkillsSoft() {
       <section className="px-8">
         <h2>Soft Skills</h2>
         <div className="flex flex-wrap justify-center gap-3 text-center skills-container">
-          {skills_soft.map((skill, index) => {
+          {SKILLS_SOFT.map((skill, index) => {
             return (
               <div
                 key={index}
