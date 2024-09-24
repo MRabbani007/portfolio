@@ -9,6 +9,7 @@ import { useInView } from "framer-motion";
 import Carousel from "@/components/Carousel";
 import { GrTechnology } from "react-icons/gr";
 import Slide from "@/components/ui/Slide";
+import Reveal from "../ui/Reveal";
 
 export default function PortfolioSkills() {
   return (
@@ -31,12 +32,13 @@ export default function PortfolioSkills() {
         /> */}
         {/* <p>The technologies that I use</p> */}
         <div className="overflow-hidden">
-          <div className="flex flex-wrap items-stretch justify-start gap-4 text-center skills-container">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center skills-container">
             {SKILLS_TECHNICAL.map((skill, index) => {
               return (
-                <div
+                <Reveal
                   key={index}
-                  className="font-mono flex items-center gap-4 w-[400px] py-2 px-4 rounded-lg hover:bg-yellow-400/20"
+                  delay={index * 0.1}
+                  className="font-mono flex items-center gap-4 py-2 px-4 rounded-lg bg-white/10 hover:bg-yellow-400/20"
                 >
                   <Image
                     src={"/assets/skills/" + skill.image}
@@ -49,7 +51,7 @@ export default function PortfolioSkills() {
                     <p className="font-semibold text-xl">{skill.name}</p>
                     <p className="text-zinc-500">{skill?.detail}</p>
                   </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>

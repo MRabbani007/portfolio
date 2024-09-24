@@ -3,6 +3,7 @@ import React from "react";
 import Slider from "@/components/Slider";
 import Slide from "@/components/ui/Slide";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import CardProject from "./CardProject";
 
 export default function PortfolioProjects() {
   return (
@@ -13,7 +14,9 @@ export default function PortfolioProjects() {
             <Slide from="left">
               <h2 className="flex items-center gap-4">
                 <AiOutlineFundProjectionScreen size={50} />
-                <span>Projects</span>
+                <span className="bg-gradient-to-r from-yellow-500 to-yellow-400 transition-all bg-clip-text text-transparent">
+                  Featured Projects
+                </span>
               </h2>
             </Slide>
             {/* <Link
@@ -30,16 +33,14 @@ export default function PortfolioProjects() {
             </Link> */}
           </div>
         </div>
-        <div>
-          <Slider data={PROJECTS} />
-        </div>
-        {/* <div className="flex flex-wrap justify-center items-center w-full gap-8 mx-auto">
+        {/* <div><Slider data={PROJECTS} /> </div>*/}
+        <div className="flex flex-col items-stretch flex-wrap justify-center max-w-5xl mx-auto gap-8">
           {PROJECTS.filter((item) => item.pinned === true).map(
             (project, index) => {
               return <CardProject key={index} project={project} />;
             }
           )}
-        </div> */}
+        </div>
       </section>
     </div>
   );

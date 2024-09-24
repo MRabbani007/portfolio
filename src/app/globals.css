@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: #27272a;
+    --foreground: #ffffff;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -65,9 +65,9 @@
   --clr-zinc-300: #d4d4d8;
   --clr-zinc-500: #71717a;
   --clr-zinc-800: #27272a;
-  --foreground-rgb: 24, 24, 27;
-  --background-start-rgb: 180, 180, 180;
-  --background-end-rgb: 100, 100, 100;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 *,
@@ -189,7 +189,7 @@ main {
   flex-direction: column;
   align-items: stretch;
   gap: 1.5rem;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
 }
 
 .section-container {

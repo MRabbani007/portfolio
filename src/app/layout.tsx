@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import { twMerge } from "tailwind-merge";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +26,14 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1.0"
         ></meta>
       </head>
-      <body className={inter.className}>
+      <body
+        className={twMerge(
+          inter.className,
+          "min-h-screen flex flex-col justify-center"
+        )}
+      >
         <Navbar />
-        <div>{children}</div>
+        {children}
         <Footer />
       </body>
     </html>

@@ -47,6 +47,7 @@ export default function PortfolioHome() {
           </MagicButton>
         </Slide>
       </section>
+      <div></div>
     </div>
   );
 }

@@ -37,8 +37,8 @@ export default function Slide({
     <motion.div
       ref={ref}
       variants={{
-        hidden: { opacity: 0, visibility: "hidden", y: offsetY, x: offsetX },
-        visible: { opacity: 1, visibility: "visible", y: 0, x: 0 },
+        hidden: { opacity: 0, y: offsetY, x: offsetX },
+        visible: { opacity: 1, y: 0, x: 0 },
       }}
       initial="hidden"
       animate={mainControls}
