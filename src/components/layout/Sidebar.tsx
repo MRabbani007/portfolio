@@ -1,102 +1,48 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
-import React, { Dispatch, SetStateAction } from "react";
-import { AiOutlineClose, AiOutlineMail } from "react-icons/ai";
-import { BsFillPersonLinesFill } from "react-icons/bs";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
 
-type Props = {
-  showSideMenu: boolean;
-  setShowSideMenu: Dispatch<SetStateAction<boolean>>;
-};
+const items = [
+  { label: "Home", url: "#home" },
+  { label: "About", url: "#about" },
+  { label: "Skills", url: "#skills" },
+  { label: "Projects", url: "#projects" },
+  { label: "Experience", url: "#experience" },
+  { label: "Contact", url: "#contact" },
+];
 
-export default function Sidebar({ showSideMenu, setShowSideMenu }: Props) {
+export default function SideBar() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  // const width = Math.ceil((ref.current?.getClientRects()[0].height ?? 0) / 2);
+
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed left-10 top-24 border-white`}
+    >
       <div
+        ref={ref}
         className={
-          (showSideMenu ? "left-0" : "-left-[5000px]") +
-          " md:hidden fixed top-0 w-full h-screen bg-black/70"
-        }
-      ></div>
-      <div
-        className={
-          (showSideMenu ? "" : " -translate-x-[1000px] ") +
-          " md:hidden fixed top-0 left-0 w-[75%] sm:w-[60%] md:w-[30%] h-full bg-zinc-300 flex flex-col justify-between duration-300 z-40"
+          (true ? "" : "") +
+          "  hidden md:flex flex-row items-start justify-start gap-5 py-2 px-0 duration-200 rotate-90 origin-top-left text-base font-extralight"
         }
       >
-        <div className="flex items-center justify-between p-4">
-          <Link href="/" className="cursor-pointer">
-            <Image
-              src={"/assets/logo/logo.png"}
-              alt="Mohamad"
-              width={80}
-              height={80}
-            />
-          </Link>
-          <button
-            className="p-2 bg-zinc-400 rounded-full text-white hover:shadow-xl hover:bg-zinc-500 shadow-zinc-400 duration-200"
-            onClick={() => setShowSideMenu(false)}
+        {items?.map((item, index) => (
+          <Link
+            key={index}
+            title={item.label}
+            href={item.url}
+            className="hover:text-accent duration-200"
           >
-            <AiOutlineClose size={20} />
-          </button>
-        </div>
-        <p className="p-4 text-md">
-          Let&apos;s build something legendary together
-        </p>
-        <ul className="flex flex-col gap-3 uppercase px-4 h-full text-lg">
-          <li onClick={() => setShowSideMenu(false)}>
-            <Link href="/">Home</Link>
-          </li>
-          <li onClick={() => setShowSideMenu(false)}>
-            <Link href="/portfolio">Portfolio</Link>
-          </li>
-          <li onClick={() => setShowSideMenu(false)}>
-            <Link href="/projects">Projects</Link>
-          </li>
-          <li onClick={() => setShowSideMenu(false)}>
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li onClick={() => setShowSideMenu(false)}>
-            <Link href="/roadmap">Roadmap</Link>
-          </li>
-          <li onClick={() => setShowSideMenu(false)}>
-            <Link href="/resources">Resources</Link>
-          </li>
-        </ul>
-        <div className="px-4 my-4">
-          <p className="uppercase my-2 font-bold text-md">Let&apos;s Connect</p>
-          <div className="flex items-center gap-3">
-            <a
-              className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer"
-              href="https://www.linkedin.com/in/mohamadrabbani"
-              target="_blank"
-            >
-              <FaLinkedinIn size={28} />
-            </a>
-            <a
-              className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer"
-              href="https://github.com/MRabbani007"
-              target="_blank"
-            >
-              <FaGithub size={28} />
-            </a>
-            <a
-              className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer"
-              href="mailto: mrabbani@outlook.com"
-              target="_blank"
-            >
-              <AiOutlineMail size={28} />
-            </a>
-            <a
-              className="p-2 rounded-full shadow-lg shadow-gray-400 hover:scale-105 ease-in duration-200 cursor-pointer"
-              href="/portfolio/#contact"
-            >
-              <BsFillPersonLinesFill size={28} />
-            </a>
-          </div>
-        </div>
+            {item.label}
+          </Link>
+        ))}
       </div>
-    </>
+    </motion.div>
   );
 }

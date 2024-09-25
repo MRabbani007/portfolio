@@ -1,13 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import React, { SyntheticEvent, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { usePathname } from "next/navigation";
-import { IoIosArrowForward } from "react-icons/io";
 import Slide from "@/components/ui/Slide";
-import SideBar from "@/components/SideBar";
+import SideBar from "@/components/layout/SideBar";
 import MobileMenu from "./MobileMenu";
 
 const items = [
@@ -85,13 +83,13 @@ export default function Navbar() {
     <nav
       className={
         (shadow ? "shadow-sm shadow-blue-700 " : "  ") +
-        " top-0 left-0 right-0 z-50 text-xl duration-200 relative bg-zinc-400 dark:bg-transparent"
+        " top-0 left-0 right-0 z-50 text-xl duration-200 relative"
       }
     >
       <div className="flex items-center justify-between px-4 sm:px-10 mx-auto h-20">
         {/* <div className="w-20 h-20 bg-white clipPath"></div> */}
         {/* Logo */}
-        <Link title="Home Page" href="/" className="cursor-pointer">
+        <Link title="Home Page" href="/">
           {/* <Image
             src={"/assets/logo/logo.png"}
             alt="Mohamad"

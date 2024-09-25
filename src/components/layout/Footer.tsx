@@ -8,22 +8,22 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 export default function Footer() {
   return (
     <div className="flex items-center sm:flex-row flex-col flex-wrap sm:justify-between gap-4 p-4 sm:p-8 ">
-      <div className="">
+      <div className="space-y-4">
         <h4 className="text-accent uppercase tracking-wide text-xl font-bold">
           Contacts
         </h4>
-        <ul className="flex items-center gap-3 py-2">
+        <div className="flex items-center gap-4">
           {CONTACTS.map((item, idx) => (
-            <li
+            <Link
               key={idx}
-              className="p-4 rounded-full bg-zinc-400 dark:bg-zinc-800 hover:scale-105 ease-in duration-200 cursor-pointer"
+              href={item.url}
+              target="_blank"
+              className="p-4 rounded-full bg-zinc-800 hover:scale-105 transition ease-in duration-200"
             >
-              <Link href={item.url} target="_blank">
-                {item.icon}
-              </Link>
-            </li>
+              {item.icon}
+            </Link>
           ))}
-        </ul>
+        </div>
       </div>
       <div className="">
         <h4 className="text-accent uppercase tracking-wide text-xl font-bold">

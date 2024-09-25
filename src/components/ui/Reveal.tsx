@@ -12,16 +12,16 @@ type Props = {
 
 export default function Reveal({ children, className, delay = 0 }: Props) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
     }
-    if (!isInView) {
-      mainControls.start("hidden");
-    }
+    // if (!isInView) {
+    //   mainControls.start("hidden");
+    // }
   }, [isInView]);
 
   return (

@@ -11,6 +11,14 @@ interface Props {
   setShowMenu: Dispatch<SetStateAction<boolean>>;
 }
 
+const menuItems = [
+  { label: "Portfolio", url: "/portfolio" },
+  { label: "Projects", url: "/projects" },
+  { label: "Blog", url: "/blog" },
+  { label: "Roadmap", url: "/roadmap" },
+  { label: "Resources", url: "/resources" },
+];
+
 export default function MobileMenu({ showMenu, setShowMenu }: Props) {
   return (
     <nav
@@ -19,8 +27,8 @@ export default function MobileMenu({ showMenu, setShowMenu }: Props) {
         " md:hidden fixed inset-0 flex flex-col duration-200 bg-black"
       }
     >
-      <div className="flex items-center gap-4 justify-between p-4">
-        <Link title="Home Page" href="/" className="cursor-pointer">
+      <div className="flex items-center gap-4 justify-between p-4 h-20">
+        <Link title="Home Page" href="/" onClick={() => setShowMenu(false)}>
           <span className="font-extrabold text-4xl">MR</span>
         </Link>
         <button onClick={() => setShowMenu(false)}>
@@ -28,37 +36,29 @@ export default function MobileMenu({ showMenu, setShowMenu }: Props) {
         </button>
       </div>
       <p className="p-4">Let's build something legendary together!</p>
-      <ul className="p-4 space-y-4 flex-1">
-        <li className="hover:text-accent duration-200">
-          <Link href="/portfolio">Portfolio</Link>
-        </li>
-        <li className="hover:text-accent duration-200">
-          <Link href="/projects">Projects</Link>
-        </li>
-        <li className="hover:text-accent duration-200">
-          <Link href="/blog">Blog</Link>
-        </li>
-        <li className="hover:text-accent duration-200">
-          <Link href="/roadmap">Roadmap</Link>
-        </li>
-        <li className="hover:text-accent duration-200">
-          <Link href="/resources">Resources</Link>
-        </li>
+      <ul className="flex-1 flex flex-col gap-4 p-4">
+        {menuItems.map((item, idx) => (
+          <li key={idx} onClick={() => setShowMenu(false)}>
+            <Link href={item.url} className="hover:text-accent duration-200">
+              {item.label}
+            </Link>
+          </li>
+        ))}
       </ul>
       <div className="p-4">
         <p className="text-accent mb-4">Contacts</p>
-        <ul className="flex items-center gap-3 py-2">
+        <div className="flex items-center gap-4">
           {CONTACTS.map((item, idx) => (
-            <li
+            <Link
               key={idx}
-              className="p-4 rounded-full bg-zinc-950 hover:scale-105 ease-in duration-200 cursor-pointer"
+              href={item.url}
+              target="_blank"
+              className="p-4 rounded-full bg-zinc-800 hover:scale-105 transition ease-in duration-200"
             >
-              <Link href={item.url} target="_blank">
-                {item.icon}
-              </Link>
-            </li>
+              {item.icon}
+            </Link>
           ))}
-        </ul>
+        </div>
       </div>
     </nav>
   );

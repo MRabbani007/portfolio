@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={twMerge(
           inter.className,
-          "min-h-screen flex flex-col justify-center"
+          "min-h-screen flex flex-col justify-center antialiased"
         )}
       >
         <Navbar />
