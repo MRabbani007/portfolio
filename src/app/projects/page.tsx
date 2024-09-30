@@ -13,19 +13,19 @@ export default function ProjectsPage() {
 
   return (
     <div className="">
-      <header className="bg-gradient-to-br from-zinc-900 to-zinc-700">
+      <header>
         <div className="h-[40vh] w-full mx-auto relative overflow-hidden">
           {/* <div className="text-zinc-50 absolute left-0 bottom-0 py-4">
             <p className="text-2xl">Projects</p>
             <p>Projects that I built</p>
           </div> */}
-          <div className="w-full ">
+          <div className="w-full h-full ">
             <Image
               src={"/wallpaper.jpeg"}
               width={6000}
               height={4000}
               alt="wallpaper"
-              className="w-full h-full object-cover"
+              className="h-full object-cover"
             />
           </div>
         </div>

@@ -8,6 +8,7 @@ import Image from "next/image";
 import { IoArrowBack } from "react-icons/io5";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
+import { genDate } from "@/lib/utils";
 
 const Content = dynamic(() => import("@/components/blog/Content"), {
   ssr: false,
@@ -76,7 +77,7 @@ export default async function Post({ params: { postId } }: Props) {
           <img src={meta.banner} className={"w-full h-full object-cover "} />
         </div>
       )}
-      <main className="max-w-[1024px]">
+      <main className="">
         <header className="flex items-stretch gap-4 my-4">
           <div className="">
             <div className="h-20 w-20 ">
@@ -95,11 +96,13 @@ export default async function Post({ params: { postId } }: Props) {
               <p className="flex items-center gap-2">
                 <span>Mohamad</span>
                 <span>-</span>
-                <span className="italic text-zinc-300">
-                  {new Date(
-                    (meta.createdAt?.seconds ?? 0) * 1000 +
-                      (meta.createdAt?.nanoseconds ?? 0) / 1000000
-                  ).toDateString()}
+                <span>Published</span>
+                <span>{genDate(meta?.publishedAt)}</span>
+                <span className="text-zinc-700 dark:text-zinc-300">
+                  Last Updated
+                </span>
+                <span className="text-zinc-700 dark:text-zinc-300">
+                  {genDate(meta?.updatedAt)}
                 </span>
               </p>
             </div>

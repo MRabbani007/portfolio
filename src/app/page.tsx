@@ -20,7 +20,7 @@ export default function HomePage() {
           <MagicButton title="Go to Portfolio">
             <Link
               href={"/portfolio"}
-              // className="border-2 border-accent/50 py-2 px-4 rounded-lg text-accent"
+              className="text-xl font-semibold text-zinc-200"
             >
               Go to Portfolio
             </Link>

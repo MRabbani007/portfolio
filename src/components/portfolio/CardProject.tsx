@@ -9,7 +9,7 @@ export default function CardProject({ project }: { project: Project }) {
       <h3 className="text-xl text-yellow-400/70 border-b-2 border-yellow-400/70 tracking-widest uppercase pb-2">
         {project.title}
       </h3>
-      <div className="flex items-stretch gap-2">
+      <div className="flex flex-col-reverse sm:flex-row flex-wrap-reverse items-stretch gap-2">
         <div className="flex-1 flex flex-col gap-4">
           <p className="md:text-xl">{project.about}</p>
           <p>{project.features.join(", ")}</p>

@@ -1,6 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { MetaData, TimeStamp } from "../../types";
+import { format, formatDistanceToNow } from "date-fns";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -13,12 +14,13 @@ export const genDate = (timeStamp?: TimeStamp | null) => {
     (timeStamp.seconds ?? 0) * 1000 + (timeStamp.nanoseconds ?? 0) / 1000000
   );
   const timeNow = new Date();
-
   const seconds = Math.floor((timeNow.getTime() - postDate.getTime()) / 1000);
 
   const minutes = Math.floor(seconds / 60);
   const hours = Math.ceil(minutes / 60);
   const days = Math.floor(hours / 24);
+
+  const year = postDate.getFullYear();
 
   const timeAgo =
     days >= 2
@@ -29,7 +31,10 @@ export const genDate = (timeStamp?: TimeStamp | null) => {
       ? "1 hour ago"
       : `${hours} hours ago`;
 
-  return timeAgo;
+  return days > 3
+    ? format(postDate, "EEE dd MMM") +
+        (year === new Date().getFullYear() ? "" : ` ${year}`)
+    : formatDistanceToNow(postDate, { addSuffix: true });
 };
 
 // export const extractMdx = async (rawMDX: string) => {

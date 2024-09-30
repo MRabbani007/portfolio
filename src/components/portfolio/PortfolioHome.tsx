@@ -28,6 +28,9 @@ export default function PortfolioHome() {
             </div>
           </div>
         </Slide>
+        <Slide from="bottom" delay={0} className="md:hidden text-xl">
+          I'm a Software Engineer,
+        </Slide>
         <Slide
           from="bottom"
           delay={0}
