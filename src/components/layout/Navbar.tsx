@@ -5,8 +5,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { usePathname } from "next/navigation";
 import Slide from "@/components/ui/Slide";
-import SideBar from "./SideBar";
 import MobileMenu from "./MobileMenu";
+import SideBar from "./SideBar";
 
 const items = [
   {
