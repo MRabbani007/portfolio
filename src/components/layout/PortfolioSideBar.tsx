@@ -13,7 +13,7 @@ const items = [
   { label: "Contact", url: "#contact" },
 ];
 
-export default function SideBar() {
+export default function PortfolioSideBar() {
   const ref = useRef<HTMLDivElement>(null);
 
   // const width = Math.ceil((ref.current?.getClientRects()[0].height ?? 0) / 2);

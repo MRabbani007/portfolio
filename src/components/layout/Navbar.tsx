@@ -6,7 +6,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { usePathname } from "next/navigation";
 import Slide from "@/components/ui/Slide";
 import MobileMenu from "./MobileMenu";
-import SideBar from "./SideBar";
+import PortfolioSideBar from "./PortfolioSideBar";
 
 const items = [
   {
@@ -123,7 +123,7 @@ export default function Navbar() {
           <AiOutlineMenu size={32} />
         </button>
       </div>
-      {isPortfolio && <SideBar />}
+      {isPortfolio && <PortfolioSideBar />}
 
       <MobileMenu showMenu={showSideMenu} setShowMenu={setShowSideMenu} />
     </nav>
