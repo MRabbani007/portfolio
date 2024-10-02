@@ -65,7 +65,7 @@ export default function PortfolioHome() {
         <HeroOrbit size={600} rotation={20}>
           <IoStar
             size={8}
-            className="text-yellow-400 animate-pulse duration-[10s]"
+            className="text-yellow-400 animate-pulse [animation-duration:10s]"
           />
         </HeroOrbit>
         <HeroOrbit size={450} rotation={160}>
@@ -74,7 +74,7 @@ export default function PortfolioHome() {
         <HeroOrbit size={740} rotation={360 - 45}>
           <IoStar
             size={10}
-            className="text-white animate-pulse duration-[10s]"
+            className="text-white animate-pulse [animation-duration:10s]"
           />
         </HeroOrbit>
         <HeroOrbit size={1020} rotation={180}>
