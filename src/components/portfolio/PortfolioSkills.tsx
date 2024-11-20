@@ -13,14 +13,31 @@ import Reveal from "../ui/Reveal";
 
 export default function PortfolioSkills() {
   return (
-    <div id="skills" className="section-container">
-      <section>
+    <div id="skills" className="section-container relative overflow-clip z-0">
+      <div className="absolute left-0 right-0 top-0 h-[15vh] bg-gradient-to-b from-black to-transparent" />
+      <div className="absolute left-0 right-0 bottom-0 h-[15vh] bg-gradient-to-b to-black from-transparent" />
+      <div className="-z-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="w-[2000px] h-[2px] bg-blue-500/30 shadow-[0_0_500px_100px] shadow-blue-500 opacity-60 animate-[spin_30s_linear_infinite]"></div>
+        </div>
+      </div>
+      <section className="z-10">
         {/* Container */}
         <Slide from="left">
-          <h2 className="flex items-center gap-4">
-            <GrTechnology size={60} />
-            Skills
-          </h2>
+          <>
+            <div className="relative overflow-hidden pb-[1px] z-0 mb-4">
+              <div className="z-0">
+                <h2 className="flex items-center gap-4 bg-inherit mb-0 pb-4">
+                  <GrTechnology size={60} />
+                  Skills
+                </h2>
+              </div>
+              <div className="h-[2px] overflow-clip w-full relative z-10">
+                {/* <div className="w-[200px] bg-sky-500 h-full animate-[pulse_2s_linear_infinite]"></div> */}
+                {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-sky-400 to-sky-400 -z-10 animate-[spin_1s_linear_infinite] origin-bottom-right"></div> */}
+              </div>
+            </div>
+          </>
         </Slide>
         {/* <Carousel
           animationDuration="60s"
@@ -37,8 +54,8 @@ export default function PortfolioSkills() {
               return (
                 <Reveal
                   key={index}
-                  delay={index * 0.1}
-                  className="font-mono flex items-center gap-4 py-2 px-4 rounded-lg bg-white/10 hover:bg-yellow-400/20"
+                  delay={0.5}
+                  className="font-mono flex items-center gap-4 py-2 px-4 rounded-lg bg-zinc-900 hover:bg-yellow-400/20 z-10"
                 >
                   <Image
                     src={"/assets/skills/" + skill.image}

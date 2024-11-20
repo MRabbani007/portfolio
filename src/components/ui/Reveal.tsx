@@ -22,7 +22,7 @@ export default function Reveal({ children, className, delay = 0 }: Props) {
     // if (!isInView) {
     //   mainControls.start("hidden");
     // }
-  }, [isInView]);
+  }, [isInView, mainControls]);
 
   return (
     <motion.div

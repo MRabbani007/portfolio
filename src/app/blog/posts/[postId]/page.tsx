@@ -73,40 +73,33 @@ export default async function Post({ params: { postId } }: Props) {
       </section>
       */}
       {meta?.banner && (
-        <div className="w-full h-[60vh] flex-1">
+        <div className="w-full h-[50vh] flex-1">
           <img src={meta.banner} className={"w-full h-full object-cover "} />
         </div>
       )}
       <main className="">
-        <header className="flex items-stretch gap-4 my-4">
-          <div className="">
-            <div className="h-20 w-20 ">
-              <Image
-                src={"/assets/blog/author.png"}
-                alt="profile.png"
-                width={800}
-                height={800}
-                className="w-full h-full object-fill"
-              />
-            </div>
-          </div>
+        <header className="flex items-stretch gap-4 my-4 p-4">
           <div className="flex flex-col justify-start">
             <div className="flex-1 flex flex-col items-start">
-              <h1 className="font-extrabold text-4xl">{meta?.title}</h1>
-              <p className="flex items-center gap-2">
-                <span>Mohamad</span>
-                <span>-</span>
-                <span>Published</span>
-                <span>{genDate(meta?.publishedAt)}</span>
-                <span className="text-zinc-700 dark:text-zinc-300">
-                  Last Updated
-                </span>
-                <span className="text-zinc-700 dark:text-zinc-300">
-                  {genDate(meta?.updatedAt)}
+              <h1 className="font-extrabold text-4xl mb-4">{meta?.title}</h1>
+              <p className="flex items-center gap-2 flex-wrap">
+                <Image
+                  src={"/assets/blog/author.png"}
+                  alt="profile.png"
+                  width={800}
+                  height={800}
+                  className="size-10 md:size-20"
+                />
+                <span>{meta.author ?? "Mohamad"}</span>
+                <span className="">{` - Published ${genDate(
+                  meta?.publishedAt
+                )}`}</span>
+                <span className="">
+                  {`Last Updated ${genDate(meta?.updatedAt)}`}
                 </span>
               </p>
             </div>
-            <p className="flex items-center gap-4 text-sm mt-6">
+            <p className="flex flex-wrap items-center gap-4 text-sm mt-6">
               {meta?.tags.map((tag, idx) => (
                 <span
                   key={idx}
@@ -116,7 +109,7 @@ export default async function Post({ params: { postId } }: Props) {
             </p>
           </div>
         </header>
-        <div className="flex-1 prose lg:prose-xl dark:prose-invert prose-invert prose-base prose-zinc ">
+        <div className="flex-1 prose lg:prose-xl dark:prose-invert prose-invert prose-base prose-zinc p-4">
           <Suspense fallback={<p>Loading...</p>}>
             <Content rawMDX={content}></Content>
           </Suspense>

@@ -15,7 +15,7 @@ export const SKILLS_TECHNICAL: Skill[] = [
   {
     name: "NextJS",
     detail: "Fullstack Framework",
-    image: "nextjs.svg",
+    image: "nextjs_white.png",
     group: 1,
   },
   { name: "React", detail: "Frontend Framework", image: "react.png", group: 1 },
@@ -24,7 +24,7 @@ export const SKILLS_TECHNICAL: Skill[] = [
   {
     name: "ExpressJS",
     detail: "Backend Library",
-    image: "express.svg",
+    image: "expressjs_white.png",
     group: 1,
   },
   { name: "MongoDB", detail: "Database", image: "mongo.png", group: 1 },
@@ -39,7 +39,12 @@ export const SKILLS_TECHNICAL: Skill[] = [
   { name: "Bootstrap", detail: "Styling", image: "bootstrap.png", group: 2 },
   { name: "Sass", detail: "Styling Preprocessor", image: "sass.png", group: 2 },
   { name: "Firebase", detail: "Storage", image: "firebase.png", group: 2 },
-  { name: "Github", detail: "Version Control", image: "github.svg", group: 2 },
+  {
+    name: "Github",
+    detail: "Version Control",
+    image: "github_white.png",
+    group: 2,
+  },
 
   { name: "HTML", image: "html.png", group: 3 },
   { name: "CSS", image: "css.png", group: 3 },
