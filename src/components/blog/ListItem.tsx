@@ -1,4 +1,4 @@
-import getFormattedDate from "@/app/_lib/blog/getFormattedDate";
+import getFormattedDate from "@/lib/getFormattedDate";
 import Link from "next/link";
 import React from "react";
 import { Meta } from "../../../types";

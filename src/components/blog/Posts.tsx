@@ -1,11 +1,8 @@
-import { getPostsMeta } from "@/app/_lib/blog/posts";
-import ListItem from "./ListItem";
-import { getBlogs } from "@/lib/firebase";
 import CardBlog from "./CardBlog";
+import { getBlogPosts } from "@/lib/actions";
 
 export default async function Posts() {
-  // const posts = await getPostsMeta();
-  const { count, blogs } = await getBlogs();
+  const { count, data: blogs } = await getBlogPosts({ page: 1 });
 
   if (!blogs) {
     return <p className="mt-10 text-center">No Posts available.</p>;
@@ -13,9 +10,11 @@ export default async function Posts() {
 
   return (
     <div className="flex flex-col gap-4 items-stretch">
-      {blogs.map((blog, idx) => (
-        <CardBlog key={idx} blog={blog} />
-      ))}
+      {blogs.map(
+        (blog, idx) =>
+          null
+          // <CardBlog key={idx} blog={blog} />
+      )}
     </div>
   );
 }

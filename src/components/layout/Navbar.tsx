@@ -87,33 +87,28 @@ export default function Navbar() {
       }
     >
       <div className="flex items-center justify-between px-4 sm:px-10 mx-auto h-20">
-        {/* <div className="w-20 h-20 bg-white clipPath"></div> */}
         {/* Logo */}
-        <Link title="Home Page" href="/">
-          {/* <Image
-            src={"/assets/logo/logo.png"}
-            alt="Mohamad"
-            width={80}
-            height={80}
-          /> */}
-          <span className="font-extrabold text-4xl">MR</span>
+        <Link title="Home Page" href="/" className="font-extrabold text-4xl">
+          MR
         </Link>
-        <Slide from="top" delay={0} className="w-full">
-          <ul className={" hidden md:flex items-center justify-end gap-5"}>
-            {items.map((item, idx) => (
-              <li
-                key={idx}
-                className={
-                  (isActive(item.isActive) ? "text-accent" : "") +
-                  " flex items-center gap-2 duration-200 delay-0"
-                }
-              >
-                <Link title={item.title} href={item.url}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <Slide
+          from="top"
+          delay={0}
+          className="w-full hidden md:flex items-center justify-end gap-5"
+        >
+          {items.map((item, idx) => (
+            <Link
+              key={idx}
+              className={
+                (isActive(item.isActive) ? "text-accent" : "") +
+                " hover:text-accent/70 duration-200"
+              }
+              title={item.title}
+              href={item.url}
+            >
+              {item.label}
+            </Link>
+          ))}
         </Slide>
         <button
           title="Menu"

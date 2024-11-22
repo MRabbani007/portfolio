@@ -1,14 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import "highlight.js/styles/github-dark.css";
-// import { getPostByName, getPostsMeta } from "@/app/_lib/blog/posts";
-// import getFormattedDate from "@/app/_lib/blog/getFormattedDate";
-import { getBlogByName } from "@/lib/firebase";
 import Image from "next/image";
 import { IoArrowBack } from "react-icons/io5";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
-import { genDate } from "@/lib/utils";
+import { getPostbySlug } from "@/lib/actions";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const Content = dynamic(() => import("@/components/blog/Content"), {
   ssr: false,
@@ -47,12 +45,13 @@ type Props = {
 // }
 
 export default async function Post({ params: { postId } }: Props) {
-  // const post = await getPostByName(`${postId}.mdx`); //deduped!
-  const post = await getBlogByName(decodeURIComponent(postId));
+  const {
+    status,
+    metadata: meta,
+    rawMDX,
+  } = await getPostbySlug(decodeURIComponent(postId));
 
-  if (!post) notFound();
-
-  const { meta, content } = post;
+  if (status !== "success") notFound();
 
   // const pubDate = getFormattedDate(meta.date);
 
@@ -64,14 +63,6 @@ export default async function Post({ params: { postId } }: Props) {
 
   return (
     <>
-      {/* <h2 className="text-3xl mt-4 mb-0">{meta.title}</h2> */}
-      {/* <p className="mt-0 text-sm">{pubDate}</p> */}
-      {/* <article>{content}</article>
-      <section>
-        <h3>Related:</h3>
-        <div className="flex flex-row gap-4">{tags}</div>
-      </section>
-      */}
       {meta?.banner && (
         <div className="w-full h-[50vh] flex-1">
           <img src={meta.banner} className={"w-full h-full object-cover "} />
@@ -90,13 +81,13 @@ export default async function Post({ params: { postId } }: Props) {
                   height={800}
                   className="size-10 md:size-20"
                 />
-                <span>{meta.author ?? "Mohamad"}</span>
-                <span className="">{` - Published ${genDate(
-                  meta?.publishedAt
+                <span>{"Mohamad"}</span>
+                <span className="">{` - Published ${meta?.publishedAt?.toLocaleDateString(
+                  "en-UK"
                 )}`}</span>
-                <span className="">
-                  {`Last Updated ${genDate(meta?.updatedAt)}`}
-                </span>
+                <span className="">{`Last Updated ${meta?.updatedAt?.toLocaleDateString(
+                  "en-UK"
+                )}`}</span>
               </p>
             </div>
             <p className="flex flex-wrap items-center gap-4 text-sm mt-6">
@@ -111,10 +102,12 @@ export default async function Post({ params: { postId } }: Props) {
         </header>
         <div className="flex-1 prose lg:prose-xl dark:prose-invert prose-invert prose-base prose-zinc p-4">
           <Suspense fallback={<p>Loading...</p>}>
-            <Content rawMDX={content}></Content>
+            <Content rawMDX={rawMDX ?? ""}></Content>
           </Suspense>
         </div>
         {/* <RelatedPosts params={params} /> */}
+        <hr />
+        <RelatedPosts slug={meta?.slug ?? ""} />
         <hr />
         <Link href="/blog" className="flex items-center gap-2 mb-10">
           <IoArrowBack size={30} />

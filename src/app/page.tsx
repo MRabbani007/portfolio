@@ -26,7 +26,6 @@ export default function HomePage() {
             </Link>
           </MagicButton>
         </Slide>
-
         {/* <div className="absolute inset-0 overflow-hidden z-50 ">
           <div className="relative w-full h-full">
             <div className="absolute top-1/2 left-0 shadow-[0_0_100px_5px_rgba(245,245,245,0.5)] w-[5000px] h-0 animate-[spin_2s_linear_infinite] origin-left "></div>
