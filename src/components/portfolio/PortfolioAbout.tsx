@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import Slide from "@/components/ui/Slide";
+import Slide from "@/components/animate/Slide";
 
 const items = [
   {
@@ -23,17 +23,17 @@ export default function PortfolioAbout() {
   return (
     <div
       id="about"
-      className="section-container bg-gradient-to-br from-black via-sky-950/50 to-black relative"
+      className="section-container bg-gradient-to-br from-background dark:from-black dark:via-sky-950/50 dark:to-black relative"
     >
-      <div className="absolute left-0 right-0 top-0 h-[20vh] bg-gradient-to-b from-black to-transparent" />
-      <div className="absolute left-0 right-0 bottom-0 h-[20vh] bg-gradient-to-b to-black from-transparent" />
+      <div className="absolute left-0 right-0 top-0 h-[20vh] bg-gradient-to-b from-background to-transparent" />
+      <div className="absolute left-0 right-0 bottom-0 h-[20vh] bg-gradient-to-b from-transparent to-background" />
       <section className="">
         <Slide
           from="left"
           delay={0}
           className="flex items-center gap-4 mb-4 md:mb-20 md:px-8"
         >
-          <div className="w-[100px] h-[100px] relative overflow-hidden shadow-md shadow-zinc-200 rounded-full">
+          <div className="w-[100px] h-[100px] relative overflow-hidden shadow-md shadow-zinc-950 rounded-full">
             <Image
               width={686}
               height={717}
@@ -50,7 +50,7 @@ export default function PortfolioAbout() {
               key={index}
               from="bottom"
               delay={index * 0.2}
-              className="p-4 shadow-lg shadow-sky-950 bg-zinc-900 rounded-lg"
+              className="p-4 shadow-lg shadow-sky-950 dark:bg-zinc-900 bg-zinc-100 rounded-lg"
             >
               <p className="text-2xl border-b-4 mx-auto w-fit border-accent mb-2">
                 {item.title}

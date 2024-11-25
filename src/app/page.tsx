@@ -1,12 +1,13 @@
 import MagicButton from "@/components/ui/MagicButton";
-import Slide from "@/components/ui/Slide";
+import Slide from "@/components/animate/Slide";
 import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="flex-1 flex flex-col gap-4 p-0">
-      <section className="w-fit mx-auto ">
+    <main className="flex-1 flex flex-col gap-4 pt-20">
+      <section className="w-fit mx-auto relative ">
+        {/* <Curtain /> */}
         <TextGenerateEffect
           words={"Transform concepts into seamless experiences"}
         />

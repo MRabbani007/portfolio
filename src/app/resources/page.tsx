@@ -1,13 +1,15 @@
 import React from "react";
 import { FRAMEWORKS, MEDIA, STYLING } from "../../lib/resources";
 import SectionResources from "../../components/resources/SectionResources";
+import Image from "next/image";
+import Wrapper from "@/components/Wrapper";
 
 export default function ResourcesPage() {
   return (
-    <div className="">
+    <main className="pt-20">
       <header className="bg-zinc-900">
         <div className="w-full mx-auto h-[40vh] px-8 relative">
-          <img
+          <Image
             src="/assets/resources/links.png"
             alt="links"
             className="object-contain h-full ml-auto"
@@ -20,12 +22,11 @@ export default function ResourcesPage() {
           </div>
         </div>
       </header>
-      <main className="p-8">
-        <h1>Links & Resources</h1>
+      <Wrapper className="flex flex-col gap-4">
         <SectionResources title="FrameWorks" resources={FRAMEWORKS} />
         <SectionResources title="Styling" resources={STYLING} />
         <SectionResources title="Media" resources={MEDIA} />
-      </main>
-    </div>
+      </Wrapper>
+    </main>
   );
 }

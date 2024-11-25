@@ -7,7 +7,7 @@ export default async function RelatedPosts({ slug }: { slug: string }) {
   const { data } = await getRelatedPosts(decodeURIComponent(slug));
 
   return (
-    <div>
+    <div className="w-full max-w-[1024px] mx-auto my-6">
       <h2 className="text-2xl my-2">Related Posts</h2>
       <div className=" overflow-x-auto">
         <div className="flex items-stretch gap-4 py-2">
@@ -22,8 +22,8 @@ export default async function RelatedPosts({ slug }: { slug: string }) {
 
 function RelatedPostCard({ blog }: { blog: BlogPost }) {
   return (
-    <div className="shadow-md shadow-zinc-200 rounded-lg overflow-clip shrink-0">
-      <div className="w-[300px] h-[200px] relative">
+    <div className="shadow-md shadow-zinc-200 rounded-lg w-[300px] overflow-clip shrink-0 ">
+      <div className="w-full h-[200px] relative">
         <Image
           src={blog.banner ?? "/post_icon.png"}
           alt="banner"
@@ -31,7 +31,7 @@ function RelatedPostCard({ blog }: { blog: BlogPost }) {
           className="object-cover object-center"
         />
       </div>
-      <div className="p-2 text-ellipsis">{blog.title}</div>
+      <div className="p-2 line-clamp-1">{blog.title}</div>
     </div>
   );
 }

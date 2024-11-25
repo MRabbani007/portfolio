@@ -2,6 +2,7 @@ import React from "react";
 import { BsSignStop } from "react-icons/bs";
 import { IoConstructOutline } from "react-icons/io5";
 import { GoAlert } from "react-icons/go";
+import { Metadata } from "next";
 
 const FRONTEND = [
   "HTML",
@@ -23,9 +24,14 @@ const BACKEND = [
   "PostGre-SQL",
 ];
 
+export const metadata: Metadata = {
+  title: "RoadMap",
+  description: "Roadmap for becoming a webdeveloper",
+};
+
 export default function RoadmapPage() {
   return (
-    <div className="">
+    <main className="pt-20">
       <header className="bg-zinc-900">
         <div className="w-full mx-auto h-[40vh] relative">
           <img
@@ -41,7 +47,7 @@ export default function RoadmapPage() {
           </div>
         </div>
       </header>
-      <main className="p-8">
+      <section>
         <h2>Roadmap</h2>
         <div className="flex flex-col flex-wrap w-full sm:justify-center sm:items-start items-start gap-6">
           <article className="flex-1">
@@ -78,7 +84,7 @@ export default function RoadmapPage() {
             </ol>
           </article>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }

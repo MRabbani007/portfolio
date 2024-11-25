@@ -72,7 +72,7 @@ html {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -80,7 +80,7 @@ html {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
   }
-}
+} */
 
 menu {
   display: flex;
@@ -281,7 +281,7 @@ menu:hover {
     @apply bg-background text-foreground;
   }
   main {
-    @apply flex flex-col items-stretch gap-4 p-4;
+    @apply flex flex-col items-stretch gap-4;
   }
   h1 {
     @apply text-4xl text-yellow-500;
@@ -290,10 +290,10 @@ menu:hover {
     @apply text-2xl text-yellow-500 font-semibold mb-4 sm:mb-8 uppercase;
   }
   h3 {
-    @apply text-4xl;
+    @apply text-accent text-2xl uppercase tracking-wide;
   }
   h4 {
-    @apply text-yellow-500 sm:text-xl font-bold;
+    @apply text-accent sm:text-xl font-bold;
   }
   section {
     @apply flex-1 flex flex-col justify-center px-4 md:px-10 lg:mx-10;

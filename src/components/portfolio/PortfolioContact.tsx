@@ -1,7 +1,19 @@
 import MagicButton from "@/components/ui/MagicButton";
-import Slide from "@/components/ui/Slide";
+import Slide from "@/components/animate/Slide";
 import Image from "next/image";
 import React from "react";
+import Reveal from "../animate/Reveal";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
+import { Label } from "../ui/label";
 
 export default function PortfolioContact() {
   return (
@@ -21,47 +33,53 @@ export default function PortfolioContact() {
               className="object-cover"
             />
           </Slide>
-          <form
-            method="POST"
-            action="https://getform.io/f/483d805c-1fff-47c8-8a66-a6e7375b4d11"
-            className="flex flex-1 flex-col gap-4 max-w-[600px]"
-          >
-            <Slide delay={0}>
-              <p className="py-2">
+          <Card>
+            <CardHeader>
+              <CardTitle>Contact Me</CardTitle>
+              <CardDescription>
                 Submit the form below or send me an email -{" "}
                 <a href="mailto: mrabbani@outlook.com">mrabbani@outlook.com</a>
-              </p>
-            </Slide>
-            <Slide delay={0.2} className="flex-1">
-              <input
-                className="bg-zinc-200 p-2 rounded-md w-full"
-                type="text"
-                placeholder="Name"
-                name="name"
-              />
-            </Slide>
-            <Slide delay={0.4}>
-              <input
-                className="p-2 bg-zinc-200 rounded-md w-full"
-                type="email"
-                placeholder="Email"
-                name="email"
-              />
-            </Slide>
-            <Slide delay={0.6}>
-              <textarea
-                className="bg-zinc-200 p-2 rounded-md w-full"
-                name="message"
-                rows={10}
-                placeholder="Message"
-              ></textarea>
-            </Slide>
-            <Slide delay={0.6}>
-              <MagicButton title="Let's Collaborate">
-                <button>Let&apos;s Collaborate</button>
-              </MagicButton>
-            </Slide>
-          </form>
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form
+                method="POST"
+                action="https://getform.io/f/483d805c-1fff-47c8-8a66-a6e7375b4d11"
+                className="flex flex-1 flex-col gap-4 max-w-[600px]"
+              >
+                <Reveal delay={0.2} className="flex-1">
+                  <Label htmlFor="name">Name</Label>
+                  <Input type="text" placeholder="Name" id="name" name="name" />
+                </Reveal>
+                <Reveal delay={0.3}>
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    type="email"
+                    placeholder="Email"
+                    id="email"
+                    name="email"
+                  />
+                </Reveal>
+                <Reveal delay={0.4}>
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
+                    className="bg-transparent p-2 rounded-md w-full"
+                    id="message"
+                    name="message"
+                    rows={6}
+                    placeholder="Message"
+                  />
+                </Reveal>
+              </form>
+            </CardContent>
+            <CardFooter>
+              <Reveal delay={0.5} className="mx-auto">
+                <MagicButton title="Let's Collaborate">
+                  <button type="submit">Let&apos;s Collaborate</button>
+                </MagicButton>
+              </Reveal>
+            </CardFooter>
+          </Card>
         </div>
       </section>
     </div>

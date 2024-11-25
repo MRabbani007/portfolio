@@ -17,12 +17,12 @@ export default async function FeaturedPosts() {
   const { data } = await getBlogPosts({ page: 1, featured: true });
   return (
     <div>
-      <h2 className="my-0 mx-4">Featured Posts</h2>
+      <h2 className="m-0">Featured Posts</h2>
       <Carousel className="w-full group">
         <CarouselContent>
           {data.map((post, idx) => (
             <CarouselItem key={idx} className="">
-              <div className="flex items-stretch m-4 rounded-lg overflow-clip shadow-md shadow-zinc-800">
+              <div className="flex items-stretch my-4 rounded-lg overflow-clip shadow-md shadow-zinc-800">
                 <div className="h-full w-auto min-w-[300px] min-h-[200px] relative">
                   <Image
                     src={post.banner ?? "/blog.png"}
@@ -39,7 +39,7 @@ export default async function FeaturedPosts() {
                         {post.publishedAt?.toISOString().substring(0, 10)}
                       </span>
                     </p>
-                    <p className="py-1 px-2 bg-zinc-300 rounded-full text-xs font-medium">
+                    <p className="py-1 px-2 bg-zinc-200 dark:bg-zinc-700 rounded-full text-xs font-medium">
                       {post.category}
                     </p>
                   </div>

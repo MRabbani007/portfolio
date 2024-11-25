@@ -13,7 +13,7 @@ export default function Footer() {
               key={idx}
               href={item.url}
               target="_blank"
-              className="sm:p-4 shrink rounded-full bg-zinc-400 dark:bg-zinc-800 hover:scale-105 transition ease-in duration-200"
+              className="p-2 sm:p-4 shrink rounded-full bg-zinc-200 dark:bg-zinc-800 hover:scale-105 transition ease-in duration-200"
             >
               {item.icon}
             </Link>

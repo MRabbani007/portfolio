@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import { twMerge } from "tailwind-merge";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,15 +27,19 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1.0"
         ></meta>
       </head>
-      <body
-        className={twMerge(
-          inter.className,
-          "min-h-screen flex flex-col justify-center antialiased"
-        )}
-      >
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={twMerge(inter.className, " antialiased")}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="min-h-screen flex flex-col relative">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

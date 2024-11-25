@@ -1,10 +1,5 @@
-"use client";
-
-import Slide from "@/components/ui/Slide";
 import Image, { StaticImageData } from "next/image";
-import { useState } from "react";
-import { BsChevronRight } from "react-icons/bs";
-import Reveal from "../ui/Reveal";
+import Reveal from "../animate/Reveal";
 
 type Props = {
   index: number;
@@ -21,32 +16,29 @@ type Props = {
   };
 };
 
-const ExperienceBlock = ({ item, index }: Props) => {
-  const [expand, setExpand] = useState(true);
-
+export default function ExperienceBlock({ item, index }: Props) {
   return (
-    <Reveal delay={0} className="min-h-screen pt-4  ">
+    <Reveal>
       <article
         key={index}
-        className="border-2 border-yellow-400/25 rounded-xl p-4 bg-white/10"
+        className="rounded-xl p-4 bg-zinc-100 dark:bg-zinc-900"
       >
-        <header className="pb-4 px-4 relative" onClick={() => setExpand(true)}>
-          <h3 className="font-semibold">{item?.position}</h3>
+        <header className="pb-4 px-4 relative">
+          <h3 className="">{item?.position}</h3>
           <p className="text-lg font-extralight">
             <strong>{item?.company}</strong>
-            <i className="text-base text-zinc-400">{" (" + item?.time + ")"}</i>
+            <i className="text-base text-zinc-500">{" (" + item?.time + ")"}</i>
           </p>
         </header>
-        <div className="flex flex-col md:flex-row flex-wrap items-stretch gap-4 sm:px-4 duration-300 ">
+        <div className="flex flex-col lg:flex-row flex-wrap justify-center items-center lg:items-start gap-4 sm:px-4 duration-300 ">
           {/* Image */}
-          <div className="max-h-[400px] sm:max-w-[40%] relative group overflow-hidden flex-1 rounded-xl">
+          <div className="h-[400px] w-[350px] sm:w-[400px] lg:w-[500px] relative group overflow-hidden rounded-xl">
             <Image
               src={item.image}
               alt={item.project}
-              width={1439}
-              height={809}
+              fill
               quality={100}
-              className="w-full h-full object-cover"
+              className="object-center object-cover"
             />
             {item.project !== "" && (
               <p className="text-pretty text-sm md:text-xl absolute bottom-0 left-0 w-full p-4 text-white bg-zinc-700/60 duration-300 invisible group-hover:visible translate-y-20  group-hover:translate-y-0">
@@ -54,11 +46,11 @@ const ExperienceBlock = ({ item, index }: Props) => {
               </p>
             )}
           </div>
-          <div className="flex flex-col flex-1 gap-4 text-white">
+          <div className="flex flex-col flex-1 gap-4 text-justify">
             {item.responsibilities.map((resp, index) => (
               <div
                 key={"expitem-" + index}
-                className="font-extralight text-lg duration-200 bg-zinc-900 px-4 py-2"
+                className="font-extralight duration-200"
               >
                 {resp}
               </div>
@@ -68,6 +60,4 @@ const ExperienceBlock = ({ item, index }: Props) => {
       </article>
     </Reveal>
   );
-};
-
-export default ExperienceBlock;
+}

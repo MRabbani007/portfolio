@@ -5,7 +5,7 @@ import Image from "next/image";
 import { IoArrowBack } from "react-icons/io5";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
-import { getPostbySlug } from "@/lib/actions";
+import { getAllBlogPosts, getBlogPosts, getPostbySlug } from "@/lib/actions";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const Content = dynamic(() => import("@/components/blog/Content"), {
@@ -20,29 +20,30 @@ type Props = {
   };
 };
 
-// export async function generateStaticParams() {
-//   const posts = await getPostsMeta(); //deduped!
+export async function generateStaticParams() {
+  const { data: posts } = await getAllBlogPosts({}); //deduped!
 
-//   if (!posts) return [];
+  if (!posts) return [];
 
-//   return posts.map((post) => ({
-//     postId: post.id,
-//   }));
-// }
+  return posts.map((post) => ({
+    postId: post.id,
+  }));
+}
 
-// export async function generateMetadata({ params: { postId } }: Props) {
-//   const post = await getPostByName(`${postId}.mdx`); //deduped!
+export async function generateMetadata({ params: { postId } }: Props) {
+  const { metadata } = await getPostbySlug(decodeURIComponent(postId)); //deduped!
 
-//   if (!post) {
-//     return {
-//       title: "Post Not Found",
-//     };
-//   }
+  if (!metadata) {
+    return {
+      title: "Post Not Found",
+    };
+  }
 
-//   return {
-//     title: post.meta.title,
-//   };
-// }
+  return {
+    title: metadata.title,
+    Content: metadata.summary,
+  };
+}
 
 export default async function Post({ params: { postId } }: Props) {
   const {
@@ -64,24 +65,29 @@ export default async function Post({ params: { postId } }: Props) {
   return (
     <>
       {meta?.banner && (
-        <div className="w-full h-[50vh] flex-1">
-          <img src={meta.banner} className={"w-full h-full object-cover "} />
+        <div className="w-full h-[50vh] relative">
+          <Image
+            src={meta.banner}
+            alt="Banner"
+            fill
+            className="object-cover object-center"
+          />
         </div>
       )}
       <main className="">
-        <header className="flex items-stretch gap-4 my-4 p-4">
+        <header className="flex items-stretch gap-4 my-4 p-4 w-full max-w-[1024px] mx-auto">
           <div className="flex flex-col justify-start">
             <div className="flex-1 flex flex-col items-start">
               <h1 className="font-extrabold text-4xl mb-4">{meta?.title}</h1>
               <p className="flex items-center gap-2 flex-wrap">
                 <Image
-                  src={"/assets/blog/author.png"}
+                  src={meta?.author.image ?? "/assets/blog/author.png"}
                   alt="profile.png"
                   width={800}
                   height={800}
                   className="size-10 md:size-20"
                 />
-                <span>{"Mohamad"}</span>
+                <span>{meta?.author.firstName}</span>
                 <span className="">{` - Published ${meta?.publishedAt?.toLocaleDateString(
                   "en-UK"
                 )}`}</span>
@@ -100,19 +106,21 @@ export default async function Post({ params: { postId } }: Props) {
             </p>
           </div>
         </header>
-        <div className="flex-1 prose lg:prose-xl dark:prose-invert prose-invert prose-base prose-zinc p-4">
+        <div className="flex-1 prose lg:prose-xl dark:prose-invert prose-invert prose-base prose-zinc p-4 max-w-[1024px] mx-auto">
           <Suspense fallback={<p>Loading...</p>}>
             <Content rawMDX={rawMDX ?? ""}></Content>
           </Suspense>
         </div>
         {/* <RelatedPosts params={params} /> */}
-        <hr />
+        {/* <hr /> */}
         <RelatedPosts slug={meta?.slug ?? ""} />
-        <hr />
-        <Link href="/blog" className="flex items-center gap-2 mb-10">
-          <IoArrowBack size={30} />
-          <span>Go back</span>
-        </Link>
+        {/* <hr /> */}
+        <div className="w-full max-w-[1024px] mx-auto">
+          <Link href="/blog" className="flex items-center gap-2 mb-10">
+            <IoArrowBack size={30} />
+            <span>Go back</span>
+          </Link>
+        </div>
       </main>
     </>
   );

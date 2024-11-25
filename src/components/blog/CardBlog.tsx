@@ -4,7 +4,13 @@ import Link from "next/link";
 import { BlogPost } from "@prisma/client";
 
 interface Props {
-  blog: BlogPost;
+  blog: {
+    author: {
+      firstName: string | null;
+      lastName: string | null;
+      image: string | null;
+    };
+  } & BlogPost;
 }
 
 export default function CardBlog({ blog }: Props) {
@@ -24,18 +30,20 @@ export default function CardBlog({ blog }: Props) {
             <Link href={`/blog/posts/${blog?.slug}`}>{blog?.title}</Link>
           </p>
           <p className="font-light text-sm flex items-center gap-2">
-            <span>Mohamad - </span>
+            <span className="first-letter:uppercase">
+              {blog.author.firstName} -{" "}
+            </span>
             <span>{`Published ${blog.publishedAt
               ?.toISOString()
               .substring(0, 10)}`}</span>
           </p>
           <p className="line-clamp-2 my-2 text-sm">{blog.summary}</p>
         </div>
-        <div className="flex items-center gap-2 flex-wrap text-sm text-zinc-200">
+        <div className="flex items-center gap-2 flex-wrap text-sm">
           {blog?.tags.map((tag) => (
             <span
               key={tag}
-              className="py-2 px-4 rounded-full bg-zinc-800"
+              className="py-2 px-4 rounded-full bg-zinc-200 dark:bg-zinc-700"
             >{`#${tag}`}</span>
           ))}
         </div>

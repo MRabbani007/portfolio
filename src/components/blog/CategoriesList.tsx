@@ -26,8 +26,10 @@ export default function CategoriesList() {
             key={idx}
             onClick={() => handleSelect(item.value)}
             className={
-              (selected === item.value ? "bg-sky-500" : "bg-zinc-400") +
-              " py-1 px-2  rounded-full font-medium text-zinc-800 text-nowrap duration-200"
+              (selected === item.value
+                ? "bg-sky-500"
+                : "bg-zinc-200 dark:bg-zinc-800") +
+              " py-1 px-4 rounded-full font-medium text-nowrap duration-200"
             }
           >
             {item.label}

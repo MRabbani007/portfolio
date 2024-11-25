@@ -7,10 +7,15 @@ type Props = {
   children: ReactNode;
   delay?: number;
   className?: string;
-  // from?: "right" | "left" | "top" | "bottom";
+  scale?: number;
 };
 
-export default function Reveal({ children, className, delay = 0 }: Props) {
+export default function Reveal({
+  children,
+  className,
+  delay = 0,
+  scale = 0,
+}: Props) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
@@ -28,12 +33,12 @@ export default function Reveal({ children, className, delay = 0 }: Props) {
     <motion.div
       ref={ref}
       variants={{
-        hidden: { opacity: 0, y: 0 },
-        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 1, y: 0, scale: scale },
+        visible: { opacity: 1, y: 0, scale: 1 },
       }}
       initial="hidden"
       animate={mainControls}
-      transition={{ duration: 1.5, delay: delay ?? 0 }}
+      transition={{ duration: 0.5, delay: delay ?? 0 }}
       className={className}
     >
       {children}

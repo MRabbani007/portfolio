@@ -23,7 +23,7 @@ export default async function BlogPage({
 
   return (
     <div className="">
-      <header className="">
+      <header className="pt-20">
         <div className="h-[40vh] w-full mx-auto relative">
           {/* <div className="text-zinc-50 absolute left-0 bottom-0 px-8 py-4 z-10">
             <h1 className="text-2xl">Blog</h1>
@@ -48,7 +48,10 @@ export default async function BlogPage({
       <main className="p-4 md:p-6 lg:p-8 max-w-[1024px] mx-auto">
         <div>
           <h1>Blog</h1>
-          <p>Web Development topics</p>
+          <p>
+            Welcome to my corner of the web, where I share insights, tips, and
+            tutorials on all things web development
+          </p>
         </div>
         <FeaturedPosts />
         <CategoriesList />
@@ -57,7 +60,7 @@ export default async function BlogPage({
           <Link
             href={"/blog"}
             className={
-              (category ? "" : "bg-zinc-400 dark:bg-zinc-800") +
+              (category || search ? "" : "bg-zinc-400 dark:bg-zinc-800") +
               " py-2 px-4  w-fit hover:bg-zinc-300 duration-200"
             }
           >
@@ -65,7 +68,12 @@ export default async function BlogPage({
           </Link>
           {category && (
             <p className="py-2 px-4 bg-zinc-400 dark:bg-zinc-800 w-fit">
-              {category ? `Category: ${category}` : "Latest Posts"}
+              {`Category: ${category}`}
+            </p>
+          )}
+          {search && (
+            <p className="py-2 px-4 bg-zinc-400 dark:bg-zinc-800 w-fit">
+              {`Search: ${search}`}
             </p>
           )}
         </div>

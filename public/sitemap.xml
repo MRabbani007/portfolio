@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://your-domain.com/resources</loc><lastmod>2024-11-19T23:57:29.992Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/roadmap</loc><lastmod>2024-11-19T23:57:29.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/projects</loc><lastmod>2024-11-19T23:57:29.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com</loc><lastmod>2024-11-19T23:57:29.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/portfolio</loc><lastmod>2024-11-19T23:57:29.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/blog</loc><lastmod>2024-11-19T23:57:29.993Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/icon.ico</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/resources</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/1/TodoApp</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/2/LanguageApp</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/3/onlineStore</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/4/expenseManager</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/5/Movies App</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/6/travelApp</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/portfolio</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/roadmap</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/2a094053-2f48-49b4-a3f2-599c13d9bea2</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/381af8a5-f451-455e-9eee-1c33beb687cc</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/6040a13b-f1f8-43da-b1cf-10bc702e7e35</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/7e17cdf5-ce47-4afd-8e1a-a258be8f93a0</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/4c8f971c-f03b-4cbd-9f0f-d2470fd0b2ed</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/4ffcb9dd-4775-45e4-9834-d23d33d0888b</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/e1d0c9ca-56d3-4ccc-98bd-8c42ae3d5b39</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/2f9a4ca3-4ebb-4c51-8b60-4da72516eb27</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/dd03096e-4c41-46d5-b677-117d37d7b534</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/94ac1a49-9dfd-4475-b7fe-48ee5e5ad055</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/dd5f9f16-479b-4367-9c72-f83977e860a5</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/blog/posts/6ae0f9a5-c4b4-4ae0-9bc2-4d78b019ffdb</loc><lastmod>2024-11-25T03:46:48.848Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

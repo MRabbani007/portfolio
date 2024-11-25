@@ -1,16 +1,21 @@
-import Slide from "@/components/ui/Slide";
+import Slide from "@/components/animate/Slide";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 import MagicButton from "../ui/MagicButton";
-import { IoStar } from "react-icons/io5";
 
 export default function PortfolioHome() {
   const words = "Transform concepts into seamless experiences";
   return (
     <div
       id="home"
-      className="min-h-[calc(100vh-5rem-1px)] flex items-center justify-center relative z-0 overflow-x-clip"
+      className="pt-20 min-h-screen flex items-center justify-center relative z-0 overflow-x-clip"
     >
+      {/* <Image
+        src={"/pngegg.png"}
+        alt="pattern"
+        fill
+        className="object-cover object-center"
+      /> */}
       <section className="max-w-[1024px] mx-auto">
         <Slide from="bottom">
           <p className="text-6xl font-extrabold uppercase">
@@ -55,13 +60,12 @@ export default function PortfolioHome() {
       <Ring size={820} />
       <Ring size={1020} />
       <Ring size={1220} /> */}
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+      {/* <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div className={`size-[620px] hero-ring`} />
         <div className={`size-[820px] hero-ring`} />
         <div className={`size-[1020px] hero-ring`} />
         <div className={`size-[1220px] hero-ring`} />
         <div className={`size-[1420px] hero-ring`} />
-
         <HeroOrbit size={600} rotation={20}>
           <IoStar
             size={8}
@@ -83,7 +87,8 @@ export default function PortfolioHome() {
         <HeroOrbit size={880} rotation={120}>
           <IoStar size={12} className="text-white/90" />
         </HeroOrbit>
-      </div>
+      </div> */}
+      {/* <div className="absolute inset-0 border-2 border-red-500"><div></div></div> */}
     </div>
   );
 }
