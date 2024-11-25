@@ -22,8 +22,8 @@ export default async function FeaturedPosts() {
         <CarouselContent>
           {data.map((post, idx) => (
             <CarouselItem key={idx} className="">
-              <div className="flex items-stretch my-4 rounded-lg overflow-clip shadow-md shadow-zinc-800">
-                <div className="h-full w-auto min-w-[300px] min-h-[200px] relative">
+              <div className="flex flex-col md:flex-row items-center md:items-stretch m-4 rounded-lg overflow-clip shadow-[0_0_10px_5px] shadow-zinc-600">
+                <div className="h-full w-full min-w-[300px] md:max-w-[400px] min-h-[200px] md:min-h-[250px] relative">
                   <Image
                     src={post.banner ?? "/blog.png"}
                     alt="banner"
@@ -32,10 +32,10 @@ export default async function FeaturedPosts() {
                   />
                 </div>
                 <div className="flex flex-col gap-2 py-2 flex-1 px-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between flex-wrap gap-2">
                     <p className="text-xs font-light flex items-center">
                       <span>Mohamad, </span>
-                      <span>
+                      <span className="text-nowrap">
                         {post.publishedAt?.toISOString().substring(0, 10)}
                       </span>
                     </p>
@@ -44,8 +44,12 @@ export default async function FeaturedPosts() {
                     </p>
                   </div>
                   <div className="flex-1 flex flex-col">
-                    <p className="text-3xl font-semibold">{post.title}</p>
-                    <p className="line-clamp-2">{post.summary}</p>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-semibold">
+                      {post.title}
+                    </p>
+                    <p className="line-clamp-2 text-sm md:text-base">
+                      {post.summary}
+                    </p>
                   </div>
                   <div className="flex items-center gap-4 mt-auto">
                     <p className="flex items-center text-zinc-500 gap-2">

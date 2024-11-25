@@ -50,8 +50,12 @@ export default function Navbar() {
     pathname.split("/").includes(page);
 
   return (
-    <nav className={"absolute top-0 left-0 right-0 z-50 text-xl"}>
-      <div className="flex items-center justify-between px-4 sm:px-10 mx-auto h-20">
+    <nav
+      className={
+        "absolute top-0 left-0 right-0 z-50 text-xl bg-gradient-to-b from-background to-background/50"
+      }
+    >
+      <div className="flex items-center px-4 sm:px-10 mx-auto h-20">
         {/* Logo */}
         <Link title="Home Page" href="/" className="font-extrabold text-4xl">
           MR
@@ -59,7 +63,7 @@ export default function Navbar() {
         <Slide
           from="top"
           delay={0}
-          className="w-full hidden md:flex items-center justify-end gap-5 mr-4"
+          className="w-full hidden md:flex items-center justify-end gap-5 mr-4 ml-auto"
         >
           {items.map((item, idx) => (
             <Link
@@ -75,8 +79,10 @@ export default function Navbar() {
             </Link>
           ))}
         </Slide>
-        <ModeToggle />
-        <MobileMenu />
+        <div className="ml-auto flex items-center gap-4">
+          <ModeToggle />
+          <MobileMenu />
+        </div>
       </div>
       {isPortfolio && <PortfolioSideBar />}
     </nav>

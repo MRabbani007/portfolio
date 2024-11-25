@@ -21,7 +21,7 @@ export default function MobileMenu() {
     <div className="">
       <button
         title="Menu"
-        className="md:hidden"
+        className="md:hidden py-2"
         onClick={() => setShowMenu(true)}
       >
         <AiOutlineMenu size={32} />

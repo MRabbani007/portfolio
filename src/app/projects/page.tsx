@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="pt-20">
+    <main className="">
       <header>
         <div className="w-full h-[40vh] relative ">
           <Image

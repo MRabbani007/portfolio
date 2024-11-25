@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { getAllBlogPosts, getBlogPosts, getPostbySlug } from "@/lib/actions";
 import RelatedPosts from "@/components/blog/RelatedPosts";
+import { FaChevronLeft } from "react-icons/fa6";
 
 const Content = dynamic(() => import("@/components/blog/Content"), {
   ssr: false,
@@ -74,9 +75,9 @@ export default async function Post({ params: { postId } }: Props) {
           />
         </div>
       )}
-      <main className="">
-        <header className="flex items-stretch gap-4 my-4 p-4 w-full max-w-[1024px] mx-auto">
-          <div className="flex flex-col justify-start">
+      <main className="p-4">
+        <header className="flex items-stretch gap-4 my-4 p-4">
+          <div className="flex flex-col justify-start flex-1 max-w-[1024px] mx-auto">
             <div className="flex-1 flex flex-col items-start">
               <h1 className="font-extrabold text-4xl mb-4">{meta?.title}</h1>
               <p className="flex items-center gap-2 flex-wrap">
@@ -106,18 +107,19 @@ export default async function Post({ params: { postId } }: Props) {
             </p>
           </div>
         </header>
-        <div className="flex-1 prose lg:prose-xl dark:prose-invert prose-invert prose-base prose-zinc p-4 max-w-[1024px] mx-auto">
-          <Suspense fallback={<p>Loading...</p>}>
-            <Content rawMDX={rawMDX ?? ""}></Content>
-          </Suspense>
+        <div className=" overflow-x-auto">
+          <div className="flex-1 prose lg:prose-xl dark:prose-invert prose-invert prose-base prose-zinc max-w-[1024px] mx-auto">
+            <Suspense fallback={<p>Loading...</p>}>
+              <Content rawMDX={rawMDX ?? ""}></Content>
+            </Suspense>
+          </div>
         </div>
-        {/* <RelatedPosts params={params} /> */}
         {/* <hr /> */}
         <RelatedPosts slug={meta?.slug ?? ""} />
         {/* <hr /> */}
-        <div className="w-full max-w-[1024px] mx-auto">
-          <Link href="/blog" className="flex items-center gap-2 mb-10">
-            <IoArrowBack size={30} />
+        <div className="max-w-[1024px] mx-auto flex items-start justify-start w-full">
+          <Link href="/blog" className="flex items-center gap-2 my-10">
+            <FaChevronLeft size={20} />
             <span>Go back</span>
           </Link>
         </div>
