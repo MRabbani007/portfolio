@@ -29,7 +29,7 @@ export default function PortfolioSideBar() {
         ref={ref}
         className={
           (true ? "" : "") +
-          "  hidden md:flex flex-row items-start justify-start gap-5 py-2 px-0 duration-200 rotate-90 origin-top-left text-base font-extralight"
+          "  hidden md:flex flex-row items-start justify-start py-2 px-0 duration-200 rotate-90 origin-top-left text-base font-extralight"
         }
       >
         {items?.map((item, index) => (
@@ -37,7 +37,7 @@ export default function PortfolioSideBar() {
             key={index}
             title={item.label}
             href={item.url}
-            className="hover:text-accent duration-200"
+            className="hover:text-accent bg-sky-900 hover:bg-sky-800 hover:-translate-y-4 px-4 pt-2 pb-6 duration-200 first:rounded-l-md last:rounded-r-md hover:rounded-t-md"
           >
             {item.label}
           </Link>
