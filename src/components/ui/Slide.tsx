@@ -25,9 +25,9 @@ export default function Slide({
     if (isInView) {
       mainControls.start("visible");
     }
-    if (!isInView) {
-      mainControls.start("hidden");
-    }
+    // if (!isInView) {
+    //   mainControls.start("hidden");
+    // }
   }, [isInView]);
 
   const offsetY = from === "bottom" ? 80 : from === "top" ? -10 : 0;

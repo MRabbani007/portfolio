@@ -5,6 +5,11 @@ import { SKILLS_SOFT } from "@/lib/skills";
 import Image from "next/image";
 import Slide from "@/components/ui/Slide";
 import { IoBarChartSharp } from "react-icons/io5";
+<<<<<<< Updated upstream:src/app/_components/Portfolio/PortfolioExperience.tsx
+=======
+import Reveal from "../animate/Reveal";
+import Wrapper from "../Wrapper";
+>>>>>>> Stashed changes:src/components/portfolio/PortfolioExperience.tsx
 
 const items = [
   { label: "9+ years", bgColor: "bg-blue-950" },
@@ -34,6 +39,7 @@ const items2 = [
 
 export default function PortfolioExperience() {
   return (
+<<<<<<< Updated upstream:src/app/_components/Portfolio/PortfolioExperience.tsx
     <div id="experience" className="section-container pt-12">
       <section className="px-8">
         <article className="min-h-screen p-8">
@@ -87,6 +93,62 @@ export default function PortfolioExperience() {
           </div>
         </article>
         <div className="flex flex-col gap-4">
+=======
+    <div id="experience" className="mt-20">
+      <section className="items-stretch">
+        <div className="bg-gradient-to-br from-sky-900 to-sky-950 ia-zinc-900/60">
+          <Wrapper className="">
+            <article className="min-h-screen flex flex-col justify-center ">
+              <Slide from="left">
+                <h2 className="flex items-center gap-4">
+                  <IoBarChartSharp size={50} />
+                  <span>Experience</span>
+                </h2>
+              </Slide>
+              <div className="flex flex-col md:flex-row flex-wrap items-center gap-4">
+                <div className="flex items-center justify-center gap-4 flex-wrap flex-1 mx-auto">
+                  {SKILLS_SOFT.map((item, idx) => (
+                    <Reveal
+                      key={idx}
+                      delay={0.2 * idx}
+                      className="bg-zinc-200 dark:bg-zinc-600 hover:scale-110 dark:hover:bg-zinc-900 hover:bg-zinc-600 p-2 rounded-md duration-200"
+                    >
+                      <Image
+                        src={"/assets/skills/" + item.image}
+                        alt={item.name}
+                        width={80}
+                        height={80}
+                        title={item.name}
+                      />
+                    </Reveal>
+                  ))}
+                </div>
+                <div className="text-center flex flex-col gap-4 flex-1 mx-auto">
+                  {items.map((item, idx) => (
+                    <Reveal key={idx} delay={0.2 * idx}>
+                      <p className={"p-4 rounded-xl uppercase " + item.bgColor}>
+                        {item.label}
+                      </p>
+                    </Reveal>
+                  ))}
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-4 flex-1 mx-auto">
+                  {items2.map((item, idx) => (
+                    <Reveal
+                      key={idx}
+                      delay={0.2 * idx}
+                      className="min-w-fit p-4 rounded-xl uppercase w-fit bg-zinc-200 dark:bg-zinc-700"
+                    >
+                      {item.label}
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            </article>
+          </Wrapper>
+        </div>
+        <div className="flex flex-col gap-20 mt-20">
+>>>>>>> Stashed changes:src/components/portfolio/PortfolioExperience.tsx
           {EXPERIENCE.map((item, index) => (
             <ExperienceBlock item={item} index={index} key={index} />
           ))}

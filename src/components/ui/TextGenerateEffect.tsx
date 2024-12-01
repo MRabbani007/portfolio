@@ -56,7 +56,11 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-bold", className)}>
       <div className="mt-4">
+<<<<<<< Updated upstream
         <div className=" dark:text-white text-black text-6xl uppercase leading-snug tracking-wide max-w-[1000px]">
+=======
+        <div className="text-2xl md:text-3xl lg:text-5xl uppercase leading-snug tracking-wide max-w-[1000px] text-white">
+>>>>>>> Stashed changes
           {renderWords()}
         </div>
       </div>

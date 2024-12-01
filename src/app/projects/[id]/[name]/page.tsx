@@ -32,6 +32,7 @@ export default function ProjectPage({ params }: URLProps) {
     PROJECTS.find((item) => item.name === params?.name) || defaultProject;
 
   return (
+<<<<<<< Updated upstream
     <div>
       <header className="bg-gradient-to-br from-zinc-900 to-zinc-700">
         <div className="w-full max-w-[1000px] mx-auto h-[40vh] relative">
@@ -48,9 +49,45 @@ export default function ProjectPage({ params }: URLProps) {
             <div>
               <div className="text-accent text-xl uppercase tracking-wide m-0 p-0">
                 About
+=======
+    <main>
+      <header className="h-[40vh] rounded-br-[100px] bg-gradient-to-br from-sky-950 to-sky-900 via-sky-900/90">
+        <Wrapper className="flex flex-col items-stretch justify-end h-full py-4 ">
+          <h1 className=" text-white">{project?.title}</h1>
+          <p className="text-white/80">{project?.subtitle}</p>
+        </Wrapper>
+      </header>
+      <section>
+        <Wrapper>
+          <div className="flex flex-col md:flex-row flex-wrap flex-1 justify-between items-start gap-4">
+            <div className="flex-1 flex flex-col gap-4">
+              {/* About */}
+              <div>
+                <h2 className="mb-0">About</h2>
+                <p>{project?.about}</p>
+              </div>
+              {/* Features */}
+              <div>
+                <h2 className="mb-0">Features</h2>
+                <ul>
+                  {project?.features.map((item, index) => {
+                    return <li key={index}>{item}</li>;
+                  })}
+                </ul>
+              </div>
+              {/* Features */}
+              <div>
+                <h2 className="mb-0">Build</h2>
+                <ul>
+                  {project?.build.map((item, index) => {
+                    return <li key={index}>{item}</li>;
+                  })}
+                </ul>
+>>>>>>> Stashed changes
               </div>
               <p>{project?.about}</p>
             </div>
+<<<<<<< Updated upstream
             {/* Features */}
             <div>
               <div className="text-accent text-xl uppercase tracking-wide m-0">
@@ -72,6 +109,35 @@ export default function ProjectPage({ params }: URLProps) {
                   return <li key={index}>{item}</li>;
                 })}
               </ul>
+=======
+            {/* Technologies */}
+            <Technologies technologies={project?.technologies} />
+          </div>
+          {/* Preview */}
+          <div className="mt-4">
+            <h2 className="mb-0">Preview</h2>
+            <div className="flex flex-wrap items-center justify-center gap-4 py-4">
+              <Carousel className="w-full group ">
+                <CarouselContent className="">
+                  {project?.images.map((image, index) => {
+                    return (
+                      <CarouselItem key={index}>
+                        <div className="relative h-[300px] w-[330px] sm:w-[600px] md:w-[700px] lg:w-[1000px] md:h-[500px] lg:h-[600px] mx-auto">
+                          <Image
+                            src={"/assets/projects/" + image}
+                            alt={project.imageNames[index]}
+                            fill
+                            className="object-contain object-center"
+                          />
+                        </div>
+                      </CarouselItem>
+                    );
+                  })}
+                </CarouselContent>
+                <CarouselPrevious className="left-2 opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300" />
+                <CarouselNext className="right-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-20" />
+              </Carousel>
+>>>>>>> Stashed changes
             </div>
           </div>
           {/* Technologies */}
