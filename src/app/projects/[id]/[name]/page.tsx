@@ -64,13 +64,11 @@ export default function ProjectPage({ params }: Props) {
 
   return (
     <main>
-      <header className="bg-gradient-to-b from-transparent to-transparent via-sky-900/30 dark:from-zinc-900 dark:to-zinc-700">
-        <div className="w-full max-w-[1024px] mx-auto h-[40vh] relative">
-          <div className="absolute left-0 bottom-0 py-4 px-4 lg:px-0">
-            <p className="text-2xl">{project?.title}</p>
-            <p>{project?.subtitle}</p>
-          </div>
-        </div>
+      <header className="h-[40vh] rounded-br-[100px] bg-gradient-to-br from-sky-950 to-sky-900 via-sky-900/90 dark:from-zinc-950 dark:to-zinc-900">
+        <Wrapper className="flex flex-col items-stretch justify-end h-full py-4 ">
+          <h1 className=" text-white">{project?.title}</h1>
+          <p className="text-white/80">{project?.subtitle}</p>
+        </Wrapper>
       </header>
       <section>
         <Wrapper>
@@ -78,12 +76,12 @@ export default function ProjectPage({ params }: Props) {
             <div className="flex-1 flex flex-col gap-4">
               {/* About */}
               <div>
-                <h3 className="">About</h3>
+                <h2 className="mb-0">About</h2>
                 <p>{project?.about}</p>
               </div>
               {/* Features */}
               <div>
-                <h3 className="">Features</h3>
+                <h2 className="mb-0">Features</h2>
                 <ul>
                   {project?.features.map((item, index) => {
                     return <li key={index}>{item}</li>;
@@ -92,7 +90,7 @@ export default function ProjectPage({ params }: Props) {
               </div>
               {/* Features */}
               <div>
-                <h3 className="">Build</h3>
+                <h2 className="mb-0">Build</h2>
                 <ul>
                   {project?.build.map((item, index) => {
                     return <li key={index}>{item}</li>;
@@ -105,7 +103,7 @@ export default function ProjectPage({ params }: Props) {
           </div>
           {/* Preview */}
           <div className="mt-4">
-            <h3 className="">Preview</h3>
+            <h2 className="mb-0">Preview</h2>
             <div className="flex flex-wrap items-center justify-center gap-4 py-4">
               <Carousel className="w-full group ">
                 <CarouselContent className="">

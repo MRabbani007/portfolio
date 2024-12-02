@@ -2,12 +2,13 @@ import React from "react";
 import { getRelatedPosts } from "@/lib/actions";
 import { BlogPost } from "@prisma/client";
 import Image from "next/image";
+import Wrapper from "../Wrapper";
 
 export default async function RelatedPosts({ slug }: { slug: string }) {
   const { data } = await getRelatedPosts(decodeURIComponent(slug));
 
   return (
-    <div className="w-full max-w-[1024px] mx-auto my-6">
+    <Wrapper className=" my-6">
       <h2 className="text-2xl my-2">Related Posts</h2>
       <div className=" overflow-x-auto">
         <div className="flex items-stretch gap-4 py-2">
@@ -16,7 +17,7 @@ export default async function RelatedPosts({ slug }: { slug: string }) {
           ))}
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 }
 

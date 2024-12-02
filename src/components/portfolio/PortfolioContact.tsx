@@ -14,15 +14,16 @@ import {
   CardTitle,
 } from "../ui/card";
 import { Label } from "../ui/label";
+import Wrapper from "../Wrapper";
 
 export default function PortfolioContact() {
   return (
-    <div id="contact" className="section-container pt-12 mb-20">
-      <section>
+    <section id="contact" className="min-h-screen">
+      <Wrapper className="mx-auto">
         <Slide>
           <h2 className="flex items-center gap-4 mb-4 lg:mb-10">Contact</h2>
         </Slide>
-        <div className="mx-auto flex flex-col sm:flex-row flex-wrap gap-8">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-8 lg:gap-16">
           <Slide className="w-fit">
             <Image
               src={"/assets/portfolio/contact_me.png"}
@@ -81,7 +82,7 @@ export default function PortfolioContact() {
             </CardFooter>
           </Card>
         </div>
-      </section>
-    </div>
+      </Wrapper>
+    </section>
   );
 }

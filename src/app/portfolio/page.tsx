@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   return (
-    <main className="">
+    <main className="gap-0">
       <PortfolioHome />
       <PortfolioAbout />
       <PortfolioSkills />

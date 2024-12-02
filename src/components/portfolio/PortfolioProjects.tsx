@@ -6,30 +6,33 @@ import { Project } from "../../../types";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../animate/Reveal";
+import Wrapper from "../Wrapper";
 
 export default function PortfolioProjects() {
   return (
     <div id="projects" className="section-container pt-12 ">
       <section className="">
-        <div className="group/container">
-          <div className="relative w-fit">
-            <Slide from="left">
-              <h2 className="flex items-center gap-4">
-                <AiOutlineFundProjectionScreen size={50} />
-                <span className="bg-gradient-to-r from-yellow-500 to-yellow-400 transition-all bg-clip-text text-transparent">
-                  Featured Projects
-                </span>
-              </h2>
-            </Slide>
+        <Wrapper>
+          <div className="group/container">
+            <div className="relative w-fit">
+              <Slide from="left">
+                <h2 className="flex items-center gap-4">
+                  <AiOutlineFundProjectionScreen size={50} />
+                  <span className="bg-gradient-to-r from-yellow-500 to-yellow-400 transition-all bg-clip-text text-transparent">
+                    Featured Projects
+                  </span>
+                </h2>
+              </Slide>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col items-stretch flex-wrap justify-center max-w-5xl mx-auto gap-8">
-          {PROJECTS.filter((item) => item.pinned === true).map(
-            (project, index) => {
-              return <RenderProject key={index} project={project} />;
-            }
-          )}
-        </div>
+          <div className="flex flex-col items-stretch flex-wrap justify-center max-w-5xl mx-auto gap-8">
+            {PROJECTS.filter((item) => item.pinned === true).map(
+              (project, index) => {
+                return <RenderProject key={index} project={project} />;
+              }
+            )}
+          </div>
+        </Wrapper>
       </section>
     </div>
   );
@@ -37,7 +40,7 @@ export default function PortfolioProjects() {
 
 function RenderProject({ project }: { project: Project }) {
   return (
-    <Reveal className="flex flex-col gap-4 p-4 bg-zinc-100 dark:bg-zinc-800 rounded-xl">
+    <Slide className="flex flex-col gap-4 p-4 bg-zinc-100 dark:bg-zinc-800 rounded-xl">
       <div>
         <h3 className="">{project.title}</h3>
         <p className="text-zinc-400">{project.subtitle}</p>
@@ -86,6 +89,6 @@ function RenderProject({ project }: { project: Project }) {
           />
         </div>
       </div>
-    </Reveal>
+    </Slide>
   );
 }

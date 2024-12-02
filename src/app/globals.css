@@ -72,16 +72,6 @@ html {
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-  }
-} */
-
 menu {
   display: flex;
   justify-content: space-between;
@@ -138,20 +128,6 @@ menu:hover {
   }
 }
 
-.section-container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  scroll-snap-align: start;
-}
-
-@media screen and (min-width: 564px) {
-}
-
-@media screen and (min-width: 1024px) {
-}
-
 .skills-container > .skill-card {
   transition: all 200ms ease, opacity 100ms linear;
   cursor: pointer;
@@ -173,7 +149,6 @@ menu:hover {
 }
 
 .message-container {
-  color: #333;
   font-family: tahoma;
   font-size: 3rem;
   font-weight: 100;
@@ -190,8 +165,6 @@ menu:hover {
 }
 
 .message {
-  /* background-color: yellow; */
-  color: #333;
   display: block;
   font-weight: 900;
   overflow: hidden;
@@ -296,9 +269,117 @@ menu:hover {
     @apply text-accent sm:text-xl font-bold;
   }
   section {
-    @apply flex-1 flex flex-col justify-center px-4 md:px-10 lg:mx-10;
+    @apply flex-1 flex flex-col justify-center items-center;
   }
   .hero-ring {
     @apply absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-[0_0_100px_inset] shadow-yellow-400/10 rounded-full border-2 border-yellow-400/5;
   }
+}
+
+.wave-path {
+  clip-path: polygon(
+    100% 100%,
+    0% 100%,
+    0% 60.69%,
+    1% 56.72%,
+    2% 52.97%,
+    3% 49.52%,
+    4% 46.45%,
+    5% 43.85%,
+    6% 41.77%,
+    7% 40.27%,
+    8% 39.38%,
+    9% 39.13%,
+    10% 39.53%,
+    11% 40.55%,
+    12% 42.18%,
+    13% 44.38%,
+    14% 47.1%,
+    15% 50.25%,
+    16% 53.78%,
+    17% 57.59%,
+    18% 61.59%,
+    19% 65.67%,
+    20% 69.75%,
+    21% 73.71%,
+    22% 77.46%,
+    23% 80.92%,
+    24% 83.98%,
+    25% 86.59%,
+    26% 88.66%,
+    27% 90.16%,
+    28% 91.05%,
+    29% 91.3%,
+    30% 90.91%,
+    31% 89.88%,
+    32% 88.25%,
+    33% 86.05%,
+    34% 83.34%,
+    35% 80.18%,
+    36% 76.65%,
+    37% 72.84%,
+    38% 68.85%,
+    39% 64.76%,
+    40% 60.69%,
+    41% 56.72%,
+    42% 52.97%,
+    43% 49.52%,
+    44% 46.45%,
+    45% 43.85%,
+    46% 41.77%,
+    47% 40.27%,
+    48% 39.38%,
+    49% 39.13%,
+    50% 39.53%,
+    51% 40.55%,
+    52% 42.18%,
+    53% 44.38%,
+    54% 47.1%,
+    55% 50.25%,
+    56% 53.78%,
+    57% 57.59%,
+    58% 61.59%,
+    59% 65.67%,
+    60% 69.75%,
+    61% 73.71%,
+    62% 77.46%,
+    63% 80.92%,
+    64% 83.98%,
+    65% 86.59%,
+    66% 88.66%,
+    67% 90.16%,
+    68% 91.05%,
+    69% 91.3%,
+    70% 90.91%,
+    71% 89.88%,
+    72% 88.25%,
+    73% 86.05%,
+    74% 83.34%,
+    75% 80.18%,
+    76% 76.65%,
+    77% 72.84%,
+    78% 68.85%,
+    79% 64.76%,
+    80% 60.69%,
+    81% 56.72%,
+    82% 52.97%,
+    83% 49.52%,
+    84% 46.45%,
+    85% 43.85%,
+    86% 41.77%,
+    87% 40.27%,
+    88% 39.38%,
+    89% 39.13%,
+    90% 39.53%,
+    91% 40.55%,
+    92% 42.18%,
+    93% 44.38%,
+    94% 47.1%,
+    95% 50.25%,
+    96% 53.78%,
+    97% 57.59%,
+    98% 61.59%,
+    99% 65.67%,
+    100% 69.75%
+  );
 }

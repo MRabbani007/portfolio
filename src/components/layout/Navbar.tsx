@@ -49,21 +49,22 @@ export default function Navbar() {
   const isActive = (page: string): boolean =>
     pathname.split("/").includes(page);
 
+  // from-background to-background/50
   return (
-    <nav
-      className={
-        "absolute top-0 left-0 right-0 z-50 text-xl bg-gradient-to-b from-background to-background/50"
-      }
-    >
+    <nav className={"absolute top-0 left-0 right-0 z-50 text-xl "}>
       <div className="flex items-center px-4 sm:px-10 mx-auto h-20">
         {/* Logo */}
-        <Link title="Home Page" href="/" className="font-extrabold text-4xl">
+        <Link
+          title="Home Page"
+          href="/"
+          className="font-extrabold text-4xl text-white"
+        >
           MR
         </Link>
         <Slide
           from="top"
           delay={0}
-          className="w-full hidden md:flex items-center justify-end gap-5 mr-4 ml-auto"
+          className="w-full hidden md:flex items-center justify-end gap-5 mr-4 ml-auto text-white"
         >
           {items.map((item, idx) => (
             <Link

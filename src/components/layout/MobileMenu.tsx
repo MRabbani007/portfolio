@@ -21,7 +21,7 @@ export default function MobileMenu() {
     <div className="">
       <button
         title="Menu"
-        className="md:hidden py-2"
+        className="md:hidden py-2 text-white"
         onClick={() => setShowMenu(true)}
       >
         <AiOutlineMenu size={32} />
@@ -29,7 +29,7 @@ export default function MobileMenu() {
       <nav
         className={
           (showMenu ? "" : "translate-x-full ") +
-          " md:hidden fixed inset-0 flex flex-col duration-200 bg-black"
+          " md:hidden fixed inset-0 flex flex-col duration-200 bg-background text-foreground"
         }
       >
         <div className="flex items-center gap-4 justify-between p-4 h-20">
@@ -58,7 +58,7 @@ export default function MobileMenu() {
                 key={idx}
                 href={item.url}
                 target="_blank"
-                className="p-4 rounded-full bg-zinc-800 hover:scale-105 transition ease-in duration-200"
+                className="p-2 md:p-4 rounded-full bg-zinc-200 dark:bg-zinc-800 hover:scale-105 transition ease-in duration-200"
               >
                 {item.icon}
               </Link>

@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="flex items-start sm:items-center sm:flex-row flex-col flex-wrap sm:justify-between gap-4 p-4 sm:p-8 ">
+    <div className="flex items-start sm:items-center sm:flex-row flex-col flex-wrap sm:justify-between gap-4 p-4 sm:p-8 bg-gradient-to-b from-sky-900 to-sky-950 dark:bg-gradient-to-b dark:from-black dark:to-zinc-900">
       <div className="space-y-4">
         <h4 className="uppercase tracking-wide">Contacts</h4>
         <div className="flex items-center gap-4">
@@ -13,14 +13,14 @@ export default function Footer() {
               key={idx}
               href={item.url}
               target="_blank"
-              className="p-2 sm:p-4 shrink rounded-full bg-zinc-200 dark:bg-zinc-800 hover:scale-105 transition ease-in duration-200"
+              className="p-2 sm:p-3 shrink rounded-full bg-zinc-200 dark:bg-zinc-800 hover:scale-105 transition ease-in duration-200"
             >
               {item.icon}
             </Link>
           ))}
         </div>
       </div>
-      <div className="">
+      <div className="text-white">
         <h4 className="uppercase tracking-wide">Quick Links</h4>
         <ul>
           <li>
