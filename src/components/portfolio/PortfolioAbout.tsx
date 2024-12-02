@@ -46,13 +46,13 @@ export default function PortfolioAbout() {
             </div>
             <p className="my-auto text-4xl font-bold text-accent">About Me</p>
           </Slide>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-10 flex-1 text-balance text-center text-lg sm:text-xl md:text-2xl font-light">
+          <div className="flex flex-col md:flex-row gap-6 md:gap-10 flex-1 text-balance text-center text-lg sm:text-xl md:text-2xl font-light">
             {items.map((item, index) => (
               <Slide
                 key={index}
                 from="bottom"
                 delay={index * 0.2}
-                className="p-4 shadow-lg shadow-sky-950 dark:bg-zinc-900 bg-zinc-100 rounded-lg"
+                className="p-4 shadow-lg shadow-sky-900 dark:bg-zinc-900 bg-zinc-100 rounded-lg"
               >
                 <p className="text-2xl border-b-4 mx-auto w-fit border-accent mb-2">
                   {item.title}

@@ -9,7 +9,7 @@ export default function PortfolioSkills() {
   return (
     <div
       id="skills"
-      className="section-container relative overflow-clip z-0 bg-gradient-to-b from-sky-950 to-sky-950 via-sky-800 dark:bg-gradient-to-b dark:from-black dark:to-black dark:via-sky-900"
+      className="relative overflow-clip z-0 bg-gradient-to-b from-sky-950 to-sky-950 via-sky-800 dark:bg-gradient-to-b dark:from-black dark:to-black dark:via-sky-900"
     >
       {/* <div className="absolute left-0 right-0 top-0 h-[5vh] bg-gradient-to-b from-background to-transparent z-10" /> */}
       {/* <div className="absolute left-0 right-0 bottom-0 h-[5vh] bg-gradient-to-b from-transparent dark:to-background to-background" /> */}
@@ -41,7 +41,7 @@ export default function PortfolioSkills() {
                   <Reveal
                     key={index}
                     delay={0.5}
-                    className="font-mono flex items-center gap-4 py-2 px-4 rounded-lg dark:bg-zinc-900 bg-zinc-200 hover:bg-yellow-400/20 z-10"
+                    className="font-mono flex items-center gap-4 py-2 px-4 rounded-lg dark:bg-zinc-900 dark:hover:bg-zinc-800 bg-zinc-100 hover:bg-zinc-200 z-10"
                   >
                     <Image
                       src={"/assets/skills/" + skill.image}

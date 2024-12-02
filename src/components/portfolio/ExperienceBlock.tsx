@@ -25,7 +25,7 @@ export default function ExperienceBlock({ item, index }: Props) {
           key={index}
           className="rounded-xl p-4 bg-zinc-100 dark:bg-zinc-900"
         >
-          <header className="pb-4 px-4 relative">
+          <div className="pb-4 relative">
             <h3 className="">{item?.position}</h3>
             <p className="text-lg font-extralight">
               <strong>{item?.company}</strong>
@@ -33,10 +33,10 @@ export default function ExperienceBlock({ item, index }: Props) {
                 {" (" + item?.time + ")"}
               </i>
             </p>
-          </header>
-          <div className="flex flex-col lg:flex-row flex-wrap justify-center items-center lg:items-start gap-4 sm:px-4 duration-300 ">
+          </div>
+          <div className="flex flex-col lg:flex-row flex-wrap justify-center items-center lg:items-start gap-4 duration-300 ">
             {/* Image */}
-            <div className="h-[400px] w-[350px] sm:w-[400px] lg:w-[500px] relative group overflow-hidden rounded-xl">
+            <div className="h-[400px] w-full lg:w-[500px] relative group overflow-hidden rounded-xl">
               <Image
                 src={item.image}
                 alt={item.project}

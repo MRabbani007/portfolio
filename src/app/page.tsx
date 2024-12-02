@@ -9,8 +9,8 @@ import ClipWave from "@/components/ClipWave";
 export default function HomePage() {
   return (
     <main className="flex-1 flex flex-col gap-4 relative p-0 lg:p-0">
-      <section className="relative bg-gradient-to-b from-sky-800 to-sky-950 dark:bg-gradient-to-b dark:from-zinc-800 dark:to-zinc-900 min-h-screen">
-        <div className="absolute bottom-0 left-0 right-0 h-[20vh] flex justify-start items-end">
+      <section className="relative bg-gradient-to-b from-sky-800 to-sky-950 dark:bg-gradient-to-b dark:from-zinc-800 dark:to-zinc-900 min-h-[90vh]">
+        <div className="absolute bottom-0 left-0 right-0 h-[20vh] flex justify-center items-end overflow-x-clip">
           <ClipWave />
         </div>
         {/* <Curtain /> */}
@@ -27,10 +27,7 @@ export default function HomePage() {
             </Slide>
             <Slide from="bottom" className="mt-6">
               <MagicButton title="Go to Portfolio">
-                <Link
-                  href={"/portfolio"}
-                  className="text-xl font-semibold text-zinc-200"
-                >
+                <Link href={"/portfolio"} className="font-medium text-white">
                   Go to Portfolio
                 </Link>
               </MagicButton>
@@ -46,12 +43,12 @@ export default function HomePage() {
           </div>
         </div> */}
       </section>
-      <section className="min-h-screen">
-        <Wrapper className="">
+      <section className="">
+        <Wrapper className="min-h-screen items-center justify-center py-8">
           <p className="text-2xl font-medium text-zinc-800 dark:text-white text-start mb-8">
-            Building Modern Responsive Web Applications
+            Building Modern Web Applications
           </p>
-          <div className="flex items-center justify-center gap-8 text-center">
+          <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-8 text-center">
             <div>
               <div className="relative w-[300px] h-[200px]">
                 <Image
@@ -91,9 +88,6 @@ export default function HomePage() {
           </div>
         </Wrapper>
       </section>
-      {/* <h1 className="text-wrap whitespace-break-spaces">
-          Welcome to my website, have a look around!
-        </h1> */}
     </main>
   );
 }

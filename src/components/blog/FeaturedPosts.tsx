@@ -22,7 +22,7 @@ export default async function FeaturedPosts() {
         <CarouselContent>
           {data.map((post, idx) => (
             <CarouselItem key={idx} className="">
-              <div className="flex flex-col md:flex-row items-center md:items-stretch m-4 rounded-lg overflow-clip shadow-[0_0_10px_5px] shadow-zinc-600">
+              <div className="flex flex-col md:flex-row items-center md:items-stretch m-4 rounded-lg overflow-clip shadow-[0_0_10px_0px] shadow-zinc-600">
                 <div className="h-full w-full min-w-[300px] md:max-w-[400px] min-h-[200px] md:min-h-[250px] relative">
                   <Image
                     src={post.banner ?? "/blog.png"}

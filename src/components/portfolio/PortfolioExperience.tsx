@@ -41,10 +41,10 @@ export default function PortfolioExperience() {
   return (
     <div id="experience" className="">
       <section className="items-stretch">
-        <article className="my-20 min-h-screen flex flex-col justify-center bg-gradient-to-br from-sky-900 to-sky-950 dark:from-black dark:to-black">
+        <article className="py-10 min-h-screen flex flex-col justify-center bg-gradient-to-br from-sky-900 to-sky-950 dark:from-black dark:to-black">
           <Wrapper>
             <Slide from="left">
-              <h2 className="flex items-center gap-4">
+              <h2 className="flex items-center gap-4 my-10">
                 <IoBarChartSharp size={50} />
                 <span>Experience</span>
               </h2>
@@ -90,7 +90,7 @@ export default function PortfolioExperience() {
             </div>
           </Wrapper>
         </article>
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-20 my-10">
           {EXPERIENCE.map((item, index) => (
             <ExperienceBlock item={item} index={index} key={index} />
           ))}

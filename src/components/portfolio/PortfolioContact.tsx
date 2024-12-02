@@ -19,7 +19,7 @@ import Wrapper from "../Wrapper";
 export default function PortfolioContact() {
   return (
     <section id="contact" className="min-h-screen">
-      <Wrapper className="mx-auto">
+      <Wrapper className="py-10">
         <Slide>
           <h2 className="flex items-center gap-4 mb-4 lg:mb-10">Contact</h2>
         </Slide>
@@ -76,7 +76,9 @@ export default function PortfolioContact() {
             <CardFooter>
               <Reveal delay={0.5} className="mx-auto">
                 <MagicButton title="Let's Collaborate">
-                  <button type="submit">Let&apos;s Collaborate</button>
+                  <button type="submit" className="text-white">
+                    Let&apos;s Collaborate
+                  </button>
                 </MagicButton>
               </Reveal>
             </CardFooter>

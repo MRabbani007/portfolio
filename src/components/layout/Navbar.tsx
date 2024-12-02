@@ -57,7 +57,7 @@ export default function Navbar() {
         <Link
           title="Home Page"
           href="/"
-          className="font-extrabold text-4xl text-white"
+          className="font-extrabold text-4xl text-white drop-shadow-[0px_0px_5px_rgba(255,255,255,0.6)]"
         >
           MR
         </Link>

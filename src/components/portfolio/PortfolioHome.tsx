@@ -10,7 +10,7 @@ export default function PortfolioHome() {
   return (
     <div
       id="home"
-      className="pt-20 min-h-screen flex items-center justify-center relative z-0 overflow-x-clip"
+      className="min-h-screen flex items-center justify-center relative z-0 overflow-x-clip bg-background"
     >
       <div className="absolute left-1/2 -translate-x-1/2 bottom-[10vh] size-[5000px] rounded-full -z-10 flex flex-col overflow-clip">
         <div className="mt-auto h-[20%] bg-gradient-to-br from-sky-950 via-sky-800 to-sky-900 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-950"></div>
@@ -20,7 +20,7 @@ export default function PortfolioHome() {
       </div>
       <div className="absolute top-0 left-1/3 size-[4px] shadow-indigo-900/80 dark:shadow-indigo-900/20 rounded-full shadow-[0_0_200px_150px]"></div>
       <div className="absolute top-1/3 right-0 size-[4px] shadow-indigo-800/30 dark:shadow-indigo-800/10 rounded-full shadow-[0_0_200px_150px]"></div>
-      <div className="absolute bottom-0 right-1/4 size-[4px] shadow-white/50 dark:shadow-white/10 rounded-full shadow-[0_0_200px_150px]"></div>
+      <div className="absolute bottom-10 right-1/4 size-[4px] shadow-white/50 dark:shadow-white/10 rounded-full shadow-[0_0_200px_150px]"></div>
       <section className="text-white">
         <Wrapper className="items-stretch lg:w-[80vw]">
           <Slide from="bottom">

@@ -25,7 +25,7 @@ export default async function BlogPage({
   return (
     <div className="">
       <header className="pt-20 bg-gradient-to-br from-sky-900 via-blue-950 to-indigo-950/90 dark:from-zinc-800 dark:to-black dark:via-zinc-900 rounded-br-[100px] overflow-hidden">
-        <div className="h-[50vh] relative flex items-center justify-center m-0 lg:m-0 lg:p-0 lg:max-w-none">
+        <div className="h-[30vh] md:h-[50vh] relative flex items-center justify-center m-0 lg:m-0 lg:p-0 lg:max-w-none">
           <BlogBanner />
           {/* <Image
             src={

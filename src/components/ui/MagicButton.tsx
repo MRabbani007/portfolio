@@ -12,8 +12,8 @@ export default function MagicButton({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative block overflow-hidden min-h-12 w-fit p-[2px] focus:outline-none my-4 mx-2 z-0">
-      <div className="z-10 block h-full w-full cursor-pointer items-center justify-center bg-zinc-950 hover:bg-zinc-950 py-4 px-8 text-sm font-medium text-white backdrop-blur-3xl">
+    <div className="relative block overflow-hidden w-fit p-[1px] focus:outline-none z-0">
+      <div className="z-10 block h-full w-full cursor-pointer items-center justify-center bg-zinc-950 hover:bg-black duration-200 py-2 px-6 backdrop-blur-3xl">
         {position === "left" && icon}
         {children}
         {position === "right" && icon}
