@@ -44,8 +44,8 @@ export default function HomePage() {
         </div> */}
       </section>
       <section className="">
-        <Wrapper className="min-h-screen items-center justify-center py-8">
-          <p className="text-2xl font-medium text-zinc-800 dark:text-white text-start mb-8">
+        <Wrapper className="min-h-screen flex flex-col justify-center py-8">
+          <p className="text-2xl lg:text-3xl font-medium text-zinc-800 dark:text-white text-start mb-8">
             Building Modern Web Applications
           </p>
           <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-8 text-center">
