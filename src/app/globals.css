@@ -128,6 +128,15 @@ menu:hover {
   }
 }
 
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 .skills-container > .skill-card {
   transition: all 200ms ease, opacity 100ms linear;
   cursor: pointer;

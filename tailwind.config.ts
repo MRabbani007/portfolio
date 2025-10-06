@@ -6,6 +6,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/features/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -87,12 +88,21 @@ const config: Config = {
             backgroundPosition: "-200% 0",
           },
         },
+        shine: {
+          from: {
+            transform: "translateX(-100%)",
+          },
+          to: {
+            transform: "translateX(100%)",
+          },
+        },
       },
       animation: {
         marquee: "marquee var(--marquee-duration) linear infinite",
         autoRotate: "autoRotate linear infinite",
         spotlight: "spotlight 2s ease .75s 1 forwards",
         shimmer: "shimmer 2s linear infinite",
+        shine: "shine 2.5s linear infinite",
       },
       borderRadius: {
         lg: "var(--radius)",
