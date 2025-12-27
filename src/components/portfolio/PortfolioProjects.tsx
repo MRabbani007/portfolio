@@ -2,10 +2,8 @@ import { PROJECTS } from "@/lib/projects";
 import React from "react";
 import Slide from "@/components/animate/Slide";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { Project } from "../../../types";
 import Image from "next/image";
 import Link from "next/link";
-import Reveal from "../animate/Reveal";
 import Wrapper from "../Wrapper";
 
 export default function PortfolioProjects() {

@@ -10,7 +10,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-[90vh] bg-gradient-to-b from-sky-800 to-sky-950 dark:from-zinc-800 dark:to-zinc-900 flex items-center">
+    <section className="items-center justify-center relative overflow-hidden min-h-[90vh] bg-gradient-to-b from-sky-800 to-sky-950 dark:from-zinc-800 dark:to-zinc-900">
       {/* Decorative gradient glow */}
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-sky-500/30 blur-3xl opacity-40 dark:bg-sky-400/20" />
 

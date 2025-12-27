@@ -1,22 +1,23 @@
+import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
   {
     title: "E-Commerce App",
-    image: "/projects/ecommerce.png",
+    image: "/bg_pattern.jpg",
     link: "/portfolio/ecommerce",
     desc: "Next.js, Prisma, PostgreSQL — complete store system.",
   },
   {
     title: "Expense Manager",
-    image: "/projects/expense.png",
+    image: "/bg_pattern.jpg",
     link: "/portfolio/expense",
     desc: "Track your spending and income with real-time insights.",
   },
   {
     title: "Blog Platform",
-    image: "/projects/blog.png",
+    image: "/bg_pattern.jpg",
     link: "/portfolio/blog",
     desc: "Create and publish MDX blogs connected to Firebase.",
   },
@@ -26,10 +27,10 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="py-24 bg-white dark:bg-zinc-900 text-center"
+      className="justify-center items-center min-h-screen py-20 bg-sky-800 dark:bg-zinc-900 text-center"
     >
-      <div className="container mx-auto px-6 max-w-6xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">
+      <Wrapper>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 lg:mb-20">
           Featured Projects
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -56,7 +57,7 @@ export default function ProjectsSection() {
             </Link>
           ))}
         </div>
-      </div>
+      </Wrapper>
     </section>
   );
 }

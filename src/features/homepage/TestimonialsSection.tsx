@@ -1,3 +1,5 @@
+import Wrapper from "@/components/Wrapper";
+
 const testimonials = [
   {
     name: "Alex Johnson",
@@ -15,9 +17,9 @@ export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="py-24 bg-zinc-50 dark:bg-zinc-950 text-center"
+      className="min-h-screen justify-center items-center py-24 bg-gray-300 dark:bg-zinc-950 text-center"
     >
-      <div className="container mx-auto px-6 max-w-4xl">
+      <Wrapper>
         <h2 className="text-3xl md:text-4xl font-bold mb-12">Testimonials</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {testimonials.map((t) => (
@@ -33,7 +35,7 @@ export default function TestimonialsSection() {
             </div>
           ))}
         </div>
-      </div>
+      </Wrapper>
     </section>
   );
 }

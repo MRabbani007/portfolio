@@ -6,7 +6,8 @@ import Image from "next/image";
 import Wrapper from "../Wrapper";
 
 export default function PortfolioHome() {
-  const words = "Transform concepts into seamless experiences";
+  // const words = "Transform concepts into seamless experiences";
+
   return (
     <div
       id="home"

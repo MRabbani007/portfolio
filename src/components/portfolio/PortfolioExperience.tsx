@@ -1,7 +1,6 @@
 import React from "react";
 import ExperienceBlock from "./ExperienceBlock";
 import { EXPERIENCE } from "@/lib/experience";
-import { SKILLS_SOFT } from "@/lib/skills";
 import Image from "next/image";
 import Slide from "@/components/animate/Slide";
 import { IoBarChartSharp } from "react-icons/io5";
@@ -35,6 +34,17 @@ const items2 = [
   { label: "Supervision" },
   { label: "Procurement" },
   { label: "Site & Office" },
+];
+
+const SKILLS_SOFT = [
+  { name: "Agile Scrum Methodologies", image: "scrum.png" },
+  { name: "Technical Program Management", image: "project-manage.png" },
+  { name: "Software Testing", image: "software-testing.png" },
+  { name: "Effective Communication", image: "communication.png" },
+  { name: "Team Leadership & Supervision", image: "leadership.png" },
+  { name: "Time Management", image: "time-manage.png" },
+  { name: "Decision Making", image: "decision.png" },
+  { name: "Prioritization", image: "prioritize.png" },
 ];
 
 export default function PortfolioExperience() {

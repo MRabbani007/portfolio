@@ -9,12 +9,12 @@ import PortfolioSideBar from "./PortfolioSideBar";
 import { ModeToggle } from "../ui/ModeToggle";
 
 const items = [
-  {
-    label: "Portfolio",
-    title: "Portfolio",
-    url: "/portfolio",
-    isActive: "portfolio",
-  },
+  // {
+  //   label: "Portfolio",
+  //   title: "Portfolio",
+  //   url: "/portfolio",
+  //   isActive: "portfolio",
+  // },
   {
     label: "Projects",
     title: "Projects",

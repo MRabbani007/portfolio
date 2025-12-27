@@ -23,7 +23,7 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 min-h-screen justify-center items-center bg-background">
       <Wrapper>
         <div className="mb-10 text-center">
           <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
@@ -34,14 +34,13 @@ export default function SkillsSection() {
             to deployment.
           </p>
         </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((item) => (
             <Card
               key={item.title}
-              className="hover:scale-[1.02] hover:shadow-lg transition-all duration-300 border-border/50 bg-card"
+              className="hover:scale-110 border-border/50 bg-card transition-all duration-200"
             >
-              <CardContent className="flex flex-col items-center gap-4 p-6 text-center">
+              <CardContent className="flex flex-col items-center p-6 text-center">
                 <div className="relative w-[200px] h-[140px]">
                   <Image
                     src={item.img}
@@ -50,9 +49,9 @@ export default function SkillsSection() {
                     className="object-contain object-center"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">
+                <p className="text-xl font-semibold text-foreground">
                   {item.title}
-                </h3>
+                </p>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
               </CardContent>
             </Card>

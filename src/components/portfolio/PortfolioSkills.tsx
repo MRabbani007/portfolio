@@ -1,9 +1,11 @@
+"use client";
+
 import Image from "next/image";
-import { SKILLS_TECHNICAL } from "@/lib/skills";
 import { GrTechnology } from "react-icons/gr";
 import Slide from "@/components/animate/Slide";
 import Wrapper from "../Wrapper";
 import Reveal from "../animate/Reveal";
+import SKILLS_TECHNICAL from "@/lib/skills";
 
 export default function PortfolioSkills() {
   return (

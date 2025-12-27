@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Wrapper from "@/components/Wrapper";
 
 export default function ContactSections() {
   const [loading, setLoading] = useState(false);
@@ -31,8 +32,8 @@ export default function ContactSections() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-sky-50 dark:from-zinc-900 dark:to-zinc-950">
-      <div className="max-w-3xl mx-auto px-6">
+    <section className="min-h-screen items-center justify-center py-20 bg-gradient-to-b from-white to-sky-50 dark:from-zinc-900 dark:to-zinc-950">
+      <Wrapper>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +41,7 @@ export default function ContactSections() {
           viewport={{ once: true }}
         >
           <Card className="border-none shadow-xl bg-white/80 dark:bg-zinc-900/70 backdrop-blur-xl">
-            <CardHeader>
+            <CardHeader className="mb-6">
               <CardTitle className="text-center text-3xl font-semibold text-zinc-800 dark:text-white">
                 Get in Touch
               </CardTitle>
@@ -92,7 +93,7 @@ export default function ContactSections() {
             </CardContent>
           </Card>
         </motion.div>
-      </div>
+      </Wrapper>
     </section>
   );
 }
