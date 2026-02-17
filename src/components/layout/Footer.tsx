@@ -1,86 +1,111 @@
-import { CONTACTS } from "@/lib/contacts";
-import Link from "next/link";
+"use client";
+
 import React from "react";
+import Link from "next/link";
+import { CONTACTS } from "@/lib/contacts";
+import Wrapper from "@/components/Wrapper";
 
 const footer_items = [
   {
     title: "MRabbani",
-    text: "Freelance web developer",
+    text: "Full-stack developer focused on building polished, high-performance web applications.",
   },
   {
-    title: "About",
+    title: "Sitemap",
     children: [
       { title: "Portfolio", url: "/portfolio" },
       { title: "Projects", url: "/projects" },
       { title: "Blog", url: "/blog" },
+      { title: "About Me", url: "/about" },
     ],
   },
   {
-    title: "Services",
+    title: "Expertise",
     children: [
-      { title: "Design", url: "#" },
-      { title: "Frontend", url: "#" },
-      { title: "Backend", url: "#" },
-      { title: "Deployment", url: "#" },
+      { title: "Frontend Engineering", url: "#" },
+      { title: "Backend Systems", url: "#" },
+      { title: "Cloud Architecture", url: "#" },
+      { title: "UI/UX Design", url: "#" },
     ],
   },
   {
-    title: "Contact",
+    title: "Resources",
     children: [
-      { title: "Send Message", url: "#" },
-      { title: "Copy Email", url: "#" },
-    ],
-  },
-  {
-    title: "Quick Links",
-    children: [
-      { title: "Portfolio", url: "/portfolio" },
-      { title: "Projects", url: "/projects" },
-      { title: "Blog", url: "/blog" },
+      { title: "Send Message", url: "/contact" },
+      { title: "Documentation", url: "#" },
+      { title: "Style Guide", url: "#" },
     ],
   },
 ];
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gradient-to-b from-sky-800 to-sky-950 dark:bg-gradient-to-b dark:from-gray-900 dark:to-zinc-900 py-0">
-      <div className=" flex items-start sm:items-start sm:flex-row flex-col flex-wrap sm:justify-between gap-4 p-4 sm:p-8 md:py-12 ">
-        {footer_items.map((item, idx) => (
-          <div key={idx} className="space-y-4">
-            <p className="uppercase tracking-wide text-start font-medium text-white">
-              {item?.title}
+    <footer className="bg-white dark:bg-[#030712] border-t border-slate-100 dark:border-slate-900 transition-colors duration-500">
+      <Wrapper>
+        {/* Top Section: Navigation Columns */}
+        <div className="py-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 lg:gap-8">
+          {/* Brand Column - Wider than others */}
+          <div className="col-span-2 lg:col-span-2 space-y-6">
+            <Link
+              href="/"
+              className="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white"
+            >
+              MR<span className="text-sky-500">.</span>
+            </Link>
+            <p className="text-slate-500 dark:text-slate-400 max-w-xs leading-relaxed text-sm md:text-base">
+              {footer_items[0].text}
             </p>
-            {item?.text && (
-              <p className="text-start text-zinc-400">{item.text}</p>
-            )}
-            {item?.children && item.children.length > 0 && (
-              <ul className="text-start text-zinc-400">
-                {item.children.map((linkItem, idx) => (
-                  <li key={idx} className=" hover:text-zinc-50 duration-200">
-                    <Link href={linkItem.url}>{linkItem.title}</Link>
+          </div>
+
+          {/* Dynamic Columns */}
+          {footer_items.slice(1).map((group, idx) => (
+            <div key={idx} className="space-y-5">
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-900 dark:text-white">
+                {group.title}
+              </h4>
+              <ul className="space-y-3">
+                {group.children?.map((link, linkIdx) => (
+                  <li key={linkIdx}>
+                    <Link
+                      href={link.url}
+                      className="text-sm text-slate-500 dark:text-slate-400 hover:text-sky-500 dark:hover:text-sky-400 transition-colors duration-200"
+                    >
+                      {link.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
-            )}
-          </div>
-        ))}
-      </div>
-      {/* Copy right & contacts */}
-      <div className="flex items-center justify-between p-8 mx-auto text-gray-400 text-center border-t-[1px] border-gray-400">
-        <p>&copy; {new Date().getFullYear()} MRabbani. All rights reserved.</p>
-        <div className="flex items-center gap-4">
-          {CONTACTS.map((item, idx) => (
-            <Link
-              key={idx}
-              href={item.url}
-              target="_blank"
-              className="text-white hover:scale-105 transition ease-in duration-200"
-            >
-              {item.icon}
-            </Link>
+            </div>
           ))}
         </div>
-      </div>
+
+        {/* Bottom Section: Legal & Social */}
+        <div className="py-8 border-t border-slate-100 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-xs font-medium text-slate-400 dark:text-slate-500 order-2 md:order-1">
+            &copy; {currentYear} Mohamad Rabbani.{" "}
+            <span className="hidden sm:inline">
+              Built with Next.js & Tailwind.
+            </span>
+          </p>
+
+          <div className="flex items-center gap-6 order-1 md:order-2">
+            {CONTACTS.map((item, idx) => (
+              <Link
+                key={idx}
+                href={item.url}
+                target="_blank"
+                className="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-white transition-all duration-300 transform hover:scale-110"
+                aria-label={item.url}
+              >
+                {/* Ensure item.icon renders properly here */}
+                <span className="w-5 h-5 block">{item.icon}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </Wrapper>
     </footer>
   );
 }

@@ -5,7 +5,6 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { MetaData } from "../../../types";
 
 interface Props {
   rawMDX: string;

@@ -4,18 +4,17 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import Video from "@/components/blog/Video";
 import CustomImage from "@/components/blog/CustomImage";
-import { BlogPost, Meta } from "../../types";
 
 type Filetree = {
   tree: [
     {
       path: string;
-    }
+    },
   ];
 };
 
 export async function getPostByName(
-  fileName: string
+  fileName: string,
 ): Promise<BlogPost | undefined> {
   const res = await fetch(
     `https://raw.githubusercontent.com/MRabbani007/Blog_Posts/main/${fileName}`,
@@ -26,7 +25,7 @@ export async function getPostByName(
         "X-Github-Api-Version": "2022-11-28",
       },
       next: { revalidate: 600 },
-    }
+    },
   );
 
   if (!res.ok) return undefined;
@@ -89,7 +88,7 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
         "X-Github-Api-Version": "2022-11-28",
       },
       next: { revalidate: 600 },
-    }
+    },
   );
 
   if (!res.ok) return undefined;

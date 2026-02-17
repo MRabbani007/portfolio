@@ -7,9 +7,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
-import { MetaData } from "../../types";
 import { getBytes, getMetadata, getStorage, ref } from "firebase/storage";
-// import { extractMdx } from "./utils";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_tToQ_1sWj3zBc52yRTtjz9aW_7ss1Hw",
@@ -30,15 +28,12 @@ export async function getBlogs(page: number = 1) {
   try {
     const count_q = query(
       collection(firestore, "blogs"),
-      where("status", "==", "published")
-      // orderBy("updatedAt", "desc")
+      where("status", "==", "published"),
     );
 
     const q = query(
       collection(firestore, "blogs"),
-      where("status", "==", "published")
-      // orderBy("updatedAt", "desc"),
-      // orderBy("title", "asc")
+      where("status", "==", "published"),
     );
 
     const querySnapshot = await getDocs(q);

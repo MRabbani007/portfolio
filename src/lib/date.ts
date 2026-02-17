@@ -1,11 +1,10 @@
 import { format, formatDistanceToNow } from "date-fns";
-import { TimeStamp } from "../../types";
 
 export const genDate = (timeStamp?: TimeStamp | null) => {
   if (!timeStamp) return "";
 
   const postDate = new Date(
-    (timeStamp.seconds ?? 0) * 1000 + (timeStamp.nanoseconds ?? 0) / 1000000
+    (timeStamp.seconds ?? 0) * 1000 + (timeStamp.nanoseconds ?? 0) / 1000000,
   );
   const timeNow = new Date();
   const seconds = Math.floor((timeNow.getTime() - postDate.getTime()) / 1000);
@@ -20,10 +19,10 @@ export const genDate = (timeStamp?: TimeStamp | null) => {
     days >= 2
       ? postDate.toLocaleDateString("en-US")
       : days >= 1
-      ? "yesterday"
-      : hours < 1
-      ? "1 hour ago"
-      : `${hours} hours ago`;
+        ? "yesterday"
+        : hours < 1
+          ? "1 hour ago"
+          : `${hours} hours ago`;
 
   return days > 3
     ? format(postDate, "EEE dd MMM") +

@@ -1,13 +1,8 @@
 import getFormattedDate from "@/lib/getFormattedDate";
 import Link from "next/link";
 import React from "react";
-import { Meta } from "../../../types";
 
-type Props = {
-  post: Meta;
-};
-
-export default function ListItem({ post }: Props) {
+export default function ListItem({ post }: { post: Meta }) {
   const { id, title, date } = post;
   const formattedDate = getFormattedDate(date);
 

@@ -1,60 +1,68 @@
-import { Card, CardContent } from "@/components/ui/card";
-import Wrapper from "@/components/Wrapper";
-import Image from "next/image";
+"use client";
+
 import React from "react";
+import Wrapper from "@/components/Wrapper";
+import Slide from "@/components/animate/Slide";
+import { Cpu, Database, Layout } from "lucide-react";
+
+const EXPERTISE = [
+  {
+    title: "Frontend Engineering",
+    desc: "Building performant, accessible, and type-safe interfaces using modern frameworks.",
+    icon: <Layout className="w-6 h-6" />,
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
+  },
+  {
+    title: "Backend Systems",
+    desc: "Designing robust microservices, specialized APIs, and optimized database schemas.",
+    icon: <Database className="w-6 h-6" />,
+    color: "text-emerald-500",
+    bg: "bg-emerald-500/10",
+  },
+  {
+    title: "System Architecture",
+    desc: "An engineer’s approach to scalable infrastructure and clean, maintainable codebases.",
+    icon: <Cpu className="w-6 h-6" />,
+    color: "text-purple-500",
+    bg: "bg-purple-500/10",
+  },
+];
 
 export default function SkillsSection() {
-  const SERVICES = [
-    {
-      title: "Front-End",
-      desc: "Modern, responsive, user-friendly",
-      img: "/frontend.png",
-    },
-    {
-      title: "Back-End",
-      desc: "RESTful APIs, databases, cloud-ready",
-      img: "/backend.png",
-    },
-    {
-      title: "Full-Stack",
-      desc: "Design, build, and deploy end-to-end",
-      img: "/developer.png",
-    },
-  ];
-
   return (
-    <section className="py-20 min-h-screen justify-center items-center bg-background">
+    <section className="py-24 bg-white dark:bg-[#030712]">
       <Wrapper>
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4">
-            Building Modern Web Applications
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Crafting seamless, scalable, and beautiful solutions — from concept
-            to deployment.
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold dark:text-white mb-4">
+              Expertise & Services
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 text-lg">
+              Combining technical depth with creative execution to deliver
+              high-impact software solutions.
+            </p>
+          </div>
+          <div className="hidden md:block h-px flex-1 bg-slate-200 dark:bg-slate-800 mx-10 mb-4" />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {SERVICES.map((item) => (
-            <Card
-              key={item.title}
-              className="hover:scale-110 border-border/50 bg-card transition-all duration-200"
-            >
-              <CardContent className="flex flex-col items-center p-6 text-center">
-                <div className="relative w-[200px] h-[140px]">
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    fill
-                    className="object-contain object-center"
-                  />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {EXPERTISE.map((item, index) => (
+            <Slide key={item.title} delay={index * 0.1} from="bottom">
+              <div className="group relative p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 hover:border-sky-500/50 transition-all hover:shadow-xl dark:hover:shadow-sky-500/5">
+                <div
+                  className={`w-12 h-12 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
+                >
+                  {item.icon}
                 </div>
-                <p className="text-xl font-semibold text-foreground">
+                <h3 className="text-xl font-bold dark:text-white mb-3">
                   {item.title}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm md:text-base">
+                  {item.desc}
                 </p>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </CardContent>
-            </Card>
+              </div>
+            </Slide>
           ))}
         </div>
       </Wrapper>

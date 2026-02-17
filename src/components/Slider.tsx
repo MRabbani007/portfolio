@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import styles from "./slider.module.css";
-import { SliderItem } from "../../types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -158,7 +157,7 @@ function Slide({
         {item?.icon}
         <p
           className={`text-2xl font-medium text-zinc-100 border-b-4 pb-2 flex-1`}
-          style={{ borderColor: "#facc15" || item?.bgColor }}
+          style={{ borderColor: "#facc15" }}
         >
           {item?.title}
         </p>

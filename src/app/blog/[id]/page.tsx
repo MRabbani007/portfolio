@@ -2,10 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import "highlight.js/styles/github-dark.css";
 import Image from "next/image";
-import { IoArrowBack } from "react-icons/io5";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
-import { getAllBlogPosts, getBlogPosts, getPostbySlug } from "@/lib/actions";
+import { getAllBlogPosts, getPostbySlug } from "@/lib/actions";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import { FaChevronLeft } from "react-icons/fa6";
 import Wrapper from "@/components/Wrapper";
@@ -96,10 +95,10 @@ export default async function Post({ params: { postId } }: Props) {
                   </p>
                   <p>
                     <span className="">{`Published ${meta?.publishedAt?.toLocaleDateString(
-                      "en-UK"
+                      "en-UK",
                     )}`}</span>
                     <span className="">{` - Last Updated ${meta?.updatedAt?.toLocaleDateString(
-                      "en-UK"
+                      "en-UK",
                     )}`}</span>
                   </p>
                 </div>
