@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { ModeToggle } from "../ui/ModeToggle";
 import MobileMenu from "./MobileMenu";
-import PortfolioSideBar from "./PortfolioSideBar";
 
 const items = [
   { label: "Projects", url: "/projects", id: "projects" },
@@ -25,7 +24,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isPortfolio = pathname === "/portfolio";
   const isActive = (url: string) => pathname.startsWith(url);
 
   return (
@@ -40,7 +38,7 @@ export default function Navbar() {
         {/* Logo - Refined Branding */}
         <Link
           href="/"
-          className="group flex items-center gap-1.5 font-black text-2xl tracking-tighter text-slate-900 dark:text-white"
+          className="group flex items-center gap-1.5 font-black text-3xl tracking-tighter text-slate-900 dark:text-white"
         >
           MR<span className="text-sky-500 group-hover:animate-pulse">.</span>
         </Link>
@@ -89,8 +87,6 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-
-      {isPortfolio && <PortfolioSideBar />}
     </header>
   );
 }

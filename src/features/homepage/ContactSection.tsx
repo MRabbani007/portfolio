@@ -2,20 +2,20 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Send,
-  Loader2,
-  Mail,
-  MapPin,
-  Linkedin,
-  CheckCircle,
-} from "lucide-react";
+import { Send, Loader2, Mail, MapPin, CheckCircle } from "lucide-react";
 import Wrapper from "@/components/Wrapper";
+import { FaLinkedin } from "react-icons/fa6";
+import { submitContactForm } from "@/lib/actions/contact";
 
 export default function ContactSection() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "Contact Me",
+    message: "",
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -24,14 +24,35 @@ export default function ContactSection() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    // Integration point for [Resend](https://resend.com) or [EmailJS](https://www.emailjs.com)
-    await new Promise((r) => setTimeout(r, 1500));
-    setLoading(false);
-    setSubmitted(true);
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setSubmitted(false), 5000);
+    try {
+      e.preventDefault();
+      setLoading(true);
+
+      const formData = new FormData();
+
+      Object.entries(form).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+
+      const result = await submitContactForm(formData);
+
+      console.log(result);
+      if (result.status === 200) {
+        setSubmitted(true);
+        setForm({
+          name: "",
+          email: "",
+          subject: "Freelance Project",
+          message: "",
+        });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("System error: Failed to transmit message.");
+      }
+    } catch {
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -49,7 +70,7 @@ export default function ContactSection() {
                 <span className="text-sky-500">conversation.</span>
               </h2>
               <p className="text-lg text-slate-600 dark:text-slate-400 max-w-md">
-                I’m currently available for freelance work and full-time
+                I&apos;m currently available for freelance work and full-time
                 opportunities. Expect a response within 24 hours.
               </p>
             </div>
@@ -59,19 +80,19 @@ export default function ContactSection() {
                 {
                   icon: <Mail className="text-sky-500" />,
                   label: "Email",
-                  value: "hello@yourdomain.com",
-                  href: "mailto:hello@yourdomain.com",
+                  value: "info@mrabbani.com",
+                  href: "mailto:info@mrabbani.com",
                 },
                 {
-                  icon: <Linkedin className="text-blue-600" />,
+                  icon: <FaLinkedin className="text-blue-600" />,
                   label: "LinkedIn",
-                  value: "://linkedin.com",
-                  href: "#",
+                  value: "https://linkedin.com/in/mohamadrabbani",
+                  href: "https://linkedin.com/in/mohamadrabbani",
                 },
                 {
                   icon: <MapPin className="text-rose-500" />,
                   label: "Location",
-                  value: "City, Country",
+                  value: "Atyrau, Kazakhstan",
                   href: null,
                 },
               ].map((item, i) => (

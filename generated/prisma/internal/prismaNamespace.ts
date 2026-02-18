@@ -396,7 +396,8 @@ export const ModelName = {
   Comment: 'Comment',
   BlogPostLike: 'BlogPostLike',
   View: 'View',
-  Visitor: 'Visitor'
+  Visitor: 'Visitor',
+  ContactInquiry: 'ContactInquiry'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -412,7 +413,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "category" | "blogPost" | "comment" | "blogPostLike" | "view" | "visitor"
+    modelProps: "user" | "category" | "blogPost" | "comment" | "blogPostLike" | "view" | "visitor" | "contactInquiry"
     txIsolationLevel: never
   }
   model: {
@@ -934,6 +935,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ContactInquiry: {
+      payload: Prisma.$ContactInquiryPayload<ExtArgs>
+      fields: Prisma.ContactInquiryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ContactInquiryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactInquiryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ContactInquiryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactInquiryPayload>
+        }
+        findFirst: {
+          args: Prisma.ContactInquiryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactInquiryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ContactInquiryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactInquiryPayload>
+        }
+        findMany: {
+          args: Prisma.ContactInquiryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactInquiryPayload>[]
+        }
+        create: {
+          args: Prisma.ContactInquiryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactInquiryPayload>
+        }
+        createMany: {
+          args: Prisma.ContactInquiryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.ContactInquiryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactInquiryPayload>
+        }
+        update: {
+          args: Prisma.ContactInquiryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactInquiryPayload>
+        }
+        deleteMany: {
+          args: Prisma.ContactInquiryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ContactInquiryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.ContactInquiryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactInquiryPayload>
+        }
+        aggregate: {
+          args: Prisma.ContactInquiryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateContactInquiry>
+        }
+        groupBy: {
+          args: Prisma.ContactInquiryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ContactInquiryGroupByOutputType>[]
+        }
+        findRaw: {
+          args: Prisma.ContactInquiryFindRawArgs<ExtArgs>
+          result: Prisma.JsonObject
+        }
+        aggregateRaw: {
+          args: Prisma.ContactInquiryAggregateRawArgs<ExtArgs>
+          result: Prisma.JsonObject
+        }
+        count: {
+          args: Prisma.ContactInquiryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ContactInquiryCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1058,6 +1133,18 @@ export const VisitorScalarFieldEnum = {
 } as const
 
 export type VisitorScalarFieldEnum = (typeof VisitorScalarFieldEnum)[keyof typeof VisitorScalarFieldEnum]
+
+
+export const ContactInquiryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  subject: 'subject',
+  message: 'message',
+  createdAt: 'createdAt'
+} as const
+
+export type ContactInquiryScalarFieldEnum = (typeof ContactInquiryScalarFieldEnum)[keyof typeof ContactInquiryScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1265,6 +1352,7 @@ export type GlobalOmitConfig = {
   blogPostLike?: Prisma.BlogPostLikeOmit
   view?: Prisma.ViewOmit
   visitor?: Prisma.VisitorOmit
+  contactInquiry?: Prisma.ContactInquiryOmit
 }
 
 /* Types for Logging */

@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   X,
   ExternalLink,
-  Github,
   Zap,
   Shield,
   Cpu,
@@ -19,22 +18,25 @@ import Wrapper from "@/components/Wrapper";
 import Link from "next/link";
 import FeaturedProjectCard from "@/features/projects/FeaturedProjectCard";
 import { featuredProject, PROJECTS } from "@/lib/data";
+import { FaGithub } from "react-icons/fa6";
 
 export default function ProjectsPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   return (
-    <main className="min-h-screen pt-32 pb-20 bg-white dark:bg-[#030712] flex flex-col gap-8">
+    <main className="pt-32 pb-20 bg-white dark:bg-[#030712] flex flex-col gap-8">
       {/* Header: Fluid Typography */}
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 flex flex-col justify-center py-16 md:py-24 mb-20 space-y-4 min-h-[80vh]">
-        <h1 className="text-6xl md:text-8xl font-black tracking-tighter dark:text-white">
-          Selected <span className="text-sky-500">Works.</span>
-        </h1>
-        <p className="text-xl text-slate-500 max-w-xl">
-          Spatial exploration of engineered solutions and technical
-          architectures.
-        </p>
-      </div>
+      <Wrapper>
+        <div className="w-full px-6 md:px-12 flex flex-col justify-center py-16 md:py-24 mb-20 gap-6">
+          <h1 className="text-6xl md:text-8xl font-black tracking-tighter dark:text-white">
+            Selected <span className="text-sky-500">Works.</span>
+          </h1>
+          <p className="text-xl text-slate-500 max-w-xl">
+            Spatial exploration of engineered solutions and technical
+            architectures.
+          </p>
+        </div>
+      </Wrapper>
 
       {/* Featured Project */}
       <section className="min-h-screen flex justify-center items-center max-w-7xl mx-auto">
@@ -159,7 +161,7 @@ export default function ProjectsPage() {
                     Live Launch <ExternalLink size={18} />
                   </button>
                   <button className="px-6 py-4 border border-slate-200 dark:border-white/10 rounded-2xl dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-                    <Github size={24} />
+                    <FaGithub size={24} />
                   </button>
                 </div>
               </div>

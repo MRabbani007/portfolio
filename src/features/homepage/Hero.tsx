@@ -65,7 +65,7 @@ export default function Hero() {
             className="flex flex-wrap gap-4 justify-center lg:justify-start"
           >
             <Link
-              href="/portfolio"
+              href="/projects"
               className="group flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-sky-500/25 transition-all active:scale-95"
             >
               Explore Projects

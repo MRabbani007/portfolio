@@ -79,3 +79,8 @@ export type View = Prisma.ViewModel
  * 
  */
 export type Visitor = Prisma.VisitorModel
+/**
+ * Model ContactInquiry
+ * 
+ */
+export type ContactInquiry = Prisma.ContactInquiryModel

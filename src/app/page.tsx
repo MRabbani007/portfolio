@@ -8,7 +8,7 @@ import ProjectsSection from "@/features/homepage/ProjectsSection";
 import WorkflowSection from "@/features/homepage/WorkFlowSection";
 import CTASection from "@/features/homepage/CTASection";
 import TestimonialsSection from "@/features/homepage/TestimonialsSection";
-import ContactSections from "@/features/homepage/ContactSections";
+import ContactSection from "@/features/homepage/ContactSection";
 import TechMarquee from "@/components/TechMarquee";
 import FullStack from "@/features/homepage/FullStack";
 import HighlightsSection from "@/features/homepage/HighlightsSection";
@@ -62,8 +62,6 @@ export default function HomePage() {
           <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-500/5 blur-[120px] dark:bg-indigo-500/[0.02]" />
         </div>
 
-        <PortfolioSideBar />
-
         <main className="relative z-10 flex flex-col w-full">
           <Hero />
 
@@ -82,10 +80,11 @@ export default function HomePage() {
 
             <CTASection />
             <TestimonialsSection />
-            <ContactSections />
+            <ContactSection />
           </div>
         </main>
       </div>
+      <PortfolioSideBar />
     </>
   );
 }

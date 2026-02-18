@@ -17,7 +17,7 @@ const PROJECTS = [
       "Built a headless architecture using Next.js 15 with server-side caching and Stripe integration.",
     impact: "40% faster page loads; 15% increase in mobile conversion.",
     tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    image: "/project1.png",
+    image: "/bg_pattern.jpg",
     links: { github: "#", live: "#" },
     metric: {
       label: "Performance Score",
@@ -34,7 +34,7 @@ const PROJECTS = [
       "Implemented WebSocket clusters and Redis caching for sub-100ms data synchronization.",
     impact: "Scale-ready for 10k+ concurrent users with zero latency spikes.",
     tech: ["Node.js", "Socket.io", "Redis", "Tailwind"],
-    image: "/project2.png",
+    image: "/bg_pattern.jpg",
     links: { github: "#", live: "#" },
     metric: {
       label: "Sync Speed",

@@ -1,16 +1,17 @@
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export const CONTACTS = [
   {
     url: "https://linkedin.com/in/mohamadrabbani",
     label: "",
-    icon: <Linkedin size={25} />,
+    icon: <FaLinkedin size={25} />,
   },
   {
     url: "https://github.com/MRabbani007",
     label: "",
-    icon: <Github size={25} />,
+    icon: <FaGithub size={25} />,
   },
   {
     url: "mailto: mrabbani@outlook.com",

@@ -55,7 +55,8 @@ export const ModelName = {
   Comment: 'Comment',
   BlogPostLike: 'BlogPostLike',
   View: 'View',
-  Visitor: 'Visitor'
+  Visitor: 'Visitor',
+  ContactInquiry: 'ContactInquiry'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -171,6 +172,18 @@ export const VisitorScalarFieldEnum = {
 } as const
 
 export type VisitorScalarFieldEnum = (typeof VisitorScalarFieldEnum)[keyof typeof VisitorScalarFieldEnum]
+
+
+export const ContactInquiryScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  subject: 'subject',
+  message: 'message',
+  createdAt: 'createdAt'
+} as const
+
+export type ContactInquiryScalarFieldEnum = (typeof ContactInquiryScalarFieldEnum)[keyof typeof ContactInquiryScalarFieldEnum]
 
 
 export const SortOrder = {

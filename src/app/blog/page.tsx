@@ -1,39 +1,56 @@
 import React from "react";
-import { Search, Terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
 import Wrapper from "@/components/Wrapper";
 import { getBlogPosts } from "@/lib/actions/blog";
 import BlogPostCard from "@/features/blog/BlogPostCard";
+import Pagination from "@/components/blog/Pagination";
+import BlogSearchBar from "@/features/blog/BlogSearchBar";
 
-const POSTS = [
-  {
-    id: "01",
-    title: "The Shift to Local-First Architectures",
-    excerpt:
-      "Exploring why synchronization is the new hard problem in web development and how to solve it.",
-    category: "Architecture",
-    date: "Feb 12, 2026",
-    readTime: "8 min",
-    version: "v1.0.4",
-    tags: ["Distributed Systems", "Sync", "React"],
-  },
-  {
-    id: "02",
-    title: "Optimizing Next.js 15 for LCP",
-    excerpt:
-      "A deep dive into server-side image processing and its impact on Core Web Vitals.",
-    category: "Performance",
-    date: "Jan 28, 2026",
-    readTime: "12 min",
-    version: "v2.1.0",
-    tags: ["Next.js", "Performance", "Web-Vitals"],
-  },
-];
+// const POSTS = [
+//   {
+//     id: "01",
+//     title: "The Shift to Local-First Architectures",
+//     excerpt:
+//       "Exploring why synchronization is the new hard problem in web development and how to solve it.",
+//     category: "Architecture",
+//     date: "Feb 12, 2026",
+//     readTime: "8 min",
+//     version: "v1.0.4",
+//     tags: ["Distributed Systems", "Sync", "React"],
+//   },
+//   {
+//     id: "02",
+//     title: "Optimizing Next.js 15 for LCP",
+//     excerpt:
+//       "A deep dive into server-side image processing and its impact on Core Web Vitals.",
+//     category: "Performance",
+//     date: "Jan 28, 2026",
+//     readTime: "12 min",
+//     version: "v2.1.0",
+//     tags: ["Next.js", "Performance", "Web-Vitals"],
+//   },
+// ];
+const itemsPerPage = 10;
 
-export default async function BlogPage() {
-  const { data } = await getBlogPosts({ page: 1 });
+export const revalidate = 86400; // 24 hours
+
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolvedSearchParams = await searchParams;
+  const page = Number(resolvedSearchParams?.page || 1);
+  const q = String(resolvedSearchParams?.q || "");
+
+  const { data, count = 0 } = await getBlogPosts({
+    page,
+    itemsPerPage,
+    filters: { query: q },
+  });
 
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-white dark:bg-[#030712]">
+    <main className="pt-32 pb-24 bg-white dark:bg-[#030712]">
       <Wrapper>
         {/* 1. Technical Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-24 border-b border-slate-100 dark:border-white/5 pb-12">
@@ -52,19 +69,7 @@ export default async function BlogPage() {
           </div>
 
           {/* Integrated Search Command Palette Style */}
-          <div className="w-full lg:w-96 relative">
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-2 text-slate-400">
-              <Search size={18} />
-              <span className="text-[10px] font-bold border border-slate-200 dark:border-white/10 px-1.5 py-0.5 rounded uppercase">
-                Cmd + K
-              </span>
-            </div>
-            <input
-              type="text"
-              placeholder="Search documentation..."
-              className="w-full pl-24 pr-6 py-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus:border-sky-500 outline-none transition-all dark:text-white text-sm"
-            />
-          </div>
+          <BlogSearchBar />
         </div>
 
         {/* 2. Article Feed: High-Density Documentation Style */}
@@ -73,6 +78,12 @@ export default async function BlogPage() {
             <BlogPostCard key={post.id} post={post} />
           ))}
         </div>
+
+        <Pagination
+          totalItems={count}
+          itemsPerPage={itemsPerPage}
+          currentPage={page}
+        />
       </Wrapper>
     </main>
   );

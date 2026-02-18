@@ -18,6 +18,7 @@ import {
   Check,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { createPortal } from "react-dom";
 
 const navSections = [
   { id: "hero", label: "Intro", icon: LayoutGrid },
@@ -38,6 +39,7 @@ export default function PortfolioSideBar() {
     stiffness: 100,
     damping: 30,
   });
+
   const opacity = useTransform(scrollYProgress, [0, 0.05], [0, 1]); // Hide until user starts scrolling
 
   // 2. Share Functionality
@@ -73,7 +75,9 @@ export default function PortfolioSideBar() {
     return () => observer.disconnect();
   }, []);
 
-  return (
+  if (typeof window === "undefined") return null;
+
+  return createPortal(
     <motion.aside
       style={{ opacity }}
       className="fixed right-6 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col items-end gap-6"
@@ -185,6 +189,7 @@ export default function PortfolioSideBar() {
           )}
         </AnimatePresence>
       </button>
-    </motion.aside>
+    </motion.aside>,
+    document.body,
   );
 }
