@@ -43,7 +43,12 @@ export default async function BlogPage({
   const page = Number(resolvedSearchParams?.page || 1);
   const q = String(resolvedSearchParams?.q || "");
 
-  const { data, count = 0 } = await getBlogPosts({
+  const {
+    data,
+    count = 0,
+    status,
+    error,
+  } = await getBlogPosts({
     page,
     itemsPerPage,
     filters: { query: q },
@@ -71,6 +76,13 @@ export default async function BlogPage({
           {/* Integrated Search Command Palette Style */}
           <BlogSearchBar />
         </div>
+
+        {status !== 200 && (
+          <div>
+            <p>{status}</p>
+            <p>{error}</p>
+          </div>
+        )}
 
         {/* 2. Article Feed: High-Density Documentation Style */}
         <div className="space-y-6">

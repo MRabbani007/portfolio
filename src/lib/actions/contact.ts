@@ -21,28 +21,32 @@ export async function submitContactForm(formData: unknown) {
 
     const { name, email, subject, message } = result.data;
 
-    // 1. Save to MongoDB
-    await prisma.contactInquiry.create({
-      data: {
-        name: name,
-        email: email,
-        subject: subject,
-        message: message,
-      },
-    });
+    try {
+      // 1. Save to MongoDB
+      await prisma.contactInquiry.create({
+        data: {
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
+        },
+      });
+    } catch {}
 
-    // 2. Send Email via Resend
-    await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>", // Use a verified domain if you have one
-      to: "mrabbani@outlook.com",
-      subject: `New Inquiry: ${subject}`,
-      html: `
+    try {
+      // 2. Send Email via Resend
+      await resend.emails.send({
+        from: "Portfolio <onboarding@resend.dev>", // Use a verified domain if you have one
+        to: "mrabbani@outlook.com",
+        subject: `New Inquiry: ${subject}`,
+        html: `
         <h3>New Contact Form Submission</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
-    });
+      });
+    } catch {}
 
     return { status: 200, success: true };
   } catch (error) {

@@ -36,7 +36,6 @@ export default function ContactSection() {
 
       const result = await submitContactForm(formData);
 
-      console.log(result);
       if (result.status === 200) {
         setSubmitted(true);
         setForm({

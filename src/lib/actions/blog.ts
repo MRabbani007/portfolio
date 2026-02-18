@@ -6,7 +6,7 @@ import { getBytes, ref } from "firebase/storage";
 import { storage } from "../firebase";
 
 type Sort = {
-  field: "createdAt" | "sortIndex";
+  field: "createdAt" | "updatedAt" | "sortIndex" | "title";
   direction: "asc" | "desc";
 };
 
@@ -53,9 +53,49 @@ export async function getBlogPosts({
       }),
     ]);
 
-    return { data, count };
-  } catch {
-    return { data: [], count: 0 };
+    return { data, count, status: 200 };
+  } catch (error) {
+    // 🔴 Always log full error on server
+    console.error("getBlogPosts failed:", error);
+
+    // Prisma-specific errors (very helpful in prod)
+    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+      return {
+        ok: false,
+        error: "Database query failed. Please try again later.",
+        data: [],
+        count: 0,
+        status: 500,
+      };
+    }
+
+    if (error instanceof Prisma.PrismaClientInitializationError) {
+      return {
+        ok: false,
+        error: "Database connection failed.",
+        data: [],
+        count: 0,
+        status: 500,
+      };
+    }
+
+    if (error instanceof Prisma.PrismaClientValidationError) {
+      return {
+        ok: false,
+        error: "Invalid query parameters.",
+        data: [],
+        count: 0,
+        status: 500,
+      };
+    }
+
+    return {
+      ok: false,
+      error: "Unexpected server error.",
+      data: [],
+      count: 0,
+      status: 500,
+    };
   }
 }
 
