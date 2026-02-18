@@ -3,8 +3,7 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { usePathname } from "next/navigation";
-import Lenis from "lenis"; // Import core library
-// Recommended for 2026 smooth scroll
+import Lenis from "lenis";
 
 export default function SmoothLayout({
   children,

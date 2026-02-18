@@ -32,8 +32,6 @@ import BlogSearchBar from "@/features/blog/BlogSearchBar";
 // ];
 const itemsPerPage = 10;
 
-export const revalidate = 86400; // 24 hours
-
 export default async function BlogPage({
   searchParams,
 }: {
