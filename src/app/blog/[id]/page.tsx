@@ -1,134 +1,100 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import "highlight.js/styles/github-dark.css";
 import Image from "next/image";
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
-import { getAllBlogPosts, getPostbySlug } from "@/lib/actions";
 import RelatedPosts from "@/components/blog/RelatedPosts";
-import { FaChevronLeft } from "react-icons/fa6";
+import { FaRegClock, FaRegCalendar } from "react-icons/fa6";
 import Wrapper from "@/components/Wrapper";
+import { getBlogPostById, getBlogPosts } from "@/lib/actions/blog";
+import BlogPostContent from "@/features/blog/BlogPostContent";
 
-const Content = dynamic(() => import("@/components/blog/Content"), {
-  ssr: false,
-});
-
-export const revalidate = 500; //86400;
-
-type Props = {
-  params: {
-    postId: string;
-  };
-};
+export const revalidate = 500;
 
 export async function generateStaticParams() {
-  const { data: posts } = await getAllBlogPosts({}); //deduped!
-
-  if (!posts) return [];
-
-  return posts.map((post) => ({
-    postId: post.id,
-  }));
+  const { data: posts } = await getBlogPosts({});
+  return posts?.map((post: { id: string }) => ({ postId: post.id })) ?? [];
 }
 
-export async function generateMetadata({ params: { postId } }: Props) {
-  const { metadata } = await getPostbySlug(decodeURIComponent(postId)); //deduped!
+export default async function Post({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const id = (await params).id;
 
-  if (!metadata) {
-    return {
-      title: "Post Not Found",
-    };
+  const { data: meta } = await getBlogPostById(id);
+
+  if (!meta) {
+    return notFound();
   }
 
-  return {
-    title: metadata.title,
-    Content: metadata.summary,
-  };
-}
-
-export default async function Post({ params: { postId } }: Props) {
-  const {
-    status,
-    metadata: meta,
-    rawMDX,
-  } = await getPostbySlug(decodeURIComponent(postId));
-
-  if (status !== "success") notFound();
-
-  // const pubDate = getFormattedDate(meta.date);
-
-  // const tags = meta.tags.map((tag, i) => (
-  //   <Link key={i} href={`/tags/${tag}`}>
-  //     {tag}
-  //   </Link>
-  // ));
-
   return (
-    <>
-      <main className="">
-        <div className="w-full h-[50vh] relative">
-          <div className="absolute top-0 left-0 right-0 h-20 bg-sky-950/80 dark:bg-zinc-950/80 z-10"></div>
-          {meta?.banner && (
-            <Image
-              src={meta.banner}
-              alt="Banner"
-              fill
-              className="object-cover object-center"
-            />
-          )}
-        </div>
-        <header className="flex items-stretch gap-4 my-4 p-4">
-          <Wrapper className="flex flex-col justify-start flex-1 ">
-            <div className="flex-1 flex flex-col items-start">
-              <h1 className="font-extrabold text-4xl mb-4">{meta?.title}</h1>
-              <div className="flex items-center gap-2 flex-wrap">
-                <Image
-                  src={meta?.author.image ?? "/assets/blog/author.png"}
-                  alt="profile.png"
-                  width={800}
-                  height={800}
-                  className="size-10 md:size-20"
-                />
-                <div>
-                  <p className="first-letter:uppercase text-xl font-semibold">
-                    {meta?.author.firstName}
-                  </p>
-                  <p>
-                    <span className="">{`Published ${meta?.publishedAt?.toLocaleDateString(
-                      "en-UK",
-                    )}`}</span>
-                    <span className="">{` - Last Updated ${meta?.updatedAt?.toLocaleDateString(
-                      "en-UK",
-                    )}`}</span>
-                  </p>
+    <main className="flex-1 flex flex-col relative w-full">
+      {/* 2026 Immersive Hero - Padding added for the absolute navbar */}
+      <section className="relative h-[60vh] min-h-[400px] w-full overflow-hidden flex flex-col justify-end pb-24">
+        {meta.banner && (
+          <Image
+            src={meta.banner}
+            alt={meta.title}
+            fill
+            priority
+            className="object-cover"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-black via-transparent" />
+
+        <Wrapper className="relative z-10">
+          <div className="max-w-4xl space-y-6">
+            <div className="flex gap-2">
+              {meta.tags?.map((tag: string) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 text-xs font-bold tracking-widest bg-sky-500 text-white rounded-md"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-zinc-900 dark:text-white">
+              {meta.title}
+            </h1>
+          </div>
+        </Wrapper>
+      </section>
+
+      {/* 2. Content Area - Fetched separately via a Suspense boundary if needed */}
+      <Wrapper className="-mt-12 relative z-20 pb-20 flex-1">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-12 items-start">
+          <article className="bg-white/90 dark:bg-zinc-950/90 backdrop-blur-2xl border border-zinc-200 dark:border-zinc-800 p-8 md:p-14 rounded-[3rem] shadow-2xl">
+            <Suspense
+              fallback={
+                <p className="animate-pulse h-96 bg-zinc-800 rounded-3xl" />
+              }
+            >
+              <BlogPostContent postId={id} />
+            </Suspense>
+          </article>
+
+          <aside className="sticky top-28 space-y-6">
+            <div className="p-8 rounded-[2rem] bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800">
+              <p className="text-xs font-bold uppercase text-sky-500 mb-4">
+                Post Details
+              </p>
+              <div className="space-y-4 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                <div className="flex items-center gap-3">
+                  <FaRegCalendar /> {meta.publishedAt?.toDateString()}
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaRegClock /> 8 min read
                 </div>
               </div>
             </div>
-            <p className="flex flex-wrap items-center gap-4 text-sm mt-6">
-              {meta?.tags.map((tag, idx) => (
-                <span
-                  key={idx}
-                  className="py-2 px-4 dark:bg-zinc-800 bg-zinc-200 rounded-full"
-                >{`#${tag}`}</span>
-              ))}
-            </p>
-          </Wrapper>
-        </header>
-        <Wrapper className="overflow-x-auto prose lg:prose-xl dark:prose-invert prose-base prose-zinc w-full">
-          <Suspense fallback={<p>Loading...</p>}>
-            <Content rawMDX={rawMDX ?? ""}></Content>
-          </Suspense>
-        </Wrapper>
-        {/* <hr /> */}
-        <RelatedPosts slug={meta?.slug ?? ""} />
-        {/* <hr /> */}
-        <Wrapper className="flex items-start justify-start w-full">
-          <Link href="/blog" className="flex items-center gap-2 my-10">
-            <FaChevronLeft size={20} />
-            <span>Go back</span>
-          </Link>
-        </Wrapper>
-      </main>
-    </>
+          </aside>
+        </div>
+      </Wrapper>
+
+      <Wrapper>
+        <RelatedPosts slug={meta.slug} />
+      </Wrapper>
+    </main>
   );
 }

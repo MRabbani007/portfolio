@@ -7,11 +7,6 @@ declare global {
     sortIndex: number;
   };
 
-  type BlogPost = {
-    meta: Meta;
-    content: any;
-  };
-
   interface SliderItem {
     id: number;
     bgColor?: string;
