@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://your-domain.com/icon.ico</loc><lastmod>2026-02-18T18:26:16.066Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/about</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/roadmap</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/contact</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/resources</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/projects</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/portfolio</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/projects/1/TodoApp</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/projects/2/LanguageApp</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/projects/3/onlineStore</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/projects/4/expenseManager</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/projects/5/Movies App</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://your-domain.com/projects/6/travelApp</loc><lastmod>2026-02-18T18:26:16.067Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/icon.ico</loc><lastmod>2026-02-18T18:43:39.600Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/about</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/roadmap</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/portfolio</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/1/TodoApp</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/2/LanguageApp</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/3/onlineStore</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/4/expenseManager</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/5/Movies App</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/projects/6/travelApp</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/resources</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://your-domain.com/contact</loc><lastmod>2026-02-18T18:43:39.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

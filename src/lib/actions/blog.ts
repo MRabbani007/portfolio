@@ -1,6 +1,6 @@
 "use server";
 
-import { Prisma } from "../../../generated/prisma/client";
+import { Prisma } from "@/generated/client/client";
 import { prisma } from "../prisma";
 import { getBytes, ref } from "firebase/storage";
 import { storage } from "../firebase";

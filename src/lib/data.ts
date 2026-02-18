@@ -62,15 +62,22 @@ export interface ProjectData {
 
 // Define your featured project data (ensure you have the image path!)
 export const featuredProject: FeaturedProjectData = {
-  id: 99,
-  title: "AI-Powered Resume Optimizer",
+  id: 1,
+  title: "FirCaspian",
   subtitle:
-    "A full-stack application using GPT-4 API to tailor resumes for specific job descriptions.",
+    "A modern full-stack platform connecting businesses and individuals across the Caspian region.",
   description:
-    "Built a platform that analyzes job descriptions and user resumes, providing actionable feedback and optimized keywords using cutting-edge AI technology. The interface is clean, intuitive, and highly performant.",
-  role: "Full Stack Developer, AI Lead",
-  duration: "3 Months",
-  tags: ["Next.js 14", "TypeScript", "OpenAI API", "Tailwind", "Vercel"],
+    "FirCaspian is a scalable web platform designed to showcase companies, services, and opportunities in the Caspian market. It features a fast, SEO-friendly architecture, clean UI, and a flexible content system that allows easy expansion. The project focuses on performance, maintainability, and a professional user experience.",
+  role: "Full Stack Developer",
+  duration: "2–3 Months",
+  tags: [
+    "Next.js",
+    "TypeScript",
+    "Prisma",
+    "PostgreSQL",
+    "Tailwind CSS",
+    "Vercel",
+  ],
   imageUrl: "/bg_pattern.jpg",
   liveUrl: "#",
   githubUrl: "#",
@@ -78,71 +85,37 @@ export const featuredProject: FeaturedProjectData = {
 
 export const PROJECTS = [
   {
-    id: "recruitment-01",
-    title: "TalentFlow AI",
-    tag: "Recruitment Ecosystem",
+    id: "tasker-01",
+    title: "Tasker",
+    tag: "Task Management System",
     description:
-      "Enterprise-grade recruiting platform with automated candidate scoring and interview scheduling.",
+      "A fast and intuitive task management application focused on productivity and clarity.",
     longDesc:
-      "Engineered a high-performance dashboard to manage 10k+ applicants. Implemented complex SQL joins and indexing in PostgreSQL to reduce query latency by 60% when filtering candidates by multiple technical skill-sets.",
+      "Built a full-featured task management system with support for projects, priorities, and task statuses. Implemented efficient backend queries and indexing to enable fast filtering by status, date, and priority. The application is designed for reliability, scalability, and a smooth user experience.",
     image: "/bg_pattern.jpg",
-    tech: ["Next.js", "PostgreSQL", "Prisma", "Redis"],
-    metrics: { speed: "220ms", uptime: "99.9%" },
+    tech: ["Next.js", "Node.js", "MongoDB", "Mongoose", "Tailwind CSS"],
+    metrics: { speed: "190ms", uptime: "99.8%" },
     logs: [
-      "[DB] Optimizing candidate search indexes...",
-      "[AUTH] JWT sessions verified via edge middleware",
-      "[SYS] ATS core heartbeat: Active",
+      "[API] User tasks fetched successfully",
+      "[DB] Task indexes optimized for filtering",
+      "[SYS] Tasker core: Active",
     ],
   },
   {
-    id: "task-02",
-    title: "Syncro Task",
-    tag: "Productivity Engine",
+    id: "russky-01",
+    title: "Russky",
+    tag: "Language Learning Platform",
     description:
-      "Real-time task management with optimistic UI updates and offline synchronization.",
+      "An interactive platform for learning and practicing the Russian language.",
     longDesc:
-      "Built using a local-first architecture. Leveraged TanStack Query for caching and custom WebSockets for real-time team collaboration, ensuring zero data loss during high-concurrency state transitions.",
+      "Designed and developed a language-learning application focused on structured texts, dialogues, and sentence-level practice. Implemented efficient content models and optimized database queries to handle large collections of texts and exercises, ensuring fast loading and a smooth learning experience.",
     image: "/bg_pattern.jpg",
-    tech: ["React", "Node.js", "WebSockets", "MongoDB"],
-    metrics: { speed: "45ms", uptime: "100%" },
+    tech: ["Next.js", "PostgreSQL", "Prisma", "Tailwind CSS"],
+    metrics: { speed: "210ms", uptime: "99.9%" },
     logs: [
-      "[WS] Connection established with shard-01",
-      "[UI] Optimistic update successful",
-      "[SYNC] Local cache pushed to remote",
-    ],
-  },
-  {
-    id: "lang-03",
-    title: "LingoPulse",
-    tag: "EdTech Architecture",
-    description:
-      "Immersive language learning app with interactive speech recognition and spaced-repetition logic.",
-    longDesc:
-      "Architected a custom Spaced Repetition Algorithm (SRS) to optimize user memory retention. integrated OpenAI's Whisper API for real-time speech-to-text validation with a custom-built progress tracking engine.",
-    image: "/bg_pattern.jpg",
-    tech: ["Typescript", "Next.js", "Tailwind", "Supabase"],
-    metrics: { speed: "310ms", uptime: "99.8%" },
-    logs: [
-      "[AI] Whisper-v3 model initialized",
-      "[SRS] Calculating next review interval...",
-      "[DATA] User fluency vector updated",
-    ],
-  },
-  {
-    id: "spend-04",
-    title: "Apex Finance",
-    tag: "FinTech Solution",
-    description:
-      "Spending manager with automated expense categorization and advanced data visualization.",
-    longDesc:
-      "Focused on data security and visualization. Developed a custom charting library using D3.js to render 12-month spending trends with zero layout shifts. Implemented AES-256 encryption for all sensitive user financial data.",
-    image: "/bg_pattern.jpg",
-    tech: ["React", "D3.js", "Firebase", "Express"],
-    metrics: { speed: "180ms", uptime: "99.9%" },
-    logs: [
-      "[SEC] AES-256 encryption handshake: OK",
-      "[D3] Re-rendering spending vectors...",
-      "[API] Firebase listener attached: shard-A",
+      "[CONTENT] Lesson content loaded",
+      "[DB] Text and sentence relations resolved",
+      "[SYS] Russky learning engine: Active",
     ],
   },
 ];
