@@ -12,6 +12,7 @@ type Sort = {
 
 type Filters = {
   query?: string;
+  featured?: boolean;
 };
 
 export async function getBlogPosts({
@@ -123,5 +124,20 @@ export async function getBlogPostContent(id: string) {
     return { data: rawMDX };
   } catch {
     return { data: null };
+  }
+}
+
+export async function getRelatedPosts(slug: string) {
+  try {
+    const blogPost = await prisma.blogPost.findFirst({ where: { slug: slug } });
+
+    const data = await prisma.blogPost.findMany({
+      where: { category: blogPost?.category, status: "PUBLISHED" },
+      take: 5,
+    });
+
+    return { status: "success", data };
+  } catch (error) {
+    return { status: "error", data: [] };
   }
 }

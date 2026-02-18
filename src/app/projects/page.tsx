@@ -17,8 +17,8 @@ import Image from "next/image";
 import Wrapper from "@/components/Wrapper";
 import Link from "next/link";
 import FeaturedProjectCard from "@/features/projects/FeaturedProjectCard";
-import { featuredProject, PROJECTS } from "@/lib/data";
 import { FaGithub } from "react-icons/fa6";
+import { featuredProject, PROJECTS } from "@/lib/data/projects";
 
 export default function ProjectsPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);

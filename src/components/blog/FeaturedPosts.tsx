@@ -1,4 +1,4 @@
-import { getBlogPosts } from "@/lib/actions";
+import { getBlogPosts } from "@/lib/actions/blog";
 import React from "react";
 import {
   Carousel,
@@ -14,7 +14,7 @@ import { FaComment } from "react-icons/fa6";
 import Link from "next/link";
 
 export default async function FeaturedPosts() {
-  const { data } = await getBlogPosts({ page: 1, featured: true });
+  const { data } = await getBlogPosts({ page: 1, filters: { featured: true } });
   return (
     <div>
       <h2 className="m-0">Featured Posts</h2>

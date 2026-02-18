@@ -1,9 +1,9 @@
 import React from "react";
-import { getRelatedPosts } from "@/lib/actions";
+import { getRelatedPosts } from "@/lib/actions/blog";
 import Image from "next/image";
 import Link from "next/link";
 import Wrapper from "../Wrapper";
-import { BlogPost } from "../../../generated/prisma/client";
+import { BlogPost } from "@/generated/client/client";
 import { calculateReadTime } from "@/lib/utils/blog";
 
 export default async function RelatedPosts({ slug }: { slug: string }) {

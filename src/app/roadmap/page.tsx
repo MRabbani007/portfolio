@@ -2,18 +2,7 @@
 
 import React from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import {
-  Terminal,
-  Code2,
-  Globe,
-  Database,
-  Cpu,
-  Cloud,
-  Layers,
-  ShieldCheck,
-  Zap,
-  Rocket,
-} from "lucide-react";
+import { Code2, Globe, Database, Layers, Zap, Rocket } from "lucide-react";
 import Wrapper from "@/components/Wrapper";
 
 const ROADMAP_STEPS = [

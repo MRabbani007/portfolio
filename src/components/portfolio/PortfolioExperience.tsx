@@ -1,6 +1,6 @@
 import React from "react";
 import ExperienceBlock from "./ExperienceBlock";
-import { EXPERIENCE } from "@/lib/experience";
+import { EXPERIENCE } from "@/lib/data/experience";
 import Image from "next/image";
 import Slide from "@/components/animate/Slide";
 import { IoBarChartSharp } from "react-icons/io5";

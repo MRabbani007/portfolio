@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { CONTACTS } from "@/lib/contacts";
+import { CONTACTS } from "@/lib/data/contacts";
 import Wrapper from "@/components/Wrapper";
 
 const footer_items = [

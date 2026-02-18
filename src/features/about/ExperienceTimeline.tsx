@@ -1,6 +1,6 @@
 import Slide from "@/components/animate/Slide";
 import Wrapper from "@/components/Wrapper";
-import { EXPERIENCE } from "@/lib/experience";
+import { EXPERIENCE } from "@/lib/data/experience";
 import { Briefcase, GraduationCap, Calendar, MapPin } from "lucide-react";
 import React from "react";
 
